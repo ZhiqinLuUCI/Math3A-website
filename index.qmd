@@ -1,8 +1,17 @@
 ---
 title: "UCI Math 3A Lecture Notes"
+subtitle: "12th edition, with the exam guide"
 author: "Zhiqin Lu"
-subtitle: "12th edition · Linear Algebra"
+date: "2026-10-31"
+date-format: "MMMM D, YYYY"
 ---
+
+Professor, Department of Mathematics  
+University of California, Irvine  
+[zlu@uci.edu](mailto:zlu@uci.edu)
+
+Based on Pearson's My Lab 6th edition of  
+*Linear Algebra and its Applications* by Lay/Lay/McDonald.
 
 Choose a chapter below. Each chapter has its own table of contents.
 
