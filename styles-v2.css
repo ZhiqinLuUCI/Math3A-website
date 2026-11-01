@@ -386,6 +386,40 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
 
 }
 
+/* iPhones in landscape are wider than the mobile breakpoint but still short. */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
+  body:has(.book-home) #title-block-header.quarto-title-block {
+    padding: 4.85rem 1.35rem 2.1rem;
+  }
+
+  body:has(.book-home) #title-block-header.quarto-title-block::before {
+    content: "UNIVERSITY OF CALIFORNIA, IRVINE  ·  DEPARTMENT OF MATHEMATICS";
+    top: .7rem;
+    left: 1.1rem;
+    right: 9rem;
+    width: auto;
+    padding-bottom: .62rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .48);
+    background: none;
+    font-size: .54rem;
+    line-height: 1.35;
+    letter-spacing: .08em;
+    text-align: left;
+    white-space: normal;
+    transform: none;
+  }
+
+  .math-ai-art {
+    top: .58rem;
+    right: 1rem;
+    font-size: .75rem;
+  }
+
+  body:has(.book-home) #title-block-header .quarto-title h1.title {
+    font-size: clamp(1.55rem, 4.3vw, 2.15rem);
+  }
+}
+
 /* Numbered display caption beneath each figure. */
 .numbered-figure-caption {
   display: flex;
