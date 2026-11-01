@@ -1,24 +1,27 @@
 ---
 title: "UCI Math 3A Lecture Notes"
 subtitle: "12th edition, with the exam guide"
-author: "Zhiqin Lu"
-date: "2026-10-31"
+author:
+  - name: "Professor Zhiqin Lu"
+    email: "zlu@uci.edu"
+date: today
 date-format: "MMMM D, YYYY"
 ---
 
-Professor, Department of Mathematics  
-University of California, Irvine  
-[zlu@uci.edu](mailto:zlu@uci.edu)
+::: {.book-home}
 
-Based on Pearson's My Lab 6th edition of  
-*Linear Algebra and its Applications* by Lay/Lay/McDonald.
+## Explore the lecture notes
 
-Choose a chapter below. Each chapter has its own table of contents.
+::: {.book-chapter-grid}
 
-- [1. Linear Equations in Linear Algebra](chapter-1.qmd)
-- [2. Matrix Algebra](chapter-2.qmd)
-- [3. Determinants](chapter-3.qmd)
-- [5. Eigenvalues and eigenvectors](chapter-5.qmd)
-- [6. Orthogonality and Least Squares](chapter-6.qmd)
-- [7. Final Exam Review Guide](chapter-7.qmd)
-- [Subject Index](subject-index.qmd)
+- [**01** Linear Equations in Linear Algebra](chapter-1.qmd)
+- [**02** Matrix Algebra](chapter-2.qmd)
+- [**03** Determinants](chapter-3.qmd)
+- [**05** Eigenvalues and Eigenvectors](chapter-5.qmd)
+- [**06** Orthogonality and Least Squares](chapter-6.qmd)
+- [**07** Final Exam Review Guide](chapter-7.qmd)
+- [**A–Z** Subject Index](subject-index.qmd)
+
+:::
+
+:::

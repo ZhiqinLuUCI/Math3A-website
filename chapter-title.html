@@ -1,26 +1,90 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector("#title-block-header h1.title");
-  if (!title) return;
+  if (title) {
+    const match = title.textContent.trim().match(/^(\d+)\.\s+(.+)$/);
+    if (match) {
+      const [, number, name] = match;
+      title.replaceChildren();
 
-  const match = title.textContent.trim().match(/^(\d+)\.\s+(.+)$/);
-  if (!match) return;
+      const kicker = document.createElement("span");
+      kicker.className = "chapter-kicker";
+      kicker.textContent = "Chapter";
 
-  const [, number, name] = match;
-  title.replaceChildren();
+      const chapterNumber = document.createElement("span");
+      chapterNumber.className = "chapter-number";
+      chapterNumber.textContent = number;
 
-  const kicker = document.createElement("span");
-  kicker.className = "chapter-kicker";
-  kicker.textContent = "Chapter";
+      const chapterName = document.createElement("span");
+      chapterName.className = "chapter-name";
+      chapterName.textContent = name;
 
-  const chapterNumber = document.createElement("span");
-  chapterNumber.className = "chapter-number";
-  chapterNumber.textContent = number;
+      title.append(kicker, chapterNumber, chapterName);
+    }
+  }
 
-  const chapterName = document.createElement("span");
-  chapterName.className = "chapter-name";
-  chapterName.textContent = name;
+  // A chapter and its sidebar sections share one HTML page. Quarto therefore
+  // points the page-bottom "Next" link back to that chapter's first section.
+  // Replace it with the first section of the following chapter.
+  const nextSections = {
+    "chapter-1.html": ["chapter-2.html#section-27", "2.1 Matrix operations"],
+    "chapter-2.html": ["chapter-3.html#section-39", "3.1 Introduction to Determinants"],
+    "chapter-3.html": ["chapter-5.html#section-42", "5.1 Eigenvectors and eigenvalues"],
+    "chapter-5.html": ["chapter-6.html#section-50", "6.1 Dot product, length, and orthogonality"],
+    "chapter-6.html": ["chapter-7.html#section-57", "7.1 Sections covered"],
+    "chapter-7.html": ["subject-index.html", "Subject Index"]
+  };
 
-  title.append(kicker, chapterNumber, chapterName);
+  const page = window.location.pathname.split("/").pop() || "index.html";
+
+  if (page === "index.html" && !document.querySelector(".math-ai-art")) {
+    const cover = document.querySelector("#title-block-header");
+    if (cover) {
+      const authorEmail = cover.querySelector(".quarto-title-author-email");
+      if (authorEmail) {
+        authorEmail.textContent = "zlu@uci.edu";
+        authorEmail.setAttribute("aria-label", "Email Professor Zhiqin Lu at zlu@uci.edu");
+      }
+
+      const art = document.createElement("div");
+      art.className = "math-ai-art";
+      art.setAttribute("aria-label", "Math times AI equals infinity");
+
+      const pieces = [
+        ["math-ai-art__math", "Math"],
+        ["math-ai-art__operator", "×"],
+        ["math-ai-art__ai", "AI"],
+        ["math-ai-art__equals", "="],
+        ["math-ai-art__infinity", "∞"]
+      ];
+
+      for (const [className, text] of pieces) {
+        const piece = document.createElement("span");
+        piece.className = className;
+        piece.textContent = text;
+        piece.setAttribute("aria-hidden", "true");
+        art.append(piece);
+      }
+      cover.append(art);
+
+      const sourceNote = document.createElement("div");
+      sourceNote.className = "book-source-note";
+      sourceNote.append("Based on Pearson’s MyLab sixth edition of ");
+      const bookTitle = document.createElement("em");
+      bookTitle.textContent = "Linear Algebra and Its Applications";
+      sourceNote.append(bookTitle, " by Lay, Lay, and McDonald.");
+      cover.append(sourceNote);
+    }
+  }
+
+  const next = nextSections[page];
+  const nextLink = document.querySelector(".nav-page-next a.pagination-link");
+  if (next && nextLink) {
+    const [href, label] = next;
+    nextLink.href = href;
+    nextLink.setAttribute("aria-label", label);
+    const text = nextLink.querySelector(".nav-page-text");
+    if (text) text.textContent = label;
+  }
 });
 </script>

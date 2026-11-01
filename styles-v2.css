@@ -84,6 +84,348 @@
   }
 }
 
+/* Academic cover and chapter gallery on the book landing page. */
+body:has(.book-home) #title-block-header.quarto-title-block {
+  position: relative;
+  overflow: hidden;
+  margin: .75rem 0 2rem;
+  padding: 4.1rem 2.5rem 2.6rem;
+  color: #fff;
+  background: linear-gradient(145deg, #0c253b 0%, #123f63 58%, #2f78a8 100%);
+  border: 1px solid #0c253b;
+  border-radius: .35rem 1.45rem .35rem 1.45rem;
+  box-shadow: 0 1.1rem 2.3rem rgba(18, 50, 79, .22);
+  text-align: center;
+}
+
+body:has(.book-home) #title-block-header.quarto-title-block::before {
+  content: "UNIVERSITY OF CALIFORNIA, IRVINE  ·  DEPARTMENT OF MATHEMATICS";
+  position: absolute;
+  top: 1.35rem;
+  left: 1.5rem;
+  right: 13.5rem;
+  display: block;
+  padding-bottom: .8rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, .32);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-align: left;
+}
+
+body:has(.book-home) #title-block-header.quarto-title-block::after {
+  content: none;
+}
+
+.math-ai-art {
+  position: absolute;
+  z-index: 3;
+  top: .72rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .16rem;
+  padding: .1rem .12rem .3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(3, 20, 38, .35));
+}
+
+.math-ai-art::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f5b400 22%, #f5b400 86%, transparent);
+}
+
+.math-ai-art__math {
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+
+.math-ai-art__operator,
+.math-ai-art__equals,
+.math-ai-art__infinity {
+  color: #f5b400;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.math-ai-art__operator {
+  margin-inline: .03rem;
+  font-size: 1.18em;
+}
+
+.math-ai-art__ai {
+  color: #7ec8ff;
+  font-size: 1.08em;
+  font-weight: 900;
+  letter-spacing: -.06em;
+}
+
+.math-ai-art__equals {
+  margin-left: .13rem;
+}
+
+.math-ai-art__infinity {
+  margin-left: .03rem;
+  font-size: 1.42em;
+  line-height: .7;
+}
+
+.book-source-note {
+  max-width: 40rem;
+  margin: 1.35rem auto 0;
+  padding-top: .85rem;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, .24);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.book-source-note em {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+body:has(.book-home) #title-block-header .quarto-title h1.title {
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4.3vw, 3.35rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+  text-shadow: 0 3px 10px rgba(3, 20, 38, .28);
+}
+
+body:has(.book-home) #title-block-header .quarto-title h1.title::after {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 2px;
+  margin: 1.15rem auto .85rem;
+  background: #9fc8e2;
+}
+
+body:has(.book-home) #title-block-header .subtitle {
+  margin: 0;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(.9rem, 2vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+body:has(.book-home) #title-block-header .quarto-title-meta {
+  justify-content: center;
+  gap: 2.6rem;
+  margin-top: 1.8rem;
+  color: #fff;
+}
+
+body:has(.book-home) #title-block-header .quarto-title-meta-heading {
+  color: #f5bf3d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .17em;
+}
+
+body:has(.book-home) #title-block-header .quarto-title-meta-contents p {
+  margin: .15rem 0 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+body:has(.book-home) #title-block-header .quarto-title-author-email {
+  display: block;
+  margin-top: .18rem;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .76rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.book-home {
+  max-width: 58rem;
+  margin: 0 auto;
+}
+
+.book-home > h2,
+.book-home > section > h2 {
+  margin: 0 0 .6cm;
+  color: #12324f;
+  font-size: 1.75rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.book-home > h2 + p,
+.book-home > section > h2 + p {
+  margin-bottom: 1.25rem;
+  color: #536777;
+  text-align: center;
+}
+
+.book-chapter-grid > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.book-chapter-grid li {
+  margin: 0;
+}
+
+.book-chapter-grid a {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: center;
+  min-height: 5rem;
+  padding: .75rem 1rem .75rem .75rem;
+  color: #12324f;
+  background: #fff;
+  border: 1px solid #c9d9e5;
+  border-radius: .75rem;
+  box-shadow: 0 .25rem .7rem rgba(18, 50, 79, .07);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.book-chapter-grid a:hover,
+.book-chapter-grid a:focus-visible {
+  color: #0b3d66;
+  border-color: #2f78a8;
+  box-shadow: 0 .5rem 1.1rem rgba(18, 50, 79, .13);
+  transform: translateY(-2px);
+}
+
+.book-chapter-grid a strong:first-child {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  color: #fff;
+  background: #12324f;
+  border-radius: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .77rem;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 700px) {
+  body:has(.book-home) #title-block-header.quarto-title-block {
+    padding: 5.25rem 1.15rem 2.35rem;
+    border-radius: .3rem .9rem .3rem .9rem;
+  }
+
+  body:has(.book-home) #title-block-header.quarto-title-block::before {
+    right: 1.5rem;
+    font-size: .56rem;
+    letter-spacing: .1em;
+    text-align: center;
+  }
+
+  .math-ai-art {
+    top: 3.45rem;
+    right: .75rem;
+    font-size: .72rem;
+  }
+
+  body:has(.book-home) #title-block-header .quarto-title-meta {
+    gap: 1.2rem;
+  }
+
+  body:has(.book-home) #title-block-header .quarto-title h1.title {
+    font-size: clamp(1.35rem, 6vw, 2.1rem);
+  }
+
+  .book-chapter-grid > ul {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Numbered display caption beneath each figure. */
+.numbered-figure-caption {
+  display: flex;
+  justify-content: center;
+  margin: .55rem auto 1.65rem;
+  color: #253746;
+}
+
+.numbered-figure-caption > p {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .55rem;
+  margin: 0;
+  padding: .32rem .85rem .36rem .38rem;
+  background: #fff;
+  border: 1px solid #c5d6e3;
+  border-radius: 999px;
+  box-shadow: 0 .2rem .55rem rgba(18, 50, 79, .08);
+  font-size: .94rem;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.numbered-figure-caption strong:first-child {
+  flex: 0 0 auto;
+  padding: .18rem .62rem .2rem;
+  color: #fff;
+  background: #12324f;
+  border-radius: 999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .78rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 575.98px) {
+  .numbered-figure-caption > p {
+    display: block;
+    border-radius: .65rem;
+    padding: .55rem .7rem .62rem;
+  }
+
+  .numbered-figure-caption strong:first-child {
+    display: table;
+    margin: 0 auto .4rem;
+  }
+}
+
 /* Classic chapter opener: the number breaks through a fine ruled frame. */
 #title-block-header.quarto-title-block {
   margin: .5rem 0 2.75rem;
@@ -240,5 +582,141 @@
 .quarto-document-content p:has(> .math.display:only-child)
   + p:has(> .math.display:only-child) {
   margin-top: -.1rem;
+}
+
+/* Polished left-hand book navigation. */
+#quarto-sidebar.sidebar-navigation {
+  padding-inline: .55rem;
+  background: linear-gradient(180deg, #f7fafc 0%, #edf4f8 100%) !important;
+  border-right: 1px solid #bfd1de;
+  box-shadow: .35rem 0 1rem rgba(18, 50, 79, .07);
+}
+
+#quarto-sidebar .sidebar-menu-container::before {
+  content: "CONTENTS";
+  display: block;
+  margin: .55rem .45rem .75rem;
+  padding-bottom: .48rem;
+  color: #2f78a8;
+  border-bottom: 2px solid #2f78a8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+#quarto-sidebar .sidebar-item-container {
+  border-radius: .45rem;
+}
+
+#quarto-sidebar > .sidebar-menu-container > ul > .sidebar-item > .sidebar-item-container {
+  margin-block: .22rem;
+  border: 1px solid transparent;
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+#quarto-sidebar > .sidebar-menu-container > ul > .sidebar-item-section > .sidebar-item-container {
+  margin-top: .48rem;
+  background: rgba(255, 255, 255, .78);
+  border-color: #d2e0e9;
+  box-shadow: 0 .15rem .45rem rgba(18, 50, 79, .045);
+}
+
+#quarto-sidebar > .sidebar-menu-container > ul > .sidebar-item > .sidebar-item-container:hover {
+  background: #fff;
+  border-color: #9fbed3;
+  box-shadow: 0 .25rem .6rem rgba(18, 50, 79, .09);
+}
+
+#quarto-sidebar .sidebar-item-section > .sidebar-item-container > .sidebar-link {
+  padding: .47rem .38rem .47rem .62rem;
+  color: #12324f !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .81rem;
+  font-weight: 750;
+  line-height: 1.28;
+}
+
+#quarto-sidebar .sidebar-item-toggle {
+  margin-right: .18rem;
+  color: #2f78a8;
+  border-radius: 50%;
+}
+
+#quarto-sidebar .sidebar-section {
+  margin: .15rem 0 .42rem .72rem;
+  padding: .12rem 0 .12rem .62rem;
+  border-left: 2px solid #a9c5d8;
+}
+
+#quarto-sidebar .sidebar-section .sidebar-link {
+  margin: .08rem 0;
+  padding: .3rem .45rem;
+  color: #31495c !important;
+  border-radius: .35rem;
+  font-size: .77rem;
+  line-height: 1.32;
+  transition: background-color .14s ease, color .14s ease, transform .14s ease;
+}
+
+#quarto-sidebar .sidebar-section .sidebar-link:hover {
+  color: #12324f !important;
+  background: #fff;
+  text-decoration: none;
+  transform: translateX(.12rem);
+}
+
+#quarto-sidebar .sidebar-link.active {
+  color: #fff !important;
+  background: linear-gradient(100deg, #12324f, #2f78a8);
+  box-shadow: 0 .2rem .55rem rgba(18, 50, 79, .18);
+}
+
+#quarto-sidebar .sidebar-section .sidebar-link.active {
+  border-left: 3px solid #f5b400;
+  border-radius: .15rem .4rem .4rem .15rem;
+  transform: translateX(-.12rem);
+}
+
+/* Refined book-style figure captions. */
+.quarto-figure figcaption.figure-caption,
+.quarto-figure figcaption {
+  position: relative;
+  width: fit-content;
+  max-width: min(88%, 46rem);
+  margin: .8rem auto 0;
+  padding: .62rem 1.15rem .68rem;
+  color: #12324f !important;
+  background: linear-gradient(90deg, #f4f8fb 0%, #fff 50%, #f4f8fb 100%);
+  border-top: 1px solid #9dbbd1;
+  border-bottom: 1px solid #9dbbd1;
+  border-radius: .2rem;
+  box-shadow: 0 .22rem .65rem rgba(18, 50, 79, .07);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .94rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.quarto-figure figcaption.figure-caption::before,
+.quarto-figure figcaption::before {
+  content: "◆";
+  display: inline-block;
+  margin-right: .55rem;
+  color: #2f78a8;
+  font-size: .62em;
+  font-style: normal;
+  vertical-align: .14em;
+}
+
+@media (max-width: 575.98px) {
+  .quarto-figure figcaption.figure-caption,
+  .quarto-figure figcaption {
+    max-width: 96%;
+    padding-inline: .8rem;
+    font-size: .9rem;
+  }
 }
 

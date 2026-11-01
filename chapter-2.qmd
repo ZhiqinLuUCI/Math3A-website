@@ -115,9 +115,11 @@ $$
 
 Thus we can define $T=T_1\circ T_2: \mathbb{R}^k\to \mathbb{R}^m$.
 
-![Composition of linear transformations: T sub 2 represented by B maps R k to R n, then T sub 1 represented by A maps R n to R m.](3A-lecture-notes-assets/figure-06.svg){fig-alt="Composition of linear transformations: T sub 2 represented by B maps R k to R n, then T sub 1 represented by A maps R n to R m."}
+![Composition of linear transformations: $T_2$, represented by $B$, maps $\mathbb{R}^k$ to $\mathbb{R}^n$; then $T_1$, represented by $A$, maps $\mathbb{R}^n$ to $\mathbb{R}^m$.](3A-lecture-notes-assets/figure-06.svg){fig-alt="Composition of linear transformations: T sub 2 represented by B maps R k to R n, then T sub 1 represented by A maps R n to R m." width="70%"}
 
-*Figure 5. The composition of two linear transformations.*
+::: {.numbered-figure-caption}
+**Figure 5.** The composition of two linear transformations.
+:::
 
 So, what is the matrix corresponding to the linear transformation $T$?
 

@@ -48,7 +48,9 @@ A <span style="color:#b40000">*solution*</span> <span id="index-4"></span> to a 
  
      
 
-*Figure 1. Examples of one solution, infinitely many solutions and no solution for $2\times 2$ systems.*
+::: {.numbered-figure-caption}
+**Figure 1.** Examples of one solution, infinitely many solutions and no solution for $2\times 2$ systems.
+:::
 
 ### Matrix notations {#section-4}
 
@@ -746,9 +748,11 @@ We use $\mathbb R^n$ to denote the set of all $n$-dimensional vectors. We call  
 
 In geometry, a vector can be represented by an arrow from the origin of the coordinate system, as showed in the following graph. 
 
-![Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared.](3A-lecture-notes-assets/figure-02.svg){fig-alt="Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared." width="70%"}
+![Coordinate axes with the vector from the origin to the point $(2,2)$. The vector is also the point with coordinates $(2,2)$ in $\mathbb{R}^2$.](3A-lecture-notes-assets/figure-02.svg){fig-alt="Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared." width="70%"}
 
-*Figure 2. Euclidean Coordinate System*
+::: {.numbered-figure-caption}
+**Figure 2.** Euclidean Coordinate System
+:::
 
 Two vectors are equal, if their corresponding entries are equal. For example, the vectors $u_1,u_2$ in the following
 
@@ -803,9 +807,11 @@ $$
 
 The diagram below illustrates vector addition.
 
-![Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin.](3A-lecture-notes-assets/figure-03.svg){fig-alt="Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin." width="70%"}
+![Parallelogram rule: vectors $u$ and $v$ form adjacent sides, and their sum $u+v$ is the diagonal from the origin.](3A-lecture-notes-assets/figure-03.svg){fig-alt="Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin." width="70%"}
 
-*Figure 3. Parallelogram Rule*
+::: {.numbered-figure-caption}
+**Figure 3.** Parallelogram Rule
+:::
 
 As mentioned before, two-dimensional Euclidean space is represented by $\mathbb{R}^2$. Let $n$ be a positive integer. We denote $\mathbb{R}^n$<span id="index-28"></span>  to be the collection of all lists of $n$ real numbers. Thus, an element of $\mathbb{R}^n$ can be represented by
 
@@ -1361,7 +1367,7 @@ In the expression  [(1.5.1)](#ref-eq1), $t$ is the parameter, which is running t
 
 The above theorem gives the structure of the solution set of a consistent linear system. 
 
-![The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p.](3A-lecture-notes-assets/figure-04.svg){fig-alt="The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p." width="70%"}
+![The solution set of $Ax=b$ is a line parallel to the homogeneous solution line $Ax=0$, translated by the particular solution $p$.](3A-lecture-notes-assets/figure-04.svg){fig-alt="The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p." width="70%"}
 
  <span style="color:#b40000">*(We will skip § 1.6)*</span>
 
@@ -1399,7 +1405,7 @@ Now we make the following definition.
 
 ::: {.math-block .definition}
 
-**Definition 4.** 
+**Definition.** 
 An indexed set of vectors $\{v_1,\cdots,v_p\}$ is said to be linearly independent, if the vector equation 
 
 $$
@@ -1413,7 +1419,7 @@ $$
 c_1v_1+c_2v_2+\cdots+c_pv_p=0.
 $$
 
-The above equation, when $c_1,\cdots, c_p$ are not all zero, is called the <span style="color:#b40000">linear dependence relation</span>. <span id="index-39"></span>
+The above equation, when $c_1,\cdots, c_p$ are not all zero, is called the <span style="color:#b40000">*linear dependence relation*</span>. <span id="index-39"></span>
 
 :::
 
@@ -1461,7 +1467,7 @@ $$
 \end{bmatrix}
 $$
 
-Since  $x_3$ is the free variable, the equation has non-trivial solutions. As a result, $v_1,v_2, v_3$ are linearly depedent. 
+Since  $x_3$ is the free variable, the equation has non-trivial solutions. As a result, $v_1,v_2, v_3$ are linearly dependent. 
 
 In order to find the linear independence relation, we need to solve the equation. So we further reduce the matrix into the reduced row-echelon form. 
 
@@ -1620,12 +1626,12 @@ If a set $\{v_1,\cdots, v_p\}$ contains the zero vector, then the set is linearl
 
 **Example.**  Determine by inspection whether the given set is linearly dependent.
 
-1. **(1).**  $\begin{bmatrix} 1\\7\\6\end{bmatrix},\,\, \begin{bmatrix} 2\\0\\9\end{bmatrix},\,\,
+**(1).**  $\begin{bmatrix} 1\\7\\6\end{bmatrix},\,\, \begin{bmatrix} 2\\0\\9\end{bmatrix},\,\,
     \begin{bmatrix} 3\\1\\5\end{bmatrix},\,\,\begin{bmatrix} 4\\1\\8\end{bmatrix}$
 
-2. **(2).**  $\begin{bmatrix} 12\\3\\5\end{bmatrix},\,\,\begin{bmatrix} 0\\0\\0\end{bmatrix},\,\,\begin{bmatrix} 1\\1\\8\end{bmatrix}$
+ **(2).**  $\begin{bmatrix} 12\\3\\5\end{bmatrix},\,\,\begin{bmatrix} 0\\0\\0\end{bmatrix},\,\,\begin{bmatrix} 1\\1\\8\end{bmatrix}$
 
-3. **(3).**  $\begin{bmatrix} -2\\4\\6\\10\end{bmatrix},\,\, \begin{bmatrix} 3\\-6\\-9\\15\end{bmatrix}$
+ **(3).**  $\begin{bmatrix} -2\\4\\6\\10\end{bmatrix},\,\, \begin{bmatrix} 3\\-6\\-9\\15\end{bmatrix}$
 
 ::: {.math-block .solution}
 
@@ -1658,9 +1664,11 @@ $$
 
 :::
 
-![A function maps points u and v in the domain X to points f(u) and f(v) in the codomain Y. The range is shown as a subset of Y.](3A-lecture-notes-assets/figure-05.svg){fig-alt="A function maps points u and v in the domain X to points f(u) and f(v) in the codomain Y. The range is shown as a subset of Y."}
+![A function maps points $u$ and $v$ in the domain $X$ to points $f(u)$ and $f(v)$ in the codomain $Y$. The range is shown as a subset of $Y$.](3A-lecture-notes-assets/figure-05.svg){fig-alt="A function maps points u and v in the domain X to points f(u) and f(v) in the codomain Y. The range is shown as a subset of Y." width="55%"}
 
-*Figure 4. A function $f: X \to Y$, where the blue disk is the domain, the red disk is the codomain, and the green disk inside the codomain is the range of the function.*
+::: {.numbered-figure-caption}
+**Figure 4.** A function $f: X \to Y$, where the blue disk is the domain, the red disk is the codomain, and the green disk inside the codomain is the range of the function.
+:::
 
 What does it have to do with the functions we are familiar with? For example, $h(x)=x^2$, in Calculus? The *implicit* domain and codomain of the function are $\mathbb{R}$, and the assignment is $x\mapsto x^2$. The range of this function is the set of all non-negative real numbers.
 
