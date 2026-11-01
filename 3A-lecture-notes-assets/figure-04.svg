@@ -318,4 +318,7 @@
 <g fill="rgb(0.782776%, 39.608765%, 5.880737%)" fill-opacity="1">
 <use xlink:href="#glyph-1-19" x="266.031128" y="134.604796"/>
 </g>
+<!-- Preserve the original vector lettering and replace only “??” with “16”. -->
+<rect x="253.5" y="125" width="12.3" height="12" fill="white"/>
+<text x="254.5" y="134.7" fill="#02650f" font-family="'Latin Modern Roman', 'CMU Serif', serif" font-size="10.2">16</text>
 </svg>

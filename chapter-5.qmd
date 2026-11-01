@@ -24,7 +24,7 @@ Then we have $Ae_1=e_1$, $Ae_2=3e_2$. Thus, the linear transformation stretches 
 
 ::: {.math-block .example}
 
-**Example 64.** 
+**Example.** 
 Let
 
 $$
@@ -76,7 +76,7 @@ An <span style="color:#b40000">eigenvector</span> <span id="index-71"></span> of
 
 ::: {.math-block .example}
 
-**Example 65.** 
+**Example.** 
 Let
 
 $$
@@ -96,7 +96,7 @@ Check whether $u,v$ are eigenvectors.
 
 ::: {.math-block .proof}
 
-** Solution.** 
+ 
 We have
 
 $$
@@ -130,15 +130,14 @@ So $u$ is an eigenvector of $A$ corresponding to the eigenvalue $-4$, and $v$ is
 
 ::: {.math-block .example}
 
-**Example 66.** 
+**Example.** 
 Show that $7$ is an eigenvalue of matrix $A$ in the above example, and find the corresponding 
 eigenvectors. 
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 The number $7$ is an eigenvalue of $A$ if and only if the equation
 
 $$
@@ -180,7 +179,7 @@ The set  of eigenvectors, plus the zero vector,  corresponding to an eigenvalue 
 
 ::: {.math-block .example}
 
-**Example 67.** 
+**Example.** 
 The matrix $A$ 
 
 $$
@@ -192,9 +191,8 @@ has an eigenvalue $2$. Find its eigenspace.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Form
 
 $$
@@ -276,7 +274,7 @@ as eigenvalues.
 
 ::: {.math-block .example}
 
-**Example 68.** 
+**Example.** 
 Let
 
 $$
@@ -297,7 +295,7 @@ The idea of finding the eigenvalues of a triangular matrix can be used in the ge
 
 ::: {.math-block .example}
 
-**Example 69.** 
+**Example.** 
 Find eigenvalue(s) of the matrix
 
 $$
@@ -306,9 +304,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 If $\lambda$  is an eigenvalue, then the equation $(A-\lambda I)x=0$ has non-trivial solutions. Thus the matrix $A-\lambda I$ is not invertible and hence
 $\det(A-\lambda I)=0$. The equation is called *<span style="color:#b40000">characteristic equation</span>*.
 <span id="index-74"></span>
@@ -336,15 +333,15 @@ The roots of the above equation are $3$ and $-7$, which are the eigenvalues of t
 **Theorem 29 (The Invertible Matrix Theorem (continued)).** 
 Let $A$ be an $n\times n$ matrix. Then $A$ is invertible if and only if
 
-1. **(s)**  the number $0$ is not an eigenvalue of $A$;
+[***(s)***]{.imt-label .imt-black} the number $0$ is not an eigenvalue of $A$;
 
-2. **(t)**  the determinant of $A$ is not zero.
+[***(t)***]{.imt-label .imt-black} the determinant of $A$ is not zero.
 
 :::
 
 ::: {.math-block .example}
 
-**Example 70.** 
+**Example.** 
 Find the characteristic equation of 
 
 $$
@@ -353,9 +350,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -375,14 +371,13 @@ The characteristic equation is a polynomial equation. The eigenvalues of the mat
 
 ::: {.math-block .example}
 
-**Example 71.** 
+**Example.** 
 The characteristic polynomial of a $6\times 6$ matrix is $\lambda^6-4\lambda^5-12\lambda^4$. Find the eigenvalues and their multiplicity. 
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -426,7 +421,6 @@ therefore the same eigenvalues.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Since $A$ and $B$ are similar, there exists an invertible matrix $P$ such
 that
 
@@ -495,7 +489,7 @@ Also, similarity is not the same as row equivalence.
 
 ::: {.math-block .example}
 
-**Example 72.** 
+**Example.** 
 Let 
 
 $$
@@ -533,7 +527,7 @@ for some invertible matrix $P$, then we say $A$ is <span style="color:#b40000">d
 
 ::: {.math-block .example}
 
-**Example 73.** 
+**Example.** 
 If $D=\begin{bmatrix} 5&0\\0&3 \end{bmatrix}$, then $D^2=\begin{bmatrix} 5^2&0\\0&3^2 \end{bmatrix}$. In general, we have
 
 $$
@@ -552,7 +546,7 @@ Of course, this is not always possible.
 
 ::: {.math-block .example}
 
-**Example 74.** 
+**Example.** 
 Let
 
 $$
@@ -623,7 +617,6 @@ In fact, $A=PDP^{-1}$, with $D$ a diagonal matrix, if and only if the columns of
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Let $v_i$ be an eigenvector corresponding to the eigenvalue $\lambda_i$, that is, 
 
 $$
@@ -665,7 +658,7 @@ We shall use the following example to show how to diagonalize a matrix.
 
 ::: {.math-block .example}
 
-**Example 75.** 
+**Example.** 
 Diagonalize the following matrix, if possible
 
 $$
@@ -676,9 +669,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 
 **Step 1: find the eigenvalues of $A$.**
 
@@ -799,9 +791,13 @@ $$
 
 :::
 
-::: {.math-block .remark}
 
-**Remark 4.** 
+ 
+
+
+
+::: {.math-block .numberedremark}
+
 The order of the eigenvectors are not important. For example, we can take 
 
 $$
@@ -818,7 +814,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 76.** 
+**Example.** 
 Diagonalize the following matrix, if possible
 
 $$
@@ -827,9 +823,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 The characteristic equation is given by 
 
 $$
@@ -873,7 +868,7 @@ An $n\times n$ matrix with $n$ distinct eigenvalues is diagonalizable.
 
 ::: {.math-block .example}
 
-**Example 77.** 
+**Example.** 
 Determine if the following matrix is
 diagonalizable.
 
@@ -883,9 +878,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Since the matrix is upper triangular, the eigenvalues are $5,0,-2$, which are distinct. 
 So the matrix is diagonalizable. 
  $\square$
@@ -927,7 +921,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 78.** 
+**Example.** 
 Let 
 
 $$
@@ -956,7 +950,7 @@ which is one-dimensional. Thus the geometric multiplicity is strictly less than 
 
 ::: {.math-block .example}
 
-**Example 79.**  For what $t$ is the following matrix diagonalizable?
+**Example.**  For what $t$ is the following matrix diagonalizable?
 
 $$
 A(t) = \begin{bmatrix}
@@ -968,9 +962,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
  The eigenvalues are $\{1,1,2\}$.  
 
  For $\lambda=1$:
@@ -998,7 +991,7 @@ Thus $x_3=0$ and $t\,x_2=0$.
 
 ::: {.math-block .example}
 
-**Example 80.**  Consider 
+**Example.**  Consider 
 
 $$
 P = \begin{bmatrix}
@@ -1010,9 +1003,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
 Since $P$ is upper triangular, the eigenvalues are the diagonal entries:
 
 $$
@@ -1080,7 +1072,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 81.** (Fibonacci Sequence)
+**Example.** (Fibonacci Sequence)
 We define the Fibonacci Sequence $\{F_n\}$ by the following recursive recursive formulas
 
 $$
@@ -1093,7 +1085,6 @@ Then we have
 
 ::: {.math-block .proof}
 
-**Proof.** 
 We define a sequence of vectors
 
 $$
@@ -1198,7 +1189,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 82.** 
+**Example.** 
 Consider the matrix
 
 $$
@@ -1216,9 +1207,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
 We solve the two parts in order:
 
 1.  **Characteristic polynomial and eigenvalues.**
@@ -1303,14 +1293,13 @@ to distinguish them from the usual Euclidean spaces $\mathbb{R}^n$.
 
 ::: {.math-block .example}
 
-**Example 83.** 
+**Example.** 
  The set of all real-valued functions $\mathscr F$ on $[0,1]$ forms an abstract vector space. This is an infinite-dimensional space. 
 
 :::
 
 ::: {.math-block .proof}
 
-**Proof.** 
  For any $f,g\in \mathscr F$, and $c\in\mathbb{R}$,  we define 
  
 
@@ -1341,7 +1330,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 84.** 
+**Example.** 
  The set $\mathscr P_n$ of polynomials of degree less than or equal to $n$   is a 
  vector space and is finite-dimensional. 
 
@@ -1351,7 +1340,6 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
  We observe that if $f$ is a polynomial of degree less than or equal to $n$, then it can be represented by 
   
 
@@ -1369,9 +1357,8 @@ $$
 
 **Warning:** The set of polynomials of degree equal to $n$ is  *<span style="color:#b40000">not</span>* a vector space. This is because that $0$ polynomial has to be an element of a vector space, and also because that it is possible that the summation of two polynomials of degree $n$ could be a polynomial of degree strictly less than $n$.
 
-::: {.math-block .remark}
+::: {.math-block .numberedremark}
 
-**Remark 5.** 
 The concepts of linear combinations, span, linear dependence and
 independence, bases, dimension, and linear transformations extend
 naturally to abstract vector spaces.
@@ -1388,7 +1375,7 @@ naturally to abstract vector spaces.
 
 ::: {.math-block .example}
 
-**Example 85.** 
+**Example.** 
 We consider $\mathscr P_n$, the space of polynomials of degree less than or equal to $n$. A basis of $\mathscr P_n$ is given by
 $\{1, t, \cdots, t^n\}$. To prove that, we shall see that first, by [(5.4.1)](#ref-900), we have 
 
@@ -1408,7 +1395,7 @@ will result in all $c_j$ to be zero. As a result, the dimension of $\mathscr P_n
 
 ::: {.math-block .example}
 
-**Example 86.** 
+**Example.** 
 Prove that 
 
 $$
@@ -1424,7 +1411,6 @@ form a basis of $\mathscr P_2$.
 
 ::: {.math-block .proof}
 
-**Proof.** 
   We prove that the set is linearly independent. To see this, we set up the following equation
   
 
@@ -1459,15 +1445,14 @@ $$
 
 ::: {.math-block .example}
 
-**Example 87.**  Find the coordinates of the polymomial $f(t)=1+t$ under the above basis $\mathfrak B$.
+**Example.**  Find the coordinates of the polymomial $f(t)=1+t$ under the above basis $\mathfrak B$.
 
 :::
 
   
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
   We need to write 
   
 
@@ -1504,7 +1489,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 88.** 
+**Example.** 
   Let $\mathfrak B=\{e_1-e_2, e_1+e_2\}$, where $\mathfrak E=\{e_1, e_2\}$ is the standard basis of $\mathbb{R}^2$. Let 
   
 
@@ -1518,9 +1503,8 @@ $$
 
   
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
   We write 
   
 
@@ -1567,9 +1551,8 @@ $$
 Such a matrix $M$ is called the *<span style="color:#b40000">matrix of $T$ relative to the bases $\mathfrak B$ and $\mathfrak C$</span>*. <span id="index-82"></span>
 Sometimes we write $M=[T]_{\mathfrak B,\mathfrak C}$.
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Let
 
 $$
@@ -1606,7 +1589,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 89.**  Let $V,W$ be linear spaces.
+**Example.**  Let $V,W$ be linear spaces.
 Suppose $\mathfrak B=\{b_1,b_2\}$ is a basis for $V$ and $\mathfrak C=\{c_1,c_2,c_3\}$ is a basis for $W$. Let $T: V\to W$ be a linear transformation with the property that 
 
 $$
@@ -1617,9 +1600,8 @@ Find the matrix $M$ for $T$ relative to $\mathfrak B$ and $\mathfrak C$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We use the formula to obtain
 
 $$
@@ -1632,7 +1614,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 90.** 
+**Example.** 
 Let $\mathscr P_2$ be the vector space of all polynomials of degree less than or equal to $2$. 
 Let $\mathfrak B=\{1, t,t^2\}$ be a basis of $\mathscr P_2$.
 Let
@@ -1649,9 +1631,8 @@ be the derivative operator. Then $T$ is a linear transformation.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -1723,7 +1704,6 @@ Suppose $A=PDP^{-1}$, where $D$ is a diagonal $n\times n$ matrix. If $\mathfrak 
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Define
 
 $$

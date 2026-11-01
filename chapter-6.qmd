@@ -30,7 +30,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 91.** 
+**Example.** 
 Compute $u\cdot v$ and $v\cdot u$ for 
 
 $$
@@ -40,9 +40,9 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.**  We have 
+We have 
 
 $$
 u\cdot v=u^Tv=[2, -5,  -1]\begin{bmatrix}3\\2\\-3  \end{bmatrix}=2\cdot 3+(-5)\cdot 2+(-1)\cdot (-3)=-1,
@@ -96,7 +96,6 @@ Equality is valid if and only if $u,v$ are linearly dependent.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Let $t\in\mathbb{R}$ be an arbitrary real number. Then by the positivity of the dot product, we have 
 
 $$
@@ -124,14 +123,13 @@ A vector of length $1$ is called a *<span style="color:#b40000">unit vector</spa
 
 ::: {.math-block .example}
 
-**Example 92.** 
+**Example.** 
 Let $v=\begin{bmatrix}1\\-2\\2\\0  \end{bmatrix}$. Find a unit vector $u$ in the same direction as $v$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We compute
 
 $$
@@ -156,14 +154,13 @@ Note that $-u$ is also a unit vector linearly dependent to $v$, but it is in the
 
 ::: {.math-block .example}
 
-**Example 93.** 
+**Example.** 
 Let $W$ be the subspace of $\mathbb{R}^2$ spanned by $x=\begin{bmatrix} 2/3\\1 \end{bmatrix}$.  Find a unit vector  $z$ that is a basis for $W$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We normalize $x$ by
 
 $$
@@ -217,7 +214,7 @@ The distance function satisfies: for any $u,v,w\in \mathbb{R}^n$, we have
 
 ::: {.math-block .example}
 
-**Example 94.** 
+**Example.** 
 Compute the distance between the vectors  
 
 $$
@@ -227,9 +224,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -303,7 +299,6 @@ where $\theta$ is the angle between $u$ and $v$. In particular, if $\theta=90^\c
 
 ::: {.math-block .proof}
 
-**Proof.** 
 We have
 
 $$
@@ -323,7 +318,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 95.** 
+**Example.** 
 Prove the Law of Sines
 
 $$
@@ -336,7 +331,6 @@ where $\alpha=\angle A, \beta=\angle B$ and $\gamma=\angle C$.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 By the Law of Cosines, we have 
 
 $$
@@ -385,13 +379,13 @@ $$
 
 Obviously, $(L^\perp)^\perp=L$. 
 
-More generally, let $L_1, L_2$ be two subspaces. We say $L_1\perp L_2$, if for any $x\in L_1$ and $y\in L_2$, we have $x\cdot y=0$.
+More generally, let $L_1, L_2$ be two subspaces. We say $L_1\;\perp\;L_2$, if for any $x\in L_1$ and $y\in L_2$, we have $x\cdot y=0$.
 
 :::
 
 ::: {.math-block .example}
 
-**Example 96 (Four Fundamental Spaces).** 
+**Example (Four Fundamental Spaces).** 
 Let $A$ be an $m\times n$ matrix. We have defined the column space ${\rm Col}(A)$ of $A$ and the null space ${\rm Nul}(A)$ of $A$ before. 
 These two spaces, with the column space ${\rm Col}(A^T)$  and the null space ${\rm Nul}(A^T)$ of $A^T$, are called the four fundamental spaces. 
 
@@ -410,7 +404,6 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
 The above second equation is equivalent to the first one. So we only prove the first one. 
 
 We first prove that 
@@ -460,7 +453,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 97.** <span id="ref-ex1"></span>
+**Example.** <span id="ref-ex1"></span>
 Show that $\{u_1,u_2,u_3\}$ is an orthogonal set, where 
 
 $$
@@ -471,9 +464,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Consider the three possible pairs $u_1\cdot u_2$, $u_1\cdot u_3$ and 
 $u_2\cdot u_3$. We have
 
@@ -498,7 +490,6 @@ If $\mathfrak S=\{u_1,\cdots, u_p\}$ is an orthogonal set of non-zero vectors in
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Assume that
 
 $$
@@ -545,7 +536,7 @@ for $j=1,\cdots, p$.
 
 ::: {.math-block .example}
 
-**Example 98.** 
+**Example.** 
 The set $\{u_1,u_2,u_3\}$ in Example [97](#ref-ex1) is an orthogonal basis for $\mathbb{R}^3$. Express the vector
 
 $$
@@ -556,9 +547,8 @@ as a linear combination of $u_1,u_2, u_3$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We compute
 
 $$
@@ -596,7 +586,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 99.** 
+**Example.** 
 Show that the following vectors $\{v_1,v_2,v_3\}$ form an orthonormal basis of $\mathbb{R}^3$.
 
 $$
@@ -613,9 +603,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 The set is orthogonal from Example  [97](#ref-ex1). We can verify that all the vectors are orthonormal, so the set is an orthonormal basis. 
  $\square$
 
@@ -623,7 +612,7 @@ The set is orthogonal from Example  [97](#ref-ex1). We can verify that all the v
 
 ::: {.math-block .example}
 
-**Example 100.**  Let 
+**Example.**  Let 
 
 $$
 u_1=\begin{bmatrix}1\\2\\3\\4\end{bmatrix},\quad 
@@ -636,7 +625,6 @@ be vectors in $\mathbb{R}^4$. Let $V={\rm span}\{u_1,u_2\}$. Find a basis of $V^
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Let $x\in V^\perp$. Then $x\cdot u_1=x\cdot u_2=0$. Thus we have 
 
 $$
@@ -705,7 +693,7 @@ More generally, let $W={\rm span}\{u_1,\cdots,u_p\}$ be a subspace of $\mathbb{R
 <span style="color:#b40000">projection</span>, <span id="index-95"></span> or <span style="color:#b40000">orthogonal projection</span> <span id="index-96"></span>, $\hat y$ of $y$ on $W$ can be represented as 
 
 $$
-\hat y =\operatorname{proj}_{W}y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\cdots + \frac{y\cdot u_p}{u_p\cdot u_p} u_n.
+\hat y =\operatorname{\mathbf{proj}}_{W}y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\cdots + \frac{y\cdot u_p}{u_p\cdot u_p} u_n.
 $$
 
 :::
@@ -713,12 +701,12 @@ $$
 If $W$ is generated by a single vector $u\neq 0$, then we sometimes write
 
 $$
-\operatorname{proj}_{u}=\operatorname{proj}_{W}.
+\operatorname{\mathbf{proj}}_{u}=\operatorname{\mathbf{proj}}_{W}.
 $$
 
 ::: {.math-block .example}
 
-**Example 101.** 
+**Example.** 
 Let 
 
 $$
@@ -729,9 +717,8 @@ Let $W={\rm span}\{u_1,u_2\}$. Find $\hat y$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have 
 
 $$
@@ -759,7 +746,6 @@ If $U$ is orthogonal, then $UU^T=I$.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 This follows from the Invertible Matrix Theorem (Theorem [15](chapter-2.qmd#ref-t222)) statements $(j)$ and $(k)$.
  $\square$
 
@@ -780,7 +766,7 @@ Let $U$ be an $m\times n$ matrix with orthonormal columns, and let $x$ and $y$ b
 
 ::: {.math-block .example}
 
-**Example 102.** 
+**Example.** 
 Let $a,b,c,d$ be real numbers. Assume that 
 
 <span id="ref-31"></span>
@@ -801,7 +787,6 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
 We let 
 
 $$
@@ -813,9 +798,8 @@ Then  [(6.3.1)](#ref-31)  implies $A^TA=I$. Thus $AA^T=I$, which implies  [(6.3.
 
 :::
 
-::: {.math-block .remark}
+::: {.math-block .numberedremark}
 
-**Remark 6.** 
 Here is an elementary proof: in order to prove the proposition, we notice the following identity
 
 $$
@@ -833,20 +817,20 @@ Let $L$ be the line spanned by a nonzero vector $\mathbf{u}$. The
 orthogonal projection of a vector $\mathbf{v}$ onto $L$ is the vector
 on $L$ that is closest to $\mathbf{v}$.
 
-![Orthogonal projection of vector v onto the line spanned by u. The residual vector from the projection to v is perpendicular to the line.](3A-lecture-notes-assets/figure-07.svg){fig-alt="Orthogonal projection of vector v onto the line spanned by u. The residual vector from the projection to v is perpendicular to the line."}
+![Orthogonal projection of vector v onto the line spanned by u. The residual vector from the projection to v is perpendicular to the line.](3A-lecture-notes-assets/figure-07.svg){fig-alt="Orthogonal projection of vector v onto the line spanned by u. The residual vector from the projection to v is perpendicular to the line." width="67%"}
 
 Geometrically, we drop a perpendicular line from the endpoint of
 $\mathbf{v}$ to the line $L$. The point where the perpendicular line
 meets $L$ is the endpoint of
 
 $$
-\operatorname{proj}_{\mathbf{u}}\mathbf{v}.
+\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v}.
 $$
 
 The projection is given by
 
 $$
-\operatorname{proj}_{\mathbf{u}}\mathbf{v}
+\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v}
 =
 \frac{\mathbf{v}\cdot\mathbf{u}}
 {\mathbf{u}\cdot\mathbf{u}}\mathbf{u}.
@@ -857,23 +841,23 @@ Thus, $\mathbf{v}$ can be decomposed as
 $$
 \mathbf{v}
 =
-\operatorname{proj}_{\mathbf{u}}\mathbf{v}
+\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v}
 +
 \left(
-\mathbf{v}-\operatorname{proj}_{\mathbf{u}}\mathbf{v}
+\mathbf{v}-\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v}
 \right).
 $$
 
 The first vector,
 
 $$
-\operatorname{proj}_{\mathbf{u}}\mathbf{v},
+\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v},
 $$
 
 is parallel to $\mathbf{u}$, while the second vector,
 
 $$
-\mathbf{v}-\operatorname{proj}_{\mathbf{u}}\mathbf{v},
+\mathbf{v}-\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v},
 $$
 
 is perpendicular to $\mathbf{u}$.
@@ -883,7 +867,7 @@ Indeed,
 $$
 \begin{aligned}
 \left(
-\mathbf{v}-\operatorname{proj}_{\mathbf{u}}\mathbf{v}
+\mathbf{v}-\operatorname{\mathbf{proj}}_{\mathbf{u}}\mathbf{v}
 \right)\cdot\mathbf{u}
 &=
 \left(
@@ -912,7 +896,7 @@ $\mathbf{u}$.
 Let $W$ be a subspace of $\mathbb{R}^n$, let $\mathbf{y}\in\mathbb{R}^n$, and let
 
 $$
-\widehat{\mathbf{y}}=\operatorname{proj}_W\mathbf{y}.
+\widehat{\mathbf{y}}=\operatorname{\mathbf{proj}}_W\mathbf{y}.
 $$
 
 Then $\widehat{\mathbf{y}}$ is the unique closest point in $W$ to $\mathbf{y}$. More precisely,
@@ -930,7 +914,6 @@ $\mathbf{v}\neq\widehat{\mathbf{y}}$.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Let $\mathbf{v}\in W$ with
 $\mathbf{v}\neq\widehat{\mathbf{y}}$. Since both
 $\widehat{\mathbf{y}}$ and $\mathbf{v}$ belong to $W$, we have
@@ -950,7 +933,7 @@ Therefore,
 
 $$
 \mathbf{y}-\widehat{\mathbf{y}}
-\perp
+\;\perp\;
 \widehat{\mathbf{y}}-\mathbf{v}.
 $$
 
@@ -1006,7 +989,7 @@ $\mathbf{y}$ by vectors in $W$.
 
 ::: {.math-block .example}
 
-**Example 103.** 
+**Example.** 
 Let
 
 $$
@@ -1031,9 +1014,8 @@ Construct an orthogonal basis $\{\mathbf{v}_1,\mathbf{v}_2\}$ for $W$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
 Set
 
 $$
@@ -1048,7 +1030,7 @@ $$
 The projection of $\mathbf{x}_2$ onto $\mathbf{v}_1$ is
 
 $$
-\operatorname{proj}_{\mathbf{v}_1}\mathbf{x}_2
+\operatorname{\mathbf{proj}}_{\mathbf{v}_1}\mathbf{x}_2
 =
 \frac{\mathbf{x}_2\cdot\mathbf{v}_1}
      {\mathbf{v}_1\cdot\mathbf{v}_1}\mathbf{v}_1.
@@ -1069,7 +1051,7 @@ $$
 \mathbf{v}_2
 &=
 \mathbf{x}_2-
-\operatorname{proj}_{\mathbf{v}_1}\mathbf{x}_2\\
+\operatorname{\mathbf{proj}}_{\mathbf{v}_1}\mathbf{x}_2\\
 &=
 \mathbf{x}_2-
 \frac{\mathbf{x}_2\cdot\mathbf{v}_1}
@@ -1120,7 +1102,7 @@ is an orthogonal basis for $W$.
 
 ::: {.math-block .example}
 
-**Example 104.** 
+**Example.** 
 Let
 
 $$
@@ -1156,7 +1138,6 @@ a subspace $W$ of $\mathbb{R}^4$. Construct an orthogonal basis for $W$.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 First, let
 
 $$
@@ -1176,7 +1157,7 @@ $$
 \mathbf{v}_2
 &=
 \mathbf{x}_2-
-\operatorname{proj}_{\mathbf{v}_1}\mathbf{x}_2\\
+\operatorname{\mathbf{proj}}_{\mathbf{v}_1}\mathbf{x}_2\\
 &=
 \mathbf{x}_2-
 \frac{\mathbf{x}_2\cdot\mathbf{v}_1}
@@ -1228,7 +1209,7 @@ The projection of $\mathbf{x}_3$ onto $W_2$ is
 
 $$
 \begin{aligned}
-\operatorname{proj}_{W_2}\mathbf{x}_3
+\operatorname{\mathbf{proj}}_{W_2}\mathbf{x}_3
 &=
 \frac{\mathbf{x}_3\cdot\mathbf{v}_1}
      {\mathbf{v}_1\cdot\mathbf{v}_1}\mathbf{v}_1
@@ -1267,7 +1248,7 @@ $$
 \begin{aligned}
 \mathbf{v}_3
 &=
-\mathbf{x}_3-\operatorname{proj}_{W_2}\mathbf{x}_3\\
+\mathbf{x}_3-\operatorname{\mathbf{proj}}_{W_2}\mathbf{x}_3\\
 &=
 \begin{bmatrix}
 0\\
@@ -1379,7 +1360,7 @@ $$
 =
 \mathbf{x}_k
 -
-\operatorname{proj}_{\operatorname{Span}
+\operatorname{\mathbf{proj}}_{\operatorname{Span}
 \{\mathbf{v}_1,\ldots,\mathbf{v}_{k-1}\}}
 \mathbf{x}_k.
 $$
@@ -1398,7 +1379,6 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
 We prove the result by induction on $k$.
 
 For $k=1$, we have $\mathbf{v}_1=\mathbf{x}_1$, so
@@ -1423,7 +1403,7 @@ By definition,
 $$
 \mathbf{v}_k
 =
-\mathbf{x}_k-\operatorname{proj}_{W_{k-1}}\mathbf{x}_k.
+\mathbf{x}_k-\operatorname{\mathbf{proj}}_{W_{k-1}}\mathbf{x}_k.
 $$
 
 Therefore, $\mathbf{v}_k$ is orthogonal to $W_{k-1}$ and hence
@@ -1453,7 +1433,7 @@ Conversely,
 $$
 \mathbf{x}_k
 =
-\mathbf{v}_k+\operatorname{proj}_{W_{k-1}}\mathbf{x}_k
+\mathbf{v}_k+\operatorname{\mathbf{proj}}_{W_{k-1}}\mathbf{x}_k
 \in
 \operatorname{Span}\{\mathbf{v}_1,\ldots,\mathbf{v}_k\}.
 $$

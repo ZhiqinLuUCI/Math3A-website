@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: _site
 
+filters:
+  - example-numbering.lua
+
 website:
   title: "Math 3A · Zhiqin Lu"
   navbar:
@@ -10,21 +13,86 @@ website:
         text: Lecture Notes
   sidebar:
     style: docked
+    collapse-level: 1
     contents:
       - href: index.qmd
         text: Overview
-      - href: chapter-1.qmd
-        text: "1. Linear Equations in Linear Algebra"
-      - href: chapter-2.qmd
-        text: "2. Matrix Algebra"
-      - href: chapter-3.qmd
-        text: "3. Determinants"
-      - href: chapter-5.qmd
-        text: "5. Eigenvalues and eigenvectors"
-      - href: chapter-6.qmd
-        text: "6. Orthogonality and Least Squares"
-      - href: chapter-7.qmd
-        text: "7. Final Exam Review Guide"
+      - section: "1. Linear Equations in Linear Algebra"
+        href: chapter-1.qmd
+        contents:
+          - href: chapter-1.qmd#section-2
+            text: "1.1 System of linear equations"
+          - href: chapter-1.qmd#section-8
+            text: "1.2 Row reduction and echelon forms"
+          - href: chapter-1.qmd#section-12
+            text: "1.3 Vector equations"
+          - href: chapter-1.qmd#section-16
+            text: "1.4 The matrix equation Ax=b"
+          - href: chapter-1.qmd#section-19
+            text: "1.5 Solution set of linear systems"
+          - href: chapter-1.qmd#section-22
+            text: "1.7 Linear independence"
+          - href: chapter-1.qmd#section-24
+            text: "1.8 Introduction to linear transformation"
+          - href: chapter-1.qmd#section-25
+            text: "1.9 The matrix of a linear transformation"
+      - section: "2. Matrix Algebra"
+        href: chapter-2.qmd
+        contents:
+          - href: chapter-2.qmd#section-27
+            text: "2.1 Matrix operations"
+          - href: chapter-2.qmd#section-28
+            text: "2.2 The inverse of a matrix"
+          - href: chapter-2.qmd#section-30
+            text: "2.3 Characterization of Invertible Matrices"
+          - href: chapter-2.qmd#section-31
+            text: "2.8 Subspaces of R^n"
+          - href: chapter-2.qmd#section-34
+            text: "2.9 Dimension and Rank"
+      - section: "3. Determinants"
+        href: chapter-3.qmd
+        contents:
+          - href: chapter-3.qmd#section-39
+            text: "3.1 Introduction to Determinants"
+          - href: chapter-3.qmd#section-40
+            text: "3.2 Properties of determinant"
+      - section: "5. Eigenvalues and eigenvectors"
+        href: chapter-5.qmd
+        contents:
+          - href: chapter-5.qmd#section-42
+            text: "5.1 Eigenvectors and eigenvalues"
+          - href: chapter-5.qmd#section-43
+            text: "5.2 The characteristic equation"
+          - href: chapter-5.qmd#section-44
+            text: "5.3 Diagonalization"
+          - href: chapter-5.qmd#section-45
+            text: "5.4 Eigenvectors and linear transformation"
+      - section: "6. Orthogonality and Least Squares"
+        href: chapter-6.qmd
+        contents:
+          - href: chapter-6.qmd#section-50
+            text: "6.1 Dot product, length, and orthogonality"
+          - href: chapter-6.qmd#section-52
+            text: "6.2 Orthogonal Sets"
+          - href: chapter-6.qmd#section-53
+            text: "6.3 Orthogonal projections"
+          - href: chapter-6.qmd#section-55
+            text: "6.4 The Gram–Schmidt Process"
+      - section: "7. Final Exam Review Guide"
+        href: chapter-7.qmd
+        contents:
+          - href: chapter-7.qmd#section-57
+            text: "7.1 Sections covered"
+          - href: chapter-7.qmd#section-58
+            text: "7.2 Basic Mathematical Reasoning"
+          - href: chapter-7.qmd#section-61
+            text: "7.3 Basic concepts"
+          - href: chapter-7.qmd#section-67
+            text: "7.4 Basic results"
+          - href: chapter-7.qmd#section-69
+            text: "7.5 Basic computations"
+          - href: chapter-7.qmd#section-79
+            text: "7.6 Additional True-False questions"
       - href: subject-index.qmd
         text: Subject Index
   page-navigation: true
@@ -41,5 +109,7 @@ format:
     html-math-method:
       method: mathjax
       url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"
-    include-in-header: math-config.html
+    include-in-header:
+      - math-config.html
+      - chapter-title.html
     link-external-newwindow: false

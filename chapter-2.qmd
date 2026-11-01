@@ -42,7 +42,7 @@ The addition and scalar multiplication are defined similar to those for vectors.
 
 ::: {.math-block .example}
 
-**Example 30.** 
+**Example.** 
 Let
 
 $$
@@ -173,7 +173,7 @@ From the above definition we observe that matrix-vector  multiplication is a spe
 
 ::: {.math-block .example}
 
-**Example 31.**  Compute $AB$, where 
+**Example.**  Compute $AB$, where 
 
 $$
 A=\begin{bmatrix} 2&3\\1&-5\end{bmatrix},\quad 
@@ -182,9 +182,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.** 
 Compute the indicated entries:
 
 $$
@@ -207,7 +206,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 32.** 
+**Example.** 
 Find the entry of the second row of $AB$, where 
 
 $$
@@ -219,9 +218,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.** 
 Multiply the second row of $A$ by each column of $B$:
 
 $$
@@ -259,9 +257,8 @@ Properties of the matrix multiplication. Let $I_m$ be the $m\times m$ identity m
 
 :::
 
-::: {.math-block .remark}
+::: {.math-block .numberedremark}
 
-**Remark 1.** 
 In general, $AB\neq BA$, because
 
 1.  $AB$ or $BA$ may not be defined
@@ -274,7 +271,7 @@ In general, $AB\neq BA$, because
 
 ::: {.math-block .example}
 
-**Example 33.** 
+**Example.** 
 Let
 
 $$
@@ -286,9 +283,9 @@ Then $AB\neq BA$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.**  We have
+We have
 
 $$
 AB=\begin{bmatrix} 5&1\\3&-2\end{bmatrix}\cdot 
@@ -323,7 +320,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 34.**  (Fibonacci Sequence) The Fibonacci Sequence $\{F_n\}$ is defined by $F_0=0, F_1=1$, and 
+**Example.**  (Fibonacci Sequence) The Fibonacci Sequence $\{F_n\}$ is defined by $F_0=0, F_1=1$, and 
 
 $$
 F_n=F_{n-1}+F_{n-2}
@@ -365,7 +362,7 @@ The transpose of a matrix is defined flipping  a matrix over its diagonal, that 
 
 ::: {.math-block .example}
 
-**Example 35.** 
+**Example.** 
 Let
 
 $$
@@ -416,7 +413,7 @@ A matrix which is not invertible is sometimes called  a *<span style="color:#b40
 
 ::: {.math-block .example}
 
-**Example 36.**  If
+**Example.**  If
 
 $$
 A=\begin{bmatrix} 2&5\\-3&-7\end{bmatrix},\quad C=\begin{bmatrix}
@@ -470,7 +467,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 37.**  Find the inverse of the matrix
+**Example.**  Find the inverse of the matrix
 
 $$
 A=\begin{bmatrix}
@@ -480,9 +477,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -512,7 +508,7 @@ Verification: $A(A^{-1}b)=(AA^{-1})b=Ib=b$.
 
 ::: {.math-block .example}
 
-**Example 38.** 
+**Example.** 
 Use the inverse matrix formula to solve the system
 
 $$
@@ -524,9 +520,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Since
 
 $$
@@ -576,7 +571,7 @@ An elementary matrix is the one that is obtained by performing a single elementa
 
 ::: {.math-block .example}
 
-**Example 39.** 
+**Example.** 
 Let
 
 $$
@@ -595,9 +590,8 @@ Compute $E_1A, E_2A, E_3A$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We can verify that 
 
 $$
@@ -624,7 +618,7 @@ $A$ is not invertible.
 
 ::: {.math-block .example}
 
-**Example 40.** 
+**Example.** 
 Find the inverse matrix of 
 
 $$
@@ -635,9 +629,8 @@ if it exists.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Row-reduce the augmented matrix:
 
 $$
@@ -669,29 +662,29 @@ $$
 **Theorem 15 (The Invertible Matrix Theorem).** <span id="ref-t222"></span>
 Let $A$ be a square $n\times n$ matrix. Then the following statements are equivalent, that is, all statements are either all true or all false.
 
-- **(a)** **(a)**  $A$ is an invertible matrix;
+[***(a)***]{.imt-label .imt-black} $A$ is an invertible matrix;
 
-- **(b)** **(b)**   $A$ is row equivalent  to the $n\times n$ identity matrix;
+[***(b)***]{.imt-label .imt-black} $A$ is row equivalent to the $n\times n$ identity matrix;
 
-- **(c)** **(c)**    $A$ has $n$  pivot positions;
+[***(c)***]{.imt-label .imt-black} $A$ has $n$ pivot positions;
 
-- **(d)** **(d)**   the equation $Ax=0$ has only trivial solutions;
+[***(d)***]{.imt-label .imt-green} the equation $Ax=0$ has only trivial solutions;
 
-- **(e)** **(e)**   the columns  of $A$ form a linearly independent set;
+[***(e)***]{.imt-label .imt-green} the columns of $A$ form a linearly independent set;
 
-- **(f)** **(f)**   the linear transformation $x\mapsto Ax$ is one-to-one;
+[***(f)***]{.imt-label .imt-green} the linear transformation $x\mapsto Ax$ is one-to-one;
 
-- **(g)** **(g)**   the equation $Ax=b$ has at least one solution for each $b$ in $\mathbb R^n$;
+[***(g)***]{.imt-label .imt-red} the equation $Ax=b$ has at least one solution for each $b$ in $\mathbb R^n$;
 
-- **(h)** **(h)**   the columns of $A$ span $\mathbb R^n$;
+[***(h)***]{.imt-label .imt-red} the columns of $A$ span $\mathbb R^n$;
 
-- **(i)** **(i)**   the linear transformation $x\mapsto Ax$ maps $\mathbb R^n$ onto $\mathbb R^n$;
+[***(i)***]{.imt-label .imt-red} the linear transformation $x\mapsto Ax$ maps $\mathbb R^n$ onto $\mathbb R^n$;
 
-- **(j)** **(j)**    there is an $n\times n$ matrix $C$ such that $CA=I$;
+[***(j)***]{.imt-label .imt-blue} there is an $n\times n$ matrix $C$ such that $CA=I$;
 
-- **(k)** **(k)**    there is an $n\times n$ matrix $D$ such that $AD=I$;
+[***(k)***]{.imt-label .imt-blue} there is an $n\times n$ matrix $D$ such that $AD=I$;
 
-- **(l)** **(l)**   $A^T$ is an invertible matrix. 
+[***(l)***]{.imt-label .imt-blue} $A^T$ is an invertible matrix.
 
 :::
 
@@ -699,7 +692,7 @@ In general, a linear transformation $T:\mathbb R^n\to\mathbb R^m$ being one-to-o
 
 ::: {.math-block .example}
 
-**Example 41.**  Use the Invertible Matrix Theorem to decide whether $A$ is invertible, where
+**Example.**  Use the Invertible Matrix Theorem to decide whether $A$ is invertible, where
 
 $$
 A=\begin{bmatrix}  1&0&2\\3&1&-2\\-5&-1&9\end{bmatrix}
@@ -707,9 +700,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -724,7 +716,7 @@ So $A$ is invertible because it has three pivot columns, by the Invertible Matri
 
 ::: {.math-block .example}
 
-**Example 42.** 
+**Example.** 
 The linear transformation defined by $A^{-1}$ is the inverse linear transformation of $T: x\mapsto Ax$. 
 
 :::
@@ -752,14 +744,14 @@ The most important examples of subspaces are the span of vectors.
 
 ::: {.math-block .example}
 
-**Example 43.** 
+**Example.** 
 $\{0\}$ is a subspace of $\mathbb{R}^n$, and $\mathbb{R}^n$ is a subspace of $\mathbb{R}^n$. These two subspaces are called *trivial* subspaces. 
 
 :::
 
 ::: {.math-block .example}
 
-**Example 44.** 
+**Example.** 
 Let $v_1,v_2$ be two vectors. Then
 
 $$
@@ -772,7 +764,6 @@ is a subspace.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Let
 
 $$
@@ -817,7 +808,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 45.** 
+**Example.** 
 Let
 
 $$
@@ -829,9 +820,8 @@ Determine whether $b$ is in the column space of $A$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 $b$ is in the column space if and only if 
 
 $$
@@ -883,7 +873,7 @@ A <span style="color:#b40000">basis</span> <span id="index-65"></span> for a sub
 
 ::: {.math-block .example}
 
-**Example 46.** 
+**Example.** 
 The columns of an invertible $n\times n$ matrix form a basis for all of $\mathbb{R}^n$ because they are linearly independent and span $\mathbb{R}^n$ by the Invertible Matrix Theorem. In particular, the vectors
 
 $$
@@ -898,7 +888,7 @@ which can be obtained from the identity matrix, is a basis. The set $\{e_1,e_2,\
 
 ::: {.math-block .example}
 
-**Example 47.** 
+**Example.** 
 Find a basis for the null space of the matrix
 
 $$
@@ -909,9 +899,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We first solve the equation $Ax=0$:
 
 $$
@@ -995,16 +984,15 @@ $$
 
 :::
 
-::: {.math-block .remark}
+::: {.math-block .numberedremark}
 
-**Remark 2.** 
 It can be proved that $u,v,w$ are linearly independent.
 
 :::
 
 ::: {.math-block .example}
 
-**Example 48.** 
+**Example.** 
 Find a basis for the column space of the matrix
 
 $$
@@ -1015,9 +1003,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Denoting the columns of $B$ by $\{b_1,\cdots, b_5\}$ and noting that $b_1,b_2,b_5$ are pivot columns. Therefore $\{b_1,b_2,b_5\}$ forms a basis of the space.
  $\square$
 
@@ -1025,7 +1012,7 @@ Denoting the columns of $B$ by $\{b_1,\cdots, b_5\}$ and noting that $b_1,b_2,b_
 
 ::: {.math-block .example}
 
-**Example 49.** 
+**Example.** 
 It can be verified that the matrix
 
 $$
@@ -1038,9 +1025,8 @@ is row equivalent to $B$ in the above example. Find a basis of ${\rm Col}(A)$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We assume that 
 
 $$
@@ -1059,9 +1045,9 @@ The pivot columns of a matrix $A$ form a basis for the column space.
 
 :::
 
-::: {.math-block .remark}
+::: {.math-block .numberedremark}
 
-**Remark 3.**  Basis of a subspace is not unique.
+Basis of a subspace is not unique.
 
 :::
 
@@ -1104,7 +1090,7 @@ $[x]_{\mathfrak B}$ is called the coordinate vector of $x$ (relative to $\mathfr
 
 ::: {.math-block .example}
 
-**Example 50.** 
+**Example.** 
 Let
 
 $$
@@ -1117,9 +1103,8 @@ Let $\mathfrak B=\{v_1,v_2\}$. Then $\mathfrak B$ is a basis for $H={\rm Span}\,
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We need to solve the following equation
 
 $$
@@ -1218,7 +1203,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 51.** 
+**Example.** 
 Determine the rank of the matrix
 
 $$
@@ -1229,9 +1214,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We use the row operations to obtain
 
 $$
@@ -1279,7 +1263,6 @@ Note that ${\rm Col}\,(A)$ and ${\rm Nul}\,(A)$ are subspaces of different Eucli
 
 ::: {.math-block .proof}
 
-**Proof.** 
 Since $\dim{\rm Col}\,(A)$ is the number of pivot columns, it is equal to the number of basic variables of the equation $Ax=0$. On the other hand, $\dim{\rm Nul}\,(A)$ is the number of free variables. Therefore, they add up to $n$, which is the Rank Theorem. 
  $\square$
 
@@ -1298,17 +1281,17 @@ Since $\dim{\rm Col}\,(A)$ is the number of pivot columns, it is equal to the nu
 **Theorem 21.** 
 Let $A$ be an $n\times n$ matrix. Then the following statements are each equivalent to the statement that $A$ is an invertible matrix. 
 
-1. **(m)**   the columns of $A$ form a basis of $\mathbb{R}^n$;
+[***(m)***]{.imt-label .imt-black} the columns of $A$ form a basis of $\mathbb{R}^n$;
 
-2. **(n)**  ${\rm Col}\,(A)=\mathbb{R}^n$;
+[***(n)***]{.imt-label .imt-black} ${\rm Col}\,(A)=\mathbb{R}^n$;
 
-3. **(o)**  $\dim {\rm Col}\,(A)=n$;
+[***(o)***]{.imt-label .imt-black} $\dim {\rm Col}\,(A)=n$;
 
-4. **(p)**  ${\rm Rank}\,(A)=n$;
+[***(p)***]{.imt-label .imt-black} ${\rm Rank}\,(A)=n$;
 
-5. **(q)**      ${\rm Nul}\,(A)=\{0\}$;
+[***(q)***]{.imt-label .imt-black} ${\rm Nul}\,(A)=\{0\}$;
 
-6. **(r)**   $\dim {\rm Nul}\,(A)=0$.
+[***(r)***]{.imt-label .imt-black} $\dim {\rm Nul}\,(A)=0$.
 
 :::
 

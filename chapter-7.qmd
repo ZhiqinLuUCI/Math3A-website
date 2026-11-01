@@ -17,7 +17,7 @@ We emphasize the *<span style="color:#b40000">Four Basics</span>*: basic mathema
 
 ::: {.math-block .example}
 
-**Example 105.** 
+**Example.** 
 Prove that 
 
 $$
@@ -53,7 +53,7 @@ $x,y$, or $c$
 
 ::: {.math-block .example}
 
-**Example 106.** 
+**Example.** 
   Prove that 
   
 
@@ -67,7 +67,6 @@ is not a linear transformation.
 
 ::: {.math-block .proof}
 
-**Proof.** 
 We let $x_1=0, x_2=1$ and $c=-1$. Then
 
 $$
@@ -86,7 +85,7 @@ Thus $T$ is not a linear transformation.
 
 ::: {.math-block .example}
 
-**Example 107.** 
+**Example.** 
 Find all $k$ such that the matrix $A$ is invertible
 
 $$
@@ -99,7 +98,7 @@ For the above problem, if $k=3$, say, the matrix $A$ is indeed invertible. But w
 
 ::: {.math-block .example}
 
-**Example 108.**  Let 
+**Example.**  Let 
 
 $$
 u_1=\begin{bmatrix}1\\2\\3\end{bmatrix},\quad 
@@ -118,7 +117,7 @@ In the above example, we need to find *<span style="color:#b40000">all</span>* v
 
 ::: {.math-block .example}
 
-**Example 109.**  If $v$ is in the null space of $A$, $v\neq 0$, is $v$ an eigenvector of $A+5I$? What is the corresponding eigenvalue?
+**Example.**  If $v$ is in the null space of $A$, $v\neq 0$, is $v$ an eigenvector of $A+5I$? What is the corresponding eigenvalue?
 
 :::
 
@@ -126,7 +125,7 @@ In the above example, we need to find *<span style="color:#b40000">all</span>* v
 
 ::: {.math-block .example}
 
-**Example 110.**  Let $v_1,v_2,v_3$ be vectors in $\mathbb{R}^4$. How to find a basis of $W^\perp$, where 
+**Example.**  Let $v_1,v_2,v_3$ be vectors in $\mathbb{R}^4$. How to find a basis of $W^\perp$, where 
 
 $$
 W={\rm span}\{ v_1,v_2,v_3\}.
@@ -152,7 +151,7 @@ The best place to study the relations among the above concepts is in the Inverti
 
 ::: {.math-block .example}
 
-**Example 111.**  Let $\mathscr P_n$ be the space of polynomials of degree $\leq n$. Prove that 
+**Example.**  Let $\mathscr P_n$ be the space of polynomials of degree $\leq n$. Prove that 
 
 $$
 T: \mathscr P_5\to \mathscr P_4, f\mapsto f''
@@ -170,7 +169,7 @@ is a linear transformation.
 
 ::: {.math-block .example}
 
-**Example 112.**  Let $T: \mathscr P_3\to \mathscr P_3$ by $T(f)=f'+2f$. Assume that $\mathfrak B=\{1,t,2t^2, t^3\}$ is a basis for the domain and $\mathfrak C=\{2, 1+t, t^2+t, t^3\}$ is  a basis for the codomain of the transformation $T$. Find the matrix $M$ of the linear transformation relative to the bases $\mathfrak B$ and $\mathfrak C$. 
+**Example.**  Let $T: \mathscr P_3\to \mathscr P_3$ by $T(f)=f'+2f$. Assume that $\mathfrak B=\{1,t,2t^2, t^3\}$ is a basis for the domain and $\mathfrak C=\{2, 1+t, t^2+t, t^3\}$ is  a basis for the codomain of the transformation $T$. Find the matrix $M$ of the linear transformation relative to the bases $\mathfrak B$ and $\mathfrak C$. 
 
 :::
 
@@ -411,7 +410,7 @@ If $\mathcal B=\{v_1,\cdots,v_n\}$ is an orthogonal (orthonormal, resp)   basis,
 
 ::: {.math-block .example}
 
-**Example 113.** 
+**Example.** 
 Apply the Gram–Schmidt process to the vectors
 
 $$
@@ -445,9 +444,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
 Let
 
 $$
@@ -478,13 +476,13 @@ For the second vector,
 $$
 \mathbf u_2
 =
-\mathbf v_2-\operatorname{proj}_{\mathbf u_1}\mathbf v_2.
+\mathbf v_2-\operatorname{\mathbf{proj}}_{\mathbf u_1}\mathbf v_2.
 $$
 
 Since
 
 $$
-\operatorname{proj}_{\mathbf u_1}\mathbf v_2
+\operatorname{\mathbf{proj}}_{\mathbf u_1}\mathbf v_2
 =
 \frac{\mathbf v_2\cdot\mathbf u_1}
 {\mathbf u_1\cdot\mathbf u_1}\mathbf u_1
@@ -555,14 +553,14 @@ $$
 \mathbf u_3
 =
 \mathbf v_3
--\operatorname{proj}_{\mathbf u_1}\mathbf v_3
--\operatorname{proj}_{\mathbf u_2}\mathbf v_3.
+-\operatorname{\mathbf{proj}}_{\mathbf u_1}\mathbf v_3
+-\operatorname{\mathbf{proj}}_{\mathbf u_2}\mathbf v_3.
 $$
 
 We have
 
 $$
-\operatorname{proj}_{\mathbf u_1}\mathbf v_3
+\operatorname{\mathbf{proj}}_{\mathbf u_1}\mathbf v_3
 =
 \frac{\mathbf v_3\cdot\mathbf u_1}
 {\mathbf u_1\cdot\mathbf u_1}\mathbf u_1
@@ -578,7 +576,7 @@ $$
 and
 
 $$
-\operatorname{proj}_{\mathbf u_2}\mathbf v_3
+\operatorname{\mathbf{proj}}_{\mathbf u_2}\mathbf v_3
 =
 \frac{\mathbf v_3\cdot\mathbf u_2}
 {\mathbf u_2\cdot\mathbf u_2}\mathbf u_2
@@ -683,7 +681,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 114.** 
+**Example.** 
 Find a QR decomposition
 
 $$
@@ -703,9 +701,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.** 
 Let the columns of $A$ be
 
 $$

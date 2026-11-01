@@ -1,8 +1,8 @@
 <script>
 window.MathJax={
- loader:{load:['[tex]/amscd']},
- tex:{packages:{'[+]':['amscd']},tags:'none',processEscapes:true,
- macros:{red:['\\textcolor{#b40000}{#1}',1],blue:['\\textcolor{#0000cc}{#1}',1],green:['\\textcolor{#02650f}{#1}',1],violet:['\\textcolor{#703080}{#1}',1],black:['\\textcolor{#000000}{#1}',1],dblue:['\\textcolor{#171477}{#1}',1]}},
+ loader:{load:['[tex]/amscd','[tex]/color']},
+ tex:{packages:{'[+]':['amscd','color']},tags:'none',processEscapes:true,
+ macros:{red:['\\textcolor[RGB]{180,0,0}{#1}',1],blue:['\\textcolor[RGB]{0,0,204}{#1}',1],green:['\\textcolor[RGB]{2,101,15}{#1}',1],violet:['\\textcolor[RGB]{112,48,128}{#1}',1],black:['\\textcolor[RGB]{0,0,0}{#1}',1],dblue:['\\textcolor[RGB]{23,20,119}{#1}',1]}},
  options:{enableMenu:true},
  startup:{ready(){MathJax.startup.defaultReady();MathJax.startup.promise.then(()=>{document.documentElement.dataset.mathReady='true';});}}
 };

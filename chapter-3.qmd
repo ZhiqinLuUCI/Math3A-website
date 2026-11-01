@@ -89,7 +89,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 52.** 
+**Example.** 
 Compute the determinant of
 
 $$
@@ -100,9 +100,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We use the formula to obtain
 
 $$
@@ -160,14 +159,13 @@ $$
 
 ::: {.math-block .example}
 
-**Example 53.** 
+**Example.** 
 Use a cofactor expansion across the third column to compute $\det A$, where $A$ is defined in the previous example.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We compute 
 
 $$
@@ -182,7 +180,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 54.** 
+**Example.** 
 Compute $\det A$, where
 
 $$
@@ -198,9 +196,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We use cofactor expansion
 
 $$
@@ -250,7 +247,7 @@ use row operations to reduce the complexity.
 
 ::: {.math-block .example}
 
-**Example 55.** 
+**Example.** 
 Compute $\det A$, where
 
 $$
@@ -259,9 +256,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Using the above theorem, we use $1$ on the top left position to eliminate the rest of the entries in the first column, and  we use the co-factor expansion with respect to the first column to get 
 
 $$
@@ -275,7 +271,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 56.** 
+**Example.** 
 Compute $\det A$, where 
 
 $$
@@ -286,9 +282,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -325,7 +320,7 @@ The echelon form of a square matrix is always an upper triangular matrix. Thus t
 
 ::: {.math-block .example}
 
-**Example 57.** 
+**Example.** 
 Compute $\det A$, where
 
 $$
@@ -337,9 +332,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -355,7 +349,7 @@ because there are two rows that are the same.
 
 ::: {.math-block .example}
 
-**Example 58.** 
+**Example.** 
 Compute $\det A$, where
 
 $$
@@ -366,9 +360,9 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.**  We have
+We have
 
 $$
 \begin{aligned}
@@ -407,7 +401,7 @@ If $A$ and $B$ are $n\times n$ matrices, then $\det AB=(\det A)(\det B)$.
 
 ::: {.math-block .example}
 
-**Example 59.** 
+**Example.** 
 Verify the above theorem for 
 
 $$
@@ -421,9 +415,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -480,14 +473,13 @@ The following are additional examples and techniques in computing the determinan
 
 ::: {.math-block .example}
 
-**Example 60.** 
+**Example.** 
 If $A$ is an invertible matrix, then what is $\det A^{-1}$?
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -512,14 +504,13 @@ $$
 
 ::: {.math-block .example}
 
-**Example 61.** 
+**Example.** 
 If $A$ is a square matrix and if $A^2=I$, is $A$ invertible?
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 Answer: Yes. Since $1=\det I=\det A^2=(\det A)^2$, we conclude that $\det A=\pm 1\neq 0$. Thus $A$ is invertible.
  $\square$
 
@@ -527,7 +518,7 @@ Answer: Yes. Since $1=\det I=\det A^2=(\det A)^2$, we conclude that $\det A=\pm 
 
 ::: {.math-block .example}
 
-**Example 62.** 
+**Example.** 
 Compute $\det A$, where
 
 $$
@@ -538,9 +529,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-** Solution.** 
 We have
 
 $$
@@ -566,7 +556,7 @@ The matrix is invertible if and only if $a,b,c$ are distinct.
 
 ::: {.math-block .example}
 
-**Example 63.** 
+**Example.** 
 Let $A$ be an $n\times n$ matrix with $n\geq 2$. Then $\det \,(2A)=2\det (A)$ – true or false?
 
 :::

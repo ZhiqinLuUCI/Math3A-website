@@ -88,7 +88,7 @@ is called the <span style="color:#b40000">*augmented matrix*</span>. <span id="i
 
 ::: {.math-block .example}
 
-**Example 1.**  Solve  the linear system
+**Example.**  Solve  the linear system
 
 $$
 \begin{matrix}
@@ -253,7 +253,7 @@ If a linear system doesn't have a solution, we call the system <span style="colo
 
 ::: {.math-block .example}
 
-**Example 2.**  Determine if the following system is consistent.
+**Example.**  Determine if the following system is consistent.
 
 $$
 \begin{matrix}
@@ -273,7 +273,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 3.** 
+**Example.** 
 Determine if the following system is consistent.
 
 $$
@@ -385,7 +385,7 @@ Once the reduced echelon is reached, the solution set of the linear system can b
 
 ::: {.math-block .example}
 
-**Example 4.** 
+**Example.** 
 Row reduce the matrix $A$ below to its echelon form and locate the pivot columns of $A$, where
 
 $$
@@ -472,7 +472,7 @@ We shall use the following example to walk through the above steps.
 
 ::: {.math-block .example}
 
-**Example 5.** 
+**Example.** 
 Apply elementary row operations to transform the following matrix first into echelon form and then into the reduced echelon form.
 
 $$
@@ -486,9 +486,9 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-**Solution.**  We begin with the given matrix:
+We begin with the given matrix:
 
 $$
 \begin{bmatrix}
@@ -608,7 +608,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 6.** 
+**Example.** 
 Find the general solution(s) of the linear system whose augmented matrix has been reduced to 
 
 $$
@@ -680,7 +680,7 @@ where $x_1,x_3,x_5$ are basic variables, and $x_2,x_4$ are free variables.
 
 ::: {.math-block .example}
 
-**Example 7.**  Solve
+**Example.**  Solve
 
 $$
 x_1+x_2=1
@@ -772,7 +772,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 8.** 
+**Example.** 
 Given
 
 $$
@@ -851,7 +851,7 @@ For example, $\sqrt 3v_1+v_2, \frac 12 v_1, 0$($=0\cdot v_1+0\cdot v_2$) are lin
 
 ::: {.math-block .example}
 
-**Example 9.**  Let
+**Example.**  Let
 
 $$
 a_1=\begin{bmatrix}1\\-2\\-5\end{bmatrix},\quad a_2=\begin{bmatrix}2\\5\\6\end{bmatrix},\quad
@@ -862,9 +862,8 @@ Determine whether $b$ can be generated as a linear combination of $a_1,a_2$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.** 
 We take real numbers $x_1,x_2$ to set up the equation
 
 $$
@@ -957,7 +956,7 @@ $$
 
 ::: {.math-block .example}
 
-**Example 10.** 
+**Example.** 
 
 $$
 \begin{aligned}
@@ -972,13 +971,12 @@ $$
 
 ::: {.math-block .example}
 
-**Example 11.**  For $v_1,v_2,v_3$ in $\mathbb{R}^m$ for some positive integer $m$, write the linear combination $3v_1-5v_2+7v_3$ as a matrix times a vector.
+**Example.**  For $v_1,v_2,v_3$ in $\mathbb{R}^m$ for some positive integer $m$, write the linear combination $3v_1-5v_2+7v_3$ as a matrix times a vector.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 We write
 
 $$
@@ -1025,7 +1023,7 @@ By  definition of $Ax$, we have
 
 ::: {.math-block .example}
 
-**Example 12.**  Let
+**Example.**  Let
 
 $$
 A=\begin{bmatrix} 1&3&4\\-4&2&-6\\-3&-2&-7\end{bmatrix},\qquad 
@@ -1036,9 +1034,8 @@ Is the equation $Ax=b$ consistent for all possible $b_1,b_2, b_3$?
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Even though there are symbols in the augmented matrix, we can still do the row operations as usual.
 
 $$
@@ -1048,7 +1045,7 @@ $$
 1&3&4&b_1\\-4&2&-6&b_2\\-3&-2&-7&b_3\\\end{bmatrix}
 \rightarrow
 \begin{bmatrix}
-1&3&4&b_1\\0&14&10&b_2+4b_1\\0&7&5&b_3+3b_1\end{bmatrix}\\
+1&3&4&b_1\\0&14&10&b_2+4b_1\\0&7&5&b_3+3b_1\end{bmatrix}\\[2ex]
 &
 \rightarrow
 \begin{bmatrix}
@@ -1087,7 +1084,7 @@ We use the following example to illustrate the matrix-vector production
 
 ::: {.math-block .example}
 
-**Example 13.**  We have
+**Example.**  We have
 
 $$
 \begin{bmatrix}
@@ -1152,7 +1149,7 @@ A homogeneous linear system always has a solution. In fact, $0$ is always a solu
 
 ::: {.math-block .example}
 
-**Example 14.** <span id="ref-example1"></span>
+**Example.** <span id="ref-example1"></span>
 Determine if the following homogeneous linear system has a non-trivial solution. Then describe the solution set.
 
 $$
@@ -1167,9 +1164,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Let $A$ be the coefficient matrix of the linear system. Then the augmented matrix is $[A,0]$. 
 We perform the row operations
 
@@ -1178,9 +1174,20 @@ $$
 &\begin{bmatrix}
 3&5&-4&0\\-3&-2&4&0\\6&1&-8&0\end{bmatrix}\rightarrow
 \begin{bmatrix}3&5&-4&0\\0&3&0&0\\0&-9&0&0\end{bmatrix}\to
-\begin{bmatrix}3&5&-4&0\\0&3&0&0\\0&0&0&0\end{bmatrix}\\
+\begin{bmatrix}3&5&-4&0\\0&3&0&0\\0&0&0&0\end{bmatrix}\\[.2cm]
 &\to \begin{bmatrix}1&\frac 53&-\frac 43&0\\0&1&0&0\\0&0&0&0\end{bmatrix}
-\to \underset{\green{\begin{array}{c}\uparrow\uparrow\\ \text{Pivot columns}\end{array}}}{\begin{bmatrix}1&0&-\frac 43&0\\0&1&0&0\\0&0&0&0\end{bmatrix}}
+\to \underset{
+\hspace{-0.6cm}\lower0.2cm\hbox{$\green{\substack{
+{\Large\boldsymbol{\uparrow}}\quad{\hspace{-.1cm}\Large\boldsymbol{\uparrow}}\\[.2cm]
+{\large\textbf{pivot columns}}
+}}$}
+\;\phantom{-\frac 43\quad 0}
+}{
+\begin{bmatrix}
+1&0&-\frac 43&0\\
+0&1&0&0\\
+0&0&0&0
+\end{bmatrix}}
 \end{aligned}
 $$
 
@@ -1225,7 +1232,7 @@ So the homogeneous system does have non-trivial solutions (in fact, there are in
 
 ::: {.math-block .example}
 
-**Example 15.** 
+**Example.** 
 Solve
 
 $$
@@ -1234,9 +1241,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 The augmented matrix of the system is
 
 $$
@@ -1282,7 +1288,7 @@ In the above example, the solutions of the linear system depend on two parameter
 
 ::: {.math-block .example}
 
-**Example 16.** <span id="ref-1.20"></span>
+**Example.** <span id="ref-1.20"></span>
 Describe all solutions  of $Ax=b$, where
 
 $$
@@ -1292,9 +1298,9 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  We observe that the coefficient matrix is the same as in <span style="color:#02650f">Example [14](#ref-example1)</span>. So similarly, 
+We observe that the coefficient matrix is the same as in <span style="color:#02650f">Example [14](#ref-example1)</span>. So similarly, 
 we use the row operations to obtain
 
 $$
@@ -1355,7 +1361,7 @@ In the expression  [(1.5.1)](#ref-eq1), $t$ is the parameter, which is running t
 
 The above theorem gives the structure of the solution set of a consistent linear system. 
 
-![The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p.](3A-lecture-notes-assets/figure-04.svg){fig-alt="The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p."}
+![The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p.](3A-lecture-notes-assets/figure-04.svg){fig-alt="The solution set of A x equals b is a line parallel to the homogeneous solution line A x equals zero, translated by the particular solution p." width="70%"}
 
  <span style="color:#b40000">*(We will skip § 1.6)*</span>
 
@@ -1416,7 +1422,7 @@ The above equation, when $c_1,\cdots, c_p$ are not all zero, is called the <span
 
 ::: {.math-block .example}
 
-**Example 17.** 
+**Example.** 
 Let
 
 $$
@@ -1431,9 +1437,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 We must determine if  there is a non-trivial solution of the equation 
 
 $$
@@ -1506,7 +1511,7 @@ We take $x_3=1$ to obtain a nonzero solution $\begin{bmatrix}x_1\\x_2\\x_3\end{b
 
 ::: {.math-block .example}
 
-**Example 18.**  Determine if the columns of the matrix
+**Example.**  Determine if the columns of the matrix
 
 $$
 A=\begin{bmatrix}
@@ -1517,9 +1522,8 @@ are linearly independent.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 We consider the system $Ax=0$, and have 
 
 $$
@@ -1570,7 +1574,7 @@ is linearly dependent, if and only if at least one of the vectors in $S$ is a li
 
 ::: {.math-block .example}
 
-**Example 19.** 
+**Example.** 
 Let 
 
 $$
@@ -1581,9 +1585,8 @@ Describe the set spanned by $u$ and $v$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 The span is the plane in $\mathbb{R}^3$ defined by the points $(0,0,0)$, $(3,1,0)$, and $(1,6,0)$. Since the third component of the vectors is zero, the span is the $xy$ plane in $\mathbb R^3$.
  $\square$
 
@@ -1598,7 +1601,6 @@ If a set contains more vectors than there are entries in each vector, then the s
 
 ::: {.math-block .proof}
 
-****Proof:**.**  
 Write $A=[v_1,\cdots,v_p]$. Then $A$ is an $n\times p$ matrix. 
 Since there are $n$ rows, there are at most $n$ basic variables. Therefore  free variable(s) do exist. So $Ax=0$ has non-trivial solutions, and $\{v_1,\cdots, v_p\}$ is linearly dependent. 
  $\square$
@@ -1616,7 +1618,7 @@ If a set $\{v_1,\cdots, v_p\}$ contains the zero vector, then the set is linearl
 
 ::: {.math-block .example}
 
-**Example 20.**  Determine by inspection whether the given set is linearly dependent.
+**Example.**  Determine by inspection whether the given set is linearly dependent.
 
 1. **(1).**  $\begin{bmatrix} 1\\7\\6\end{bmatrix},\,\, \begin{bmatrix} 2\\0\\9\end{bmatrix},\,\,
     \begin{bmatrix} 3\\1\\5\end{bmatrix},\,\,\begin{bmatrix} 4\\1\\8\end{bmatrix}$
@@ -1625,9 +1627,8 @@ If a set $\{v_1,\cdots, v_p\}$ contains the zero vector, then the set is linearl
 
 3. **(3).**  $\begin{bmatrix} -2\\4\\6\\10\end{bmatrix},\,\, \begin{bmatrix} 3\\-6\\-9\\15\end{bmatrix}$
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 (1) is linearly dependent, because the set consists of $4$ vectors, which is bigger than  dimension $3$.
 
 (2) is linearly dependent, because it contains the zero vector. 
@@ -1667,7 +1668,7 @@ A function sometimes is called a <span style="color:#b40000">*mapping*</span>, o
 
 ::: {.math-block .example}
 
-**Example 21.**  The following is an example of a transformation
+**Example.**  The following is an example of a transformation
 
 $$
 T:\mathbb{R}^2\to \mathbb{R}^2,\quad T(x_1,x_2)=(x_1+x_2, 3x_2).
@@ -1693,7 +1694,7 @@ Before formally defining what a linear transformation is, we first study the <sp
 
 ::: {.math-block .example}
 
-**Example 22.** 
+**Example.** 
 Let
 
 $$
@@ -1713,9 +1714,8 @@ and define a transformation $T:\mathbb{R}^2\to \mathbb{R}^3$ by $T(x)=Ax$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 (1). We compute 
 
 $$
@@ -1805,14 +1805,13 @@ $$
 
 ::: {.math-block .example}
 
-**Example 23.** 
+**Example.** 
 Show that $T(x_1,x_2)=(x_1+x_2, 3x_2)$ is a linear transformation. 
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 We write $T$ into the standard format
 
 $$
@@ -1876,14 +1875,13 @@ On the other hand, if we need to prove a transformation is  not linear, we need 
 
 ::: {.math-block .example}
 
-**Example 24.** 
+**Example.** 
 Prove that the transformation defined by $T(x_1,x_2)=(1+x_1,x_2)$ is not a linear transformation.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Since $T(0,0)=(1,0)\neq (0,0)$, it is not a linear transformation.
  $\square$
 
@@ -1891,14 +1889,13 @@ Since $T(0,0)=(1,0)\neq (0,0)$, it is not a linear transformation.
 
 ::: {.math-block .example}
 
-**Example 25.** 
+**Example.** 
 Prove that the transformation defined by $T(x_1,x_2)=(|x_1|,x_2)$ is not a linear transformation.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Since $T(-1,0)=(-1)\cdot T(1,0)=-(1,0)$ by the second property of linear transformation, we get a contradiction because by definition, $T(-1,0)=(1,0)$.
  $\square$
 
@@ -1940,7 +1937,7 @@ We first study the following example.
 
 ::: {.math-block .example}
 
-**Example 26.** 
+**Example.** 
 We consider the following matrix
 
 $$
@@ -1968,9 +1965,8 @@ $$
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 The trick is that the vectors $e_1,e_2$ are special. We write
 
 $$
@@ -2058,14 +2054,13 @@ $$
 
 ::: {.math-block .example}
 
-**Example 27.** 
+**Example.** 
 Find the standard matrix $A$ for the dilation transformation $T:\mathbb{R}^2\to \mathbb{R}^2, T(x)=3x$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 We have
 
 $$
@@ -2085,15 +2080,14 @@ $$
 
 ::: {.math-block .example}
 
-**Example 28.** 
+**Example.** 
 Let $T: \mathbb{R}^2\to\mathbb{R}^2$ be the transformation that rotates each point in $\mathbb{R}^2$ about the origin through an angle
 $\phi$, with counter-clockwise  rotation for a positive angle. Find the standard matrix $A$ of this transformation. 
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Since $\begin{bmatrix}1\\0\end{bmatrix}$ rotates into $\begin{bmatrix}\cos\phi\\\sin\phi\end{bmatrix}$, and 
 $\begin{bmatrix}0\\1\end{bmatrix}$ rotates into $\begin{bmatrix}-\sin\phi\\\cos\phi\end{bmatrix}$, we have
 
@@ -2141,7 +2135,7 @@ A transformation $T: \mathbb{R}^n\to\mathbb{R}^m$ is said to be <span style="col
 
 ::: {.math-block .example}
 
-**Example 29.** 
+**Example.** 
 Let $T$ be the linear transformation whose matrix is 
 
 $$
@@ -2154,9 +2148,8 @@ Does $T$ maps $\mathbb{R}^4$ onto $\mathbb{R}^3$? Is $T$ a one-to-one mapping?
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  
 Since $A$ happens to be in the echelon form, we can see at once that $A$ has a pivot position in each row. Therefore $Ax=b$ has a solution for any $b$ in $\mathbb{R}^3$, hence $T$ is onto. On the other hand, since $Ax=b$ has free variable $x_3$, the map is not one-to-one. 
  $\square$
 
