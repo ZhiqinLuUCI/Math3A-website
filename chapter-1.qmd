@@ -74,7 +74,7 @@ $$
 \end{bmatrix}.
 $$
 
-This is called the <span style="color:#b40000">*coefficient matrix*</span> <span id="index-6"></span>(or matrix coefficients), and 
+This is called the <span style="color:#b40000">*coefficient matrix*</span> <span id="index-6"></span> (or matrix of coefficients), and 
 
 $$
 \begin{bmatrix}
@@ -102,7 +102,7 @@ $$
 
  
 
-We copy the linear system below, with the right side the corresponding augmented matrix.
+We copy the linear system below, with the corresponding augmented matrix on the right.
 
 $$
 \begin{matrix}
@@ -120,7 +120,7 @@ x_1&-&2x_2&+&x_3&=&0\\
 $$
 
  
-Using the Gauss elimination method, we  eliminate $5x_1$ in the third equation by multiplying $-5$ on the first equation then adding to the third
+Using the Gaussian elimination method, we eliminate $5x_1$ in the third equation by multiplying the first equation by $-5$ and then adding it to the third equation.
 
 $$
 \begin{matrix}
@@ -240,7 +240,7 @@ Thus, the solution of the linear system is $(x_1,x_2,x_3)=(1,0,-1)$.
 
 2.  <span style="color:#02650f">(Interchange) </span> Interchange two rows.
 
-3.  <span style="color:#02650f">(Scaling) </span> Multiple all entries in a row by a non-zero constant.
+3.  <span style="color:#02650f">(Scaling) </span> Multiply all entries in a row by a non-zero constant.
 
 Two linear systems are <span style="color:#b40000">*equivalent*</span><span id="index-9"></span>,  if one of them is obtained from the other by finitely many steps of row operations. Two equivalent 
 linear systems have the same solution set. 
@@ -348,7 +348,7 @@ Since $0\neq 15$, the system is inconsistent.
 
  As we can see, to determine whether a system is consistent, sometimes we don't have to solve it completely.
 
-If it has at least one solution, we call the linear system satisfies the *<span style="color:#b40000">existence</span>* <span id="index-12"></span> property; if it has at most one solution, we call the linear system satisfies the *<span style="color:#b40000">uniqueness</span>* <span id="index-13"></span>  property.
+If it has at least one solution, we say that the linear system satisfies the *<span style="color:#b40000">existence</span>* <span id="index-12"></span> property; if it has at most one solution, we say that the linear system satisfies the *<span style="color:#b40000">uniqueness</span>* <span id="index-13"></span> property.
 
 **Important warning:** If a linear system satisfies the uniqueness property, then either it has one solution or it has no solution. This is the definition of uniqueness.
 
@@ -365,15 +365,15 @@ The concepts of existence, uniqueness, consistency, and inconsistency are relate
 ::: {.math-block .definition}
 
 **Definition 1.** 
-A matrix is in the <span style="color:#b40000">echelon form</span>, <span id="index-14"></span> if
+A matrix is in <span style="color:#b40000">echelon form</span>, <span id="index-14"></span> if
 
-1.  all non-zero rows[^1] are above any rows of all-zero rows;
+1.  all non-zero rows[^1] are above all zero rows;
 
 2.  each leading entry of a row is in a column to the right of the column of the leading entry of the row above it;
 
 3.  all entries in a column below a leading entry are zero.
 
-If a matrix in its echelon form satisfies the following additional conditions, then it is called a <span style="color:#b40000">reduced echelon form</span>. <span id="index-16"></span>
+If a matrix in echelon form satisfies the following additional conditions, then it is called a <span style="color:#b40000">reduced echelon form</span>. <span id="index-16"></span>
 
 4. the leading entry in each non-zero row is $1$;
 
@@ -464,9 +464,9 @@ The pivot columns are columns $1$, $2$, and $4$.
 
   **<span style="color:#02650f">**Step 3**</span>**  Use the row replacement operations to create zeros in all positions below the pivot.
 
-  **<span style="color:#02650f">**Step 4**</span>**  Cover (or ignore) the row contain the pivot position and cover all rows, if any, above it. Repeat 1–3. 
+  **<span style="color:#02650f">**Step 4**</span>**  Cover (or ignore) the row containing the pivot position and all rows, if any, above it. Repeat Steps 1–3. 
 
-  **<span style="color:#02650f">**Step 5**</span>**  Begin with the right-most pivot and work upward and to the left, create zeros above each pivot, if a pivot is not $1$, make it $1$ by a scaling operation.
+  **<span style="color:#02650f">**Step 5**</span>**  Begin with the right-most pivot and work upward and to the left, creating zeros above each pivot. If a pivot is not $1$, make it $1$ by a scaling operation.
 
 The last step is also called <span style="color:#b40000">*back substitution*</span>.
 
@@ -542,7 +542,7 @@ $$
 \end{bmatrix}
 $$
 
- <span style="color:#02650f">**Step 5.** Perform back substitution starting from the pivot on the thrid row, and then the pivot on the second row.</span>
+ <span style="color:#02650f">**Step 5.** Perform back substitution starting from the pivot on the third row and then the pivot on the second row.</span>
 
 $$
 \begin{bmatrix}
@@ -562,7 +562,7 @@ The last matrix is the reduced echelon form of matrix $A$.
 ::: {.math-block .theorem}
 
 **Theorem 1.** 
-Each matrix is row equivalent to one and the only one reduced echelon matrix.
+Each matrix is row equivalent to one and only one reduced echelon matrix.
 
 :::
 
@@ -592,7 +592,7 @@ x_1&&&-&5x_3&=&1\\
 \end{matrix}
 $$
 
-The variables $x_1,x_2$  corresponding to the pivot columns are called <span style="color:#b40000">*basic variables*</span> <span id="index-20"></span>; the rest of the variable, $x_3$, is called a  <span style="color:#b40000">*free variable*</span>. <span id="index-21"></span>
+The variables $x_1,x_2$ corresponding to the pivot columns are called <span style="color:#b40000">*basic variables*</span> <span id="index-20"></span>; the remaining variable, $x_3$, is called a <span style="color:#b40000">*free variable*</span>. <span id="index-21"></span>
 
 The solution of the above system can be written as 
 
@@ -606,7 +606,7 @@ x_3 \text{ is free}
 \right.
 $$
 
-<span style="color:#000000">This called the *<span style="color:#b40000">parametric</span>* description of the solution set.</span> <span id="index-22"></span>
+<span style="color:#000000">This is called the *<span style="color:#b40000">parametric</span>* description of the solution set.</span> <span id="index-22"></span>
 
 ::: {.math-block .example}
 
@@ -627,7 +627,7 @@ $$
 ::: {.math-block .proof}
 
  
-We need to deform the matrix into its reduced echelon form:
+We need to reduce the matrix to its reduced echelon form:
 
 $$
 \begin{aligned}
@@ -729,7 +729,7 @@ where $b\neq 0$. If a system is *not* inconsistent, then the solution(s) exist.
 
  <span style="color:#703080">Uniqueness:</span> Either no solution, or there is a solution but no free variable(s).
 
-**Important warning:** Note that the last column, or the augment column, is special. We don't consider it as a pivot column, *if we are working on the augment matrix of a linear system.* For the row operations on a general matrix, where is last column is not special, it should be counted as a candidate of pivot column. 
+**Important warning:** Note that the last column, or the augmented column, is special. We don't consider it a pivot column *if we are working on the augmented matrix of a linear system.* For row operations on a general matrix, where its last column is not special, it should be counted as a candidate for a pivot column. 
 
 ## 1.3 Vector equations {#section-12}
 
@@ -746,7 +746,7 @@ The number of components is called the *<span style="color:#b40000">dimension</s
 
 We use $\mathbb R^n$ to denote the set of all $n$-dimensional vectors. We call  $\mathbb R^n$ the *<span style="color:#b40000">$n$-dimensional Euclidean space</span>*. <span id="index-26"></span> Two dimensional Euclidean space is also called the  *<span style="color:#b40000">Euclidean plane</span>*. <span id="index-27"></span>
 
-In geometry, a vector can be represented by an arrow from the origin of the coordinate system, as showed in the following graph. 
+In geometry, a vector can be represented by an arrow from the origin of the coordinate system, as shown in the following graph. 
 
 ![Coordinate axes with the vector from the origin to the point $(2,2)$. The vector is also the point with coordinates $(2,2)$ in $\mathbb{R}^2$.](3A-lecture-notes-assets/figure-02.svg){fig-alt="Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared." width="70%"}
 
@@ -853,7 +853,7 @@ $$
 
 is called a  <span style="color:#b40000">*linear combination*</span><span id="index-29"></span> of $v_1,\cdots, v_p$ with weights $c_1,\cdots, c_p$.
 
-For example, $\sqrt 3v_1+v_2, \frac 12 v_1, 0$($=0\cdot v_1+0\cdot v_2$) are linear combination of vectors $v_1$ and $v_2$.
+For example, $\sqrt 3v_1+v_2, \frac 12 v_1, 0$($=0\cdot v_1+0\cdot v_2$) are linear combinations of vectors $v_1$ and $v_2$.
 
 ::: {.math-block .example}
 
@@ -893,7 +893,7 @@ x_1&+&2x_2&=&7\\
 \end{matrix}
 $$
 
-The augmented matrix is give by
+The augmented matrix is given by
 
 $$
 A=\begin{bmatrix}
@@ -918,7 +918,7 @@ Answer: yes, it is possible to write $b$ as a linear combination of $a_1$ and $a
 
 :::
 
-By using the vector notations, a  system of linear equations can be written as a a single vector equation.
+Using vector notation, a system of linear equations can be written as a single vector equation.
 The vector equation
 
 $$
@@ -951,7 +951,7 @@ with $c_1,\cdots, c_p$ being scalars (or weights)  as before.
 ::: {.math-block .definition}
 
 **Definition 3.** 
-If $A$ is an $m\times n$ matrix, with columns $a_1,\cdots, a_n$ and if $x$ is in $\mathbb{R}^n$, then the <span style="color:#b40000">product $A$ and $x$</span>, <span id="index-31"></span> denoted by $Ax$, is the linear combination  of the columns of $A$ using the corresponding entries in $x$ as weights, that is, 
+If $A$ is an $m\times n$ matrix, with columns $a_1,\cdots, a_n$ and if $x$ is in $\mathbb{R}^n$, then the <span style="color:#b40000">product of $A$ and $x$</span>, <span id="index-31"></span> denoted by $Ax$, is the linear combination of the columns of $A$ using the corresponding entries in $x$ as weights, that is, 
 
 $$
 Ax=[a_1,\cdots,a_n]\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix}=x_1a_1+x_2a_2+\cdots
@@ -1086,7 +1086,7 @@ Let $A$ be an $m\times n$ matrix. Then the following statements are logically eq
 
 ### The row-vector rule for computing $Ax$ {#section-17}
 
-We use the following example to illustrate the matrix-vector production
+We use the following example to illustrate the matrix-vector product.
 
 ::: {.math-block .example}
 
@@ -1140,7 +1140,7 @@ Let $A$ be an $m\times n$ matrix and let $u$ be  an $n$-dimensional vector. Then
 
 2.  $A(cu)=c(Au)$.
 
-The above properties is  the *linearity* of the matrix-vector production. 
+The above properties describe the *linearity* of the matrix-vector product. 
 
 ## 1.5 Solution set of linear systems {#section-19}
 
@@ -1219,7 +1219,7 @@ x_3 \text{ is free}
 \right.
 $$
 
-It would be much better is we rewrite the solutions in terms of vector notations. 
+It would be much better if we rewrote the solutions using vector notation. 
 The solution can be written as the vector form
 
 $$
@@ -1315,7 +1315,7 @@ $$
 \begin{bmatrix}1&0&-\frac 43&-1\\0&1&0&2\\0&0&0&0\end{bmatrix}.
 $$
 
-Thus we recover the liner system by
+Thus we recover the linear system as
 
 $$
 \left\{
@@ -1357,7 +1357,7 @@ $$
 
 :::
 
-In the expression  [(1.5.1)](#ref-eq1), $t$ is the parameter, which is running through all real numbers (it doesn't matter we use the symbols $t$ or $x_3$). It can be verified directly that $p$ is a solution of the linear system. On the other hand, the set $tv$, where $t$ is running through all the real numbers, is the solution set of the homogeneous equation in Example [14](#ref-example1). In general, we have the following
+In the expression [(1.5.1)](#ref-eq1), $t$ is the parameter, which runs through all real numbers (it doesn't matter whether we use the symbol $t$ or $x_3$). It can be verified directly that $p$ is a solution of the linear system. On the other hand, the set of all $tv$, where $t$ runs through all real numbers, is the solution set of the homogeneous equation in Example [14](#ref-example1). In general, we have the following.
 
 ::: {.math-block .theorem}
 
@@ -1397,15 +1397,15 @@ $$
 =(c_1+2c_2)v_1.
 $$
 
-Thus even it looks like that the span is made from the linear combination of two vectors, ${\rm span}\{v_1,v_2\}$ really is the set of vectors proportional to $v_1$ (and since $v_2=2v_1$, it is also the set of vectors proportional to $v_2$ as well). In fact, one of the two vectors $v_1, v_2$ is redundant. The concepts <span style="color:#b40000">*linear independence*</span>
+Although it looks as though the span is formed from linear combinations of two vectors, ${\rm span}\{v_1,v_2\}$ really is the set of vectors proportional to $v_1$ (and since $v_2=2v_1$, it is also the set of vectors proportional to $v_2$). In fact, one of the two vectors $v_1, v_2$ is redundant. The concepts <span style="color:#b40000">*linear independence*</span>
 <span id="index-37"></span> and <span style="color:#b40000">*linear dependence*</span>
-<span id="index-38"></span> are defined to catch this phenomena.
+<span id="index-38"></span> are defined to capture this phenomenon.
 
 Now we make the following definition.
 
 ::: {.math-block .definition}
 
-**Definition.** 
+**Definition 4.** 
 An indexed set of vectors $\{v_1,\cdots,v_p\}$ is said to be linearly independent, if the vector equation 
 
 $$
@@ -1424,7 +1424,7 @@ The above equation, when $c_1,\cdots, c_p$ are not all zero, is called the <span
 :::
 
  
- <span style="color:#0000cc">From the above definiton, we know that $\{v_1,\cdots, v_p\}$ is linearly independent if and only if $Ax=0$ has trivial solution only, where $A=[v_1, v_2,\cdots,v_p]$.</span>
+ <span style="color:#0000cc">From the above definition, we know that $\{v_1,\cdots, v_p\}$ is linearly independent if and only if $Ax=0$ has only the trivial solution, where $A=[v_1, v_2,\cdots,v_p]$.</span>
 
 ::: {.math-block .example}
 
@@ -1469,7 +1469,7 @@ $$
 
 Since  $x_3$ is the free variable, the equation has non-trivial solutions. As a result, $v_1,v_2, v_3$ are linearly dependent. 
 
-In order to find the linear independence relation, we need to solve the equation. So we further reduce the matrix into the reduced row-echelon form. 
+In order to find a linear dependence relation, we need to solve the equation. So we further reduce the matrix to reduced row-echelon form. 
 
 $$
 \begin{bmatrix}
@@ -1565,8 +1565,7 @@ $$
 
 By this equation, if $c_2\neq 0$, then we can write $v_2=-c_1/c_2 v_1$, but if $c_2=0$, then $c_1$ must not be zero, and hence $v_1=-c_2/c_1v_2$. In both cases, we conclude that the two vectors must be proportional, if they are linearly dependent. 
 
-If $v$ is a vector, then by definition, if it is linearly independent, the equation $xv=0$ only has the  trivial solution. 
-Since $c\neq 0$, we must have $v=0$. <span style="color:#0000cc">Thus  a single vector $v$ is linearly independent if and only if $v\neq 0$.</span>
+If the single-vector set $\{v\}$ is linearly dependent, then there exists a scalar $c\neq 0$ such that $cv=0$. Since $c\neq 0$, we must have $v=0$. Conversely, if $v=0$, then $1\cdot v=0$ is a non-trivial linear dependence relation. <span style="color:#0000cc">Thus a single vector $v$ is linearly independent if and only if $v\neq 0$.</span>
 
 It is much more difficult to characterize the linear independence property for a set of more than two vectors. But by 
 the above discussion, we have
@@ -1613,7 +1612,7 @@ Since there are $n$ rows, there are at most $n$ basic variables. Therefore  free
 
 :::
 
-**Warning:** Warning: if $p\leq n$, the above theorem says nothing.
+**Warning:** If $p\leq n$, the above theorem says nothing.
 
 ::: {.math-block .theorem}
 
@@ -1635,7 +1634,7 @@ If a set $\{v_1,\cdots, v_p\}$ contains the zero vector, then the set is linearl
 
 ::: {.math-block .solution}
 
-(1) is linearly dependent, because the set consists of $4$ vectors, which is bigger than  dimension $3$.
+(1) is linearly dependent because it contains four vectors in a three-dimensional space.
 
 (2) is linearly dependent, because it contains the zero vector. 
 
@@ -1649,7 +1648,7 @@ If a set $\{v_1,\cdots, v_p\}$ contains the zero vector, then the set is linearl
 
 ## 1.8 Introduction to linear transformation {#section-24}
 
-We would like to more formally introduce the concept  <span style="color:#b40000">*function*</span> <span id="index-40"></span> in the following
+We would like to introduce more formally the concept of a <span style="color:#b40000">*function*</span> <span id="index-40"></span>.
 
 ::: {.math-block .definition}
 
@@ -1684,7 +1683,7 @@ $$
 
 :::
 
-The standard way to represent such a transformation is to use column vector notations. Therefore
+The standard way to represent such a transformation is to use column-vector notation. Therefore
 
 $$
 T\left(\begin{bmatrix} x_1\\x_2\end{bmatrix}\right)=\begin{bmatrix} x_1+x_2\\3x_2\end{bmatrix}
@@ -1698,7 +1697,7 @@ $$
 
 are both legitimate ways to represent the transformation. 
 
-Before formally defining what a linear transformation is, we first study the <span style="color:#b40000">*matrix transformation*</span><span id="index-48"></span>. As is well known, if $A$ is an $m\times n$ matrix, and if $x$ is in $\mathbb{R}^n$, then $Ax$ is in $\mathbb{R}^m$. Therefore, $x\mapsto Ax$ is a transformation, which is called matrix transformation.
+Before formally defining what a linear transformation is, we first study the <span style="color:#b40000">*matrix transformation*</span><span id="index-48"></span>. As is well known, if $A$ is an $m\times n$ matrix, and if $x$ is in $\mathbb{R}^n$, then $Ax$ is in $\mathbb{R}^m$. Therefore, $x\mapsto Ax$ is a transformation, which is called a matrix transformation.
 
 ::: {.math-block .example}
 
@@ -1714,9 +1713,9 @@ and define a transformation $T:\mathbb{R}^2\to \mathbb{R}^3$ by $T(x)=Ax$.
 
 1.  find $T(u)$, the <span style="color:#b40000">image</span><span id="index-49"></span> of $u$ under the transformation $T$;
 
-2.  find an $x$ in $\mathbb{R}^2$ whose image under $T$ is $b$ (such an $x$, if exists, is called the  <span style="color:#b40000">pre-image</span> <span id="index-50"></span> of $b$);
+2.  find an $x$ in $\mathbb{R}^2$ whose image under $T$ is $b$ (such an $x$, if it exists, is called a <span style="color:#b40000">preimage</span> <span id="index-50"></span> of $b$);
 
-3.  are there more than one $x$ whose image under $T$ is $b$ (are the pre-image of $b$ unique)?
+3.  is there more than one $x$ whose image under $T$ is $b$ (are the preimages of $b$ unique)?
 
 4.  determine if $c$ is in the image of the transformation $T$.
 
@@ -1733,7 +1732,7 @@ $$
 
 which is the image of $u$ under $T$.
 
-(2). Solve $T(x)=b$ for $x$, which is equivalent to solve $Ax=b$:
+(2). Solve $T(x)=b$ for $x$, which is equivalent to solving $Ax=b$:
 
 $$
 \begin{bmatrix} 1&-3\\3&5\\-1&7\end{bmatrix}\begin{bmatrix} x_1\\x_2\end{bmatrix}
@@ -2016,7 +2015,7 @@ $$
 \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
 $$
 
-Then $n\times n$ identity matrix is given by
+The $n\times n$ identity matrix is given by
 
 $$
 I_n=
@@ -2137,7 +2136,7 @@ If $T$ is onto, then the pre-image of any $b$ in $\mathbb{R}^m$ exists.
 ::: {.math-block .definition}
 
 **Definition 8.** 
-A transformation $T: \mathbb{R}^n\to\mathbb{R}^m$ is said to be <span style="color:#b40000">one-to-one</span><span id="index-56"></span> $\mathbb{R}^m$, if each $b$ in $\mathbb{R}^m$ is the image of at most  one $x$ in $\mathbb{R}^n$. 
+A transformation $T: \mathbb{R}^n\to\mathbb{R}^m$ is said to be <span style="color:#b40000">one-to-one</span><span id="index-56"></span> if each $b$ in $\mathbb{R}^m$ is the image of at most one $x$ in $\mathbb{R}^n$. 
 
 :::
 
@@ -2152,7 +2151,7 @@ A=
 1&-4&8&1\\0&2&-1&3\\0&0&0&5\end{bmatrix}
 $$
 
-Does $T$ maps $\mathbb{R}^4$ onto $\mathbb{R}^3$? Is $T$ a one-to-one mapping?
+Does $T$ map $\mathbb{R}^4$ onto $\mathbb{R}^3$? Is $T$ a one-to-one mapping?
 
 :::
 
@@ -2167,13 +2166,13 @@ Since $A$ happens to be in the echelon form, we can see at once that $A$ has a p
 <span style="color:#0000cc">
 
 1. 
-    $T$ is onto $\Longleftrightarrow$ the columns of $A$ span $\mathbb{R}^m$$\Longleftrightarrow$ each *<span style="color:#b40000">row</span>* of $A$ has a pivot position;
+    $T$ is onto $\Longleftrightarrow$ the columns of $A$ span $\mathbb{R}^m$ $\Longleftrightarrow$ each *<span style="color:#b40000">row</span>* of $A$ has a pivot position;
 
-2.  $T$ is one-to-one $\Longleftrightarrow$  the columns of $A$  are linearly indepedent$\Longleftrightarrow$ each *<span style="color:#b40000">column</span>* of $A$ has a pivot position.
+2.  $T$ is one-to-one $\Longleftrightarrow$ the columns of $A$ are linearly independent $\Longleftrightarrow$ each *<span style="color:#b40000">column</span>* of $A$ has a pivot position.
 
 </span>
 
-In the one-to-one case, by the structure theorem (Theorem [3](#ref-1.21)) of solutions of system of linear equations, we have a little better criterium in the following
+In the one-to-one case, by the structure theorem (Theorem [3](#ref-1.21)) for solutions of systems of linear equations, we have a slightly better criterion.
 
 ::: {.math-block .theorem}
 

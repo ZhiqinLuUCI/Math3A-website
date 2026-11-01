@@ -6,7 +6,7 @@ filters:
   - example-numbering.lua
 
 website:
-  title: "Math 3A · Zhiqin Lu"
+  title: "UCI Math 3A"
   navbar:
     left:
       - href: index.qmd

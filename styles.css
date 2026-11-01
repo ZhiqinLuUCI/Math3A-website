@@ -564,6 +564,13 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
   color: #542f18;
 }
 
+/* Indexed vocabulary is red and italic throughout the lecture notes. */
+#quarto-document-content p:has(span[id^="index-"])
+  span[style*="color:#b40000"],
+#quarto-document-content span[style*="color:#b40000"]:has(+ span[id^="index-"]) {
+  font-style: italic !important;
+}
+
 /* Consecutive display equations should read as one compact calculation. */
 .quarto-document-content p:has(> .math.display:only-child) {
   margin-top: .16rem;
@@ -672,10 +679,28 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
   box-shadow: 0 .2rem .55rem rgba(18, 50, 79, .18);
 }
 
+#quarto-sidebar .sidebar-link.active.sidebar-item-text,
+#quarto-sidebar .sidebar-item-section > .sidebar-item-container > .sidebar-link.active,
+#quarto-sidebar .sidebar-link.active .menu-text {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .28);
+}
+
 #quarto-sidebar .sidebar-section .sidebar-link.active {
   border-left: 3px solid #f5b400;
   border-radius: .15rem .4rem .4rem .15rem;
   transform: translateX(-.12rem);
+}
+
+/* High-contrast active item in the top navigation bar. */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.active:focus {
+  color: #12324f !important;
+  background: #fff;
+  box-shadow: inset 0 -3px 0 #f5b400, 0 .15rem .45rem rgba(0, 0, 0, .22);
 }
 
 /* Refined book-style figure captions. */

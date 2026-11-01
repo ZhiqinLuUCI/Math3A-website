@@ -14,7 +14,7 @@ a&b\\c&d
 \end{bmatrix},
 $$
 
-it is invertible if and only if $ad-bc\neq 0$. For higher order square matrices, do we have a numerical criterion for them to be invertible?
+it is invertible if and only if $ad-bc\neq 0$. For higher-order square matrices, do we have a numerical criterion for invertibility?
 
 Yes, and such a numerical criterion is related to  the concept called *<span style="color:#b40000">determinant</span>*. 
 
@@ -138,7 +138,7 @@ $$
 \det A=a_{11} C_{11}+a_{12} C_{12}+\cdots+ a_{1n} C_{1n}.
 $$
 
-The above formula is called the *<span style="color:#b40000">cofactor expansion</span>* <span id="index-70"></span>  across the first row of $A$. In fact, we can expand the determinant of a matrix through any row or column.
+The above formula is called the *<span style="color:#b40000">cofactor expansion</span>* <span id="index-70"></span> across the first row of $A$. In fact, we can expand the determinant of a matrix along any row or column.
 
 ::: {.math-block .theorem}
 
@@ -198,7 +198,7 @@ $$
 
 ::: {.math-block .solution}
 
-We use cofactor expansion
+We use a cofactor expansion.
 
 $$
 \begin{array}{llll}
@@ -210,7 +210,7 @@ $$
 &&& \text {\color{#703080}{\scriptsize expanding using the first column}}\\
 =3\cdot 2\cdot\det
 \begin{bmatrix} 1&5&0\\2&4&-1\\0&-2&0 \end{bmatrix}
-&&&\text{\color{#703080}{\scriptsize exapnding using the first column again}}\\
+&&&\text{\color{#703080}{\scriptsize expanding using the first column again}}\\
 =6\cdot (-2)\cdot (-1)^{3+2}\cdot\det \begin{bmatrix} 1&0\\2&-1\end{bmatrix}.
 &&& \text{\color{#703080}{\scriptsize expanding using the third row}}\\
 =-12.
@@ -258,7 +258,7 @@ $$
 
 ::: {.math-block .solution}
 
-Using the above theorem, we use $1$ on the top left position to eliminate the rest of the entries in the first column, and  we use the co-factor expansion with respect to the first column to get 
+Using the above theorem, we use $1$ in the top-left position to eliminate the other entries in the first column, and we use the cofactor expansion with respect to the first column to get 
 
 $$
 \det A=\det\begin{bmatrix} 1&-4&2\\0&0&-5\\0&3&2 \end{bmatrix}
@@ -310,13 +310,13 @@ A square matrix $A$ is invertible if and only if $\det A\neq 0$.
 
 :::
 
-Note that whether or not the determinant of a matrix is not zero is invariant under the row operations. 
+Note that whether the determinant of a matrix is nonzero is invariant under row operations. 
 
-The echelon form of a square matrix is always an upper triangular matrix. Thus the determinant of it is
+The echelon form of a square matrix is always an upper triangular matrix. Thus its determinant is
 
-1.  $\neq 0$, if and only if each column is a pivot column;
+1.  nonzero if and only if each column is a pivot column;
 
-2.  $=0$, if and only if one of the columns is not a pivot column.
+2.  zero if and only if one of the columns is not a pivot column.
 
 ::: {.math-block .example}
 
@@ -337,7 +337,7 @@ $$
 We have
 
 $$
-\det A=\begin{bmatrix}
+\det A=\det\begin{bmatrix}
 3&-1&2&-5\\0&5&-3&-6\\0&5&-3&-6\\-5&-8&0&9
 \end{bmatrix}=0,
 $$
@@ -390,7 +390,7 @@ If $A$ is an $n\times n$ matrix, then $\det A=\det A^T$.
 
 :::
 
-Therefore, any “column operations" change the determinant in the same way as the row operations. 
+Therefore, any “column operations” change the determinant in the same way as row operations. 
 
 ::: {.math-block .theorem}
 
@@ -463,7 +463,7 @@ $$
 
 :::
 
- Using Theorem [27](#ref-6), we have
+Using Theorem [27](#ref-6), we have
 
 $$
 \det A^k=(\det A)^k.
@@ -539,12 +539,13 @@ $$
 1&a&a^2\\1&b&b^2\\1&c&c^2
 \end{bmatrix}=\det \begin{bmatrix}
 1&a&a^2\\0&b-a&b^2-a^2\\0&c-a&c^2-a^2
-\end{bmatrix}\\
+\end{bmatrix}\\[.2cm]
 &=\det \begin{bmatrix}
 b-a&b^2-a^2\\c-a&c^2-a^2
 \end{bmatrix}=(b-a)(c-a)\det \begin{bmatrix}
 1&b+a\\1&c+a
-\end{bmatrix}\\&=(b-a)(c-a)(c-b).
+\end{bmatrix}\\[.2cm]
+&=(b-a)(c-a)(c-b).
 \end{aligned}
 $$
 

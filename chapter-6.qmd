@@ -102,7 +102,7 @@ $$
 (u+tv)\cdot (u+tv)\geq 0.
 $$
 
-Expanding this above, we get
+Expanding the expression above, we get
 
 $$
 \|u\|^2+2 t\,(u\cdot v)+t^2\, \|v\|^2\geq 0.
@@ -111,7 +111,7 @@ $$
 Since the above is true for any $t$, the discriminant 
 
 $$
-4 (u\cdot v)^2-4\|u\|\cdot\|v\|^2\leq 0,
+4 (u\cdot v)^2-4\|u\|^2\cdot\|v\|^2\leq 0,
 $$
 
 which  completes the proof. 
@@ -119,7 +119,7 @@ which  completes the proof.
 
 :::
 
-A vector of length $1$ is called a *<span style="color:#b40000">unit vector</span>*.  <span id="index-87"></span> If $v\neq 0$, then $\|v\|^{-1} v$ is a unit vector, and is called as the *<span style="color:#b40000">normalization</span>* of $v$. <span id="index-88"></span>
+A vector of length $1$ is called a *<span style="color:#b40000">unit vector</span>*.  <span id="index-87"></span> If $v\neq 0$, then $\|v\|^{-1} v$ is a unit vector and is called the *<span style="color:#b40000">normalization</span>* of $v$. <span id="index-88"></span>
 
 ::: {.math-block .example}
 
@@ -144,13 +144,13 @@ u=\frac{v}{\|v\|}=\frac 13 \begin{bmatrix} 1\\-2\\2\\0 \end{bmatrix}
 \begin{bmatrix}  1/3\\-2/3\\2/3\\0\end{bmatrix}.
 $$
 
-$u$ is the unit vector in the same direction of $v$.
+$u$ is the unit vector in the same direction as $v$.
 
  $\square$
 
 :::
 
-Note that $-u$ is also a unit vector linearly dependent to $v$, but it is in the “opposite" direction to $u$.
+Note that $-u$ is also a unit vector linearly dependent on $v$, but it is in the “opposite” direction from $u$.
 
 ::: {.math-block .example}
 
@@ -175,7 +175,7 @@ $$
 
 ::: {.math-block .definition}
 
-**Definition 26 (The distance formula).**  Let $u,v$ be vectors in $\mathbb{R}^n$, then 
+**Definition 26 (The distance formula).**  Let $u,v$ be vectors in $\mathbb{R}^n$. Then 
 the <span style="color:#b40000">distance</span> <span id="index-89"></span>  between $u$ and $v$, written as ${\rm dist}(u,v)$, is the length of vector $u-v$, that is, 
 
 $$
@@ -267,11 +267,11 @@ $$
 \cos\theta=\frac{u\cdot v}{\|u\|\cdot\|v\|}.
 $$
 
-By Theorem [37](#ref-t65), the above right side is between $[-1,1]$.
+By Theorem [37](#ref-t65), the right-hand side above is in $[-1,1]$.
 
 :::
 
-The angle is not uniquely determined. If $\theta_0$ solves the above equation, so are $2k\pi\pm\theta_0$.   
+The angle is not uniquely determined. If $\theta_0$ is a solution of the equation above, then so are $2k\pi\pm\theta_0$.   
 
 ::: {.math-block .theorem}
 
@@ -310,7 +310,7 @@ The theorem follows from Definition [28](#ref-d611).
 
 :::
 
-Assume that in $\triangle ABC$, $BC=a, CA=b$ and $AB=c$. Assume that $\angle C=\gamma$. Then the Law of Cosines can be written as the usual format
+Assume that in $\triangle ABC$, $BC=a, CA=b$ and $AB=c$. Assume that $\angle C=\gamma$. Then the Law of Cosines can be written in the usual form
 
 $$
 c^2=a^2+b^2-2ab\cos\gamma.
@@ -404,7 +404,7 @@ $$
 
 ::: {.math-block .proof}
 
-The above second equation is equivalent to the first one. So we only prove the first one. 
+The second equation above is equivalent to the first one, so we prove only the first one. 
 
 We first prove that 
 
@@ -424,7 +424,7 @@ Thus $y\in ({\rm Nul}(A^T))^\perp$.
 Next we prove that 
 
 $$
-({\rm Nul}(A^T)^\perp\subset {\rm Col}(A).
+({\rm Nul}(A^T))^\perp\subset {\rm Col}(A).
 $$
 
 The above is equivalent to 
@@ -433,7 +433,7 @@ $$
 ({\rm Col}(A))^\perp\subset ({\rm Nul}(A^T)^\perp)^\perp={\rm Nul}(A^T).
 $$
 
-Let $y\in ({\rm Col}(A))^\perp$. The for any $x\in \mathbb{R}^n$, we have $y^TAx=0$. Since $x$ is arbitrary, we must have $y^TA=0$, equivalent to $A^Ty=0$. 
+Let $y\in ({\rm Col}(A))^\perp$. Then, for any $x\in \mathbb{R}^n$, we have $y^TAx=0$. Since $x$ is arbitrary, we must have $y^TA=0$, which is equivalent to $A^Ty=0$. 
  $\square$
 
 :::
@@ -496,7 +496,7 @@ $$
 c_1u_1+\cdots +c_pu_p=0.
 $$
 
-If $c_j\neq 0$ for some $j$, we take dot product on both sides
+If $c_j\neq 0$ for some $j$, we take the dot product of both sides with $u_j$:
 
 $$
 0=u_j\cdot (c_1u_1+\cdots +c_pu_p)=c_j \,\|u_j\|^2.
@@ -605,7 +605,7 @@ $$
 
 ::: {.math-block .solution}
 
-The set is orthogonal from Example  [97](#ref-ex1). We can verify that all the vectors are orthonormal, so the set is an orthonormal basis. 
+The set is orthogonal by Example [97](#ref-ex1). We can verify that all the vectors are unit vectors, so the set is an orthonormal basis. 
  $\square$
 
 :::
@@ -636,7 +636,7 @@ $$
 \right.
 $$
 
-So perform the following row operations.
+We perform the following row operations.
 
 $$
 \begin{aligned}
@@ -690,10 +690,10 @@ y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\cdots + \frac{y\cdot u_n}{u_n\cdot u_n} u
 $$
 
 More generally, let $W={\rm span}\{u_1,\cdots,u_p\}$ be a subspace of $\mathbb{R}^n$. Then the 
-<span style="color:#b40000">projection</span>, <span id="index-95"></span> or <span style="color:#b40000">orthogonal projection</span> <span id="index-96"></span>, $\hat y$ of $y$ on $W$ can be represented as 
+<span style="color:#b40000">projection</span>, <span id="index-95"></span> or <span style="color:#b40000">orthogonal projection</span> <span id="index-96"></span>, $\hat y$ of $y$ onto $W$ can be represented as 
 
 $$
-\hat y =\operatorname{\mathbf{proj}}_{W}y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\cdots + \frac{y\cdot u_p}{u_p\cdot u_p} u_n.
+\hat y =\operatorname{\mathbf{proj}}_{W}y=\frac{y\cdot u_1}{u_1\cdot u_1} u_1+\cdots + \frac{y\cdot u_p}{u_p\cdot u_p} u_p.
 $$
 
 :::
@@ -732,7 +732,7 @@ $$
 ::: {.math-block .definition}
 
 **Definition 33.** 
-A matrix $U$ is called <span style="color:#b40000">orthogonal</span>,<span id="index-97"></span> if $U^TU=I$, in other words, 
+An $n\times n$ matrix $U$ is called <span style="color:#b40000">orthogonal</span>,<span id="index-97"></span> if $U^TU=I$; in other words, 
 $U$ is an orthogonal matrix if and only if its columns form an orthonormal basis of $\mathbb{R}^n$.
 
 :::
@@ -818,6 +818,10 @@ orthogonal projection of a vector $\mathbf{v}$ onto $L$ is the vector
 on $L$ that is closest to $\mathbf{v}$.
 
 ![Orthogonal projection of vector $v$ onto the line spanned by $u$. The residual vector from the projection to $v$ is perpendicular to the line.](3A-lecture-notes-assets/figure-07.svg){fig-alt="Orthogonal projection of vector v onto the line spanned by u. The residual vector from the projection to v is perpendicular to the line." width="67%"}
+
+::: {.numbered-figure-caption}
+**Figure 6.** Orthogonal projection of $v$ onto the line spanned by $u$.
+:::
 
 Geometrically, we drop a perpendicular line from the endpoint of
 $\mathbf{v}$ to the line $L$. The point where the perpendicular line
@@ -1460,13 +1464,13 @@ $$
 A=[x_1,\cdots, x_n],
 $$
 
-be a square matrix. Define $\{\mathbf{v}_1,\ldots,\mathbf{v}_p\}$ to be the orthogonal basis obtained from the Gram-Schmidt Process.[^2] Then we can write
+be a square matrix. Define $\{\mathbf{v}_1,\ldots,\mathbf{v}_n\}$ to be the orthogonal basis obtained from the Gram–Schmidt process.[^2] Then we can write
 
 $$
-A=[\mathbf{v}_1,\ldots,\mathbf{v}_p]R
+A=[\mathbf{v}_1,\ldots,\mathbf{v}_n]R
 $$
 
-for an upper triangular matrix $R$. By normalizing $\mathbf{v}_j$ to $\tilde{\mathbf{v}}_j$, we obtain an orthognal matrix
+for an upper triangular matrix $R$. By normalizing $\mathbf{v}_j$ to $\tilde{\mathbf{v}}_j$, we obtain an orthogonal matrix
 
 $$
 Q=[\tilde{\mathbf{v}}_1,\cdots,\tilde{\mathbf{v}}_n].
@@ -1482,7 +1486,7 @@ A=Q\begin{bmatrix}
 \end{bmatrix}R=Q\tilde R,
 $$
 
-where $\tilde R$ is an upper triangular matrix. This is called the QR decompostion of the matrix $A$.
+where $\tilde R$ is an upper triangular matrix. This is called the QR decomposition of the matrix $A$.
 
 [^2]: We need to assume that $x_1,\ldots,x_n$ are linearly independent
 for this argument to work. For the moment, however, let us tentatively

@@ -7,13 +7,13 @@ title: "7. Final Exam Review Guide"
 ## 7.1 Sections covered {#section-57}
 
 In the final exam, we shall cover
-<span style="color:#b40000">§1.1–§1.5, §1.7–1.9, § 2.1–§2.3, §2.8–2.9, §3.1–§3.2, §5.1–§5.4,     §6.1–6.4</span>.
+<span style="color:#b40000">§1.1–§1.5, §1.7–§1.9, §2.1–§2.3, §2.8–§2.9, §3.1–§3.2, §5.1–§5.4, §6.1–§6.4</span>.
 
 We emphasize the *<span style="color:#b40000">Four Basics</span>*: basic mathematical reasoning, basic concepts, basic results, basic computation.
 
 ## 7.2 Basic Mathematical Reasoning {#section-58}
 
-### One can't verify a statement by only checking it for one or two special cases {#section-59}
+### One cannot verify a statement by checking only one or two special cases {#section-59}
 
 ::: {.math-block .example}
 
@@ -38,14 +38,14 @@ $$
 and 
 
 $$
-T(e_1)=T\begin{bmatrix}1\\0\end{bmatrix},\quad T(e_2)=T\begin{bmatrix}1\\1\end{bmatrix}.
+T(e_1)=T\begin{bmatrix}1\\0\end{bmatrix},\quad T(e_2)=T\begin{bmatrix}0\\1\end{bmatrix}.
 $$
 
 Therefore $T(e_1+e_2)=T(e_1)+T(e_2)$ and hence $T$ is linear. 
 
 Using one example to verify is not enough. 
 
-On the other hand, if you want to show that a transformation is not linear, you only need to provide a 	“counterexample," meaning that a single choice of 
+On the other hand, if you want to show that a transformation is not linear, you only need to provide a “counterexample,” meaning that a single choice of 
 $x,y$, or $c$
   is sufficient.
 
@@ -79,9 +79,9 @@ Thus $T$ is not a linear transformation.
 
 :::
 
-### Problem like “for which $k$ is the matrix invertible?" {#section-60}
+### Problems like “For which $k$ is the matrix invertible?” {#section-60}
 
- means one needs to find *<span style="color:#b40000">all $k$, not just one special value of $k$</span>*, such that the matrix is invertible.
+Such a problem requires finding *<span style="color:#b40000">all $k$, not just one special value of $k$</span>*, for which the matrix is invertible.
 
 ::: {.math-block .example}
 
@@ -113,7 +113,7 @@ In the above example, we need to find *<span style="color:#b40000">all</span>* v
 
 ## 7.3 Basic concepts {#section-61}
 
- If I word the problems in different ways from the homework or quizzes, can you still do them?
+ If I word a problem in a different way from the homework or quizzes, can you still do it?
 
 ::: {.math-block .example}
 
@@ -121,11 +121,11 @@ In the above example, we need to find *<span style="color:#b40000">all</span>* v
 
 :::
 
-<span style="color:#02650f">Since $(A+5I)v=5v$, so yes, $v$ is an eigenvector corresponding to the eigenvalue $5$.</span>
+<span style="color:#02650f">Since $(A+5I)v=5v$, the vector $v$ is an eigenvector corresponding to the eigenvalue $5$.</span>
 
 ::: {.math-block .example}
 
-**Example.**  Let $v_1,v_2,v_3$ be vectors in $\mathbb{R}^4$. How to find a basis of $W^\perp$, where 
+**Example.**  Let $v_1,v_2,v_3$ be vectors in $\mathbb{R}^4$. How do we find a basis of $W^\perp$, where 
 
 $$
 W={\rm span}\{ v_1,v_2,v_3\}.
@@ -133,7 +133,7 @@ $$
 
 :::
 
-### Different level of abstracts {#section-62}
+### Different levels of abstraction {#section-62}
 
 For a linear system, we can describe the same concept through the following three levels of abstraction.
 
@@ -169,7 +169,7 @@ is a linear transformation.
 
 ::: {.math-block .example}
 
-**Example.**  Let $T: \mathscr P_3\to \mathscr P_3$ by $T(f)=f'+2f$. Assume that $\mathfrak B=\{1,t,2t^2, t^3\}$ is a basis for the domain and $\mathfrak C=\{2, 1+t, t^2+t, t^3\}$ is  a basis for the codomain of the transformation $T$. Find the matrix $M$ of the linear transformation relative to the bases $\mathfrak B$ and $\mathfrak C$. 
+**Example.**  Let $T: \mathscr P_3\to \mathscr P_3$ be defined by $T(f)=f'+2f$. Assume that $\mathfrak B=\{1,t,2t^2, t^3\}$ is a basis for the domain and $\mathfrak C=\{2, 1+t, t^2+t, t^3\}$ is a basis for the codomain of the transformation $T$. Find the matrix $M$ of the linear transformation relative to the bases $\mathfrak B$ and $\mathfrak C$. 
 
 :::
 
@@ -182,13 +182,13 @@ $$
 {\rm span}\{v_1,\cdots, v_p\},
 $$
 
-which is the set of all linear combination of $v_1,\cdots,v_p$, is a subspace of $\mathbb{R}^n$. 
+which is the set of all linear combinations of $v_1,\cdots,v_p$, is a subspace of $\mathbb{R}^n$. 
 
 Let $A$ be an $m\times n$ matrix. Then we can define (<span style="color:#b40000">page 156</span>)
 
 1.  the column space ${\rm Col}(A)$, which is a subspace of $\mathbb{R}^m$, spanned by the columns of $A$. 
 
-2.  the null space ${\rm Nul}(A)$, which is a subspace of $\mathbb{R}^n$, containing the solutions of the homogeneous equation
+2.  the null space ${\rm Nul}(A)$, which is a subspace of $\mathbb{R}^n$, consisting of the solutions of the homogeneous equation
 
     $$
     Ax=0
@@ -223,7 +223,7 @@ $$
 
 ::: {.math-block .theorem}
 
-**Theorem 50 (Invertible Matrix Theorem).**  The IMT (Invertible Matrix Theorem) contains 20 equivalent statements. These statements are very useful. In particular, the statements implies that, for a linear transformation
+**Theorem 50 (Invertible Matrix Theorem).**  The IMT (Invertible Matrix Theorem) contains 20 equivalent statements. These statements are very useful. In particular, the statements imply that, for a linear transformation
 
 $$
 T:\mathbb{R}^n\to \mathbb{R}^n,
@@ -237,7 +237,7 @@ it is onto if and only if it is one-to-one.
 
 What is the definition of a basis for a subspace, what is the standard basis?
 
-What is the dimension of a subspace? Why the number of vectors in a basis is always the same (independent of the choice of basis?)
+What is the dimension of a subspace? Why is the number of vectors in a basis always the same (independent of the choice of basis)?
 
 What is the rank?
 
@@ -271,7 +271,7 @@ $$
 \dim{\rm Col}(A)=\dim{\rm Row}(A).
 $$
 
-(The above is the advanced topic, not required for the exam though.)
+(The above is an advanced topic and is not required for the exam.)
 
 ## 7.5 Basic computations {#section-69}
 
@@ -294,11 +294,11 @@ Some facts:
 
 1.  In general, $AB$ is not defined, unless the number of columns of $A$ is equal to the number of rows of $B$. 
 
-2.  Even $AB$ is defined, $BA$ may not be defined. 
+2.  Even if $AB$ is defined, $BA$ may not be defined. 
 
-3.  Even both $AB$ and $BA$ are defined (which happens if $A$ is of $m\times n$ and $B$ is of $n\times m$), they may not be of the same size. 
+3.  Even if both $AB$ and $BA$ are defined (which happens if $A$ is $m\times n$ and $B$ is $n\times m$), they may not be the same size. 
 
-4.  Even both $AB$ and $BA$ are defined and of the same size, they may not be equal, that is, in general $AB\neq BA$.
+4.  Even if both $AB$ and $BA$ are defined and are the same size, they may not be equal; that is, in general $AB\neq BA$.
 
 5.  However, we always have the associativity law
 
@@ -314,7 +314,7 @@ Some facts:
 
 2.  $A\to A^2\to A^3\to\cdots\to A^k$
 
-### The inverse of a martrix {#section-72}
+### The inverse of a matrix {#section-72}
 
 If $A$ is invertible, then  $A^{-1}\cdot A=A\cdot A^{-1}=I$.
 
@@ -330,7 +330,7 @@ $$
 A^{-1}=\frac{1}{ad-bc}\begin{bmatrix} d& -b\\-c&a\end{bmatrix}.
 $$
 
-For an $n\times n$ matrix $A$, we form the augmented matrix $[A,I]$, and we do the row operations to obtain the reduced echelon form
+For an $n\times n$ matrix $A$, we form the augmented matrix $[A,I]$, and we perform row operations to obtain reduced row-echelon form:
 
 $$
 [A,I]\to\cdots\to [P,Q].
@@ -340,13 +340,13 @@ $$
 
 2.  if $P\neq I$, then $A$ is not invertible.
 
-### The basis of column space and null space {#section-73}
+### Bases for the column space and null space {#section-73}
 
-1.  Know how to compute the basis of a column space;
+1.  Know how to compute a basis for a column space;
 
-2.  Know how to compute the basis of a null space;
+2.  Know how to compute a basis for a null space;
 
-3.  Can you compute the basis of a row space?
+3.  Can you compute a basis for a row space?
 
 ### The coordinates of a vector with respect to a basis {#section-74}
 
@@ -361,9 +361,9 @@ $$
 \det\begin{bmatrix} a&c\\b&d\end{bmatrix} =ad-bc.
 $$
 
-For bigger sized matrices, the determinant is defined by using  the co-factor expansion. 
+For larger matrices, the determinant is defined using cofactor expansion. 
 
-The method of using row operation is a more effective way to compute the determinant.
+Using row operations is a more effective way to compute the determinant.
 
  
 In general, you need to be able to use the hybrid method (combining both methods) to compute the determinant.
@@ -380,17 +380,17 @@ We also have
 
 1.  One should be able to compute the eigenvalues of a $2\times 2$ matrix.
 
-2.  One should be able to compute the eigenvalues of special matrices like triangle matrices, diagonalized matrices. If the characteristic equation is provided, one should be able to factorize and find the roots. 
+2.  One should be able to compute the eigenvalues of special matrices such as triangular matrices and diagonal matrices. If the characteristic equation is provided, one should be able to factor it and find the roots. 
 
-3.  for other general matrices, eigenvalues will be provided to you in the exam.
+3.  For other general matrices, eigenvalues will be provided to you on the exam.
 
-4.  One needs to be able to find eigenvectors if eigenvalues are known. How to find the eigenspace, the dimension of eigenspace?
+4.  One needs to be able to find eigenvectors if the eigenvalues are known. How do we find an eigenspace and its dimension?
 
-5.  One should be able to answer the question whether a matrix is diagonalizable, if all the information of eigenvalues and eigenvectors are known, in case the matrix is diagonalizable, find the diagonalization. 
+5.  One should be able to determine whether a matrix is diagonalizable if all the information about its eigenvalues and eigenvectors is known. If the matrix is diagonalizable, find a diagonalization. 
 
 ### Diagonalization {#section-77}
 
-<span style="color:#0000cc">Question: </span> How to diagonalizing a matrix? What is the algebraic multiplicity and geometric multiplicity of an eigenvalue?
+<span style="color:#0000cc">Question: </span> How do we diagonalize a matrix? What are the algebraic and geometric multiplicities of an eigenvalue?
 
 ::: {.math-block .theorem}
 
@@ -406,7 +406,7 @@ We also have
 
 ### What is an orthogonal basis? An orthonormal basis? {#section-78}
 
-If $\mathcal B=\{v_1,\cdots,v_n\}$ is an orthogonal (orthonormal, resp)   basis, how to find the coordinates of a vector with respect to that basis? Do we still need to solve a general linear equation, or can we use the concept of inner product to find them?
+If $\mathcal B=\{v_1,\cdots,v_n\}$ is an orthogonal (respectively, orthonormal) basis, how do we find the coordinates of a vector with respect to that basis? Do we still need to solve a general linear equation, or can we use the inner product to find them?
 
 ::: {.math-block .example}
 
@@ -829,7 +829,7 @@ $$
 
 ## 7.6 Additional True-False questions {#section-79}
 
-True or False and Explain why? 
+State whether each assertion is true or false, and explain why. 
 
 1.  A homogeneous linear system must be consistent.
 
