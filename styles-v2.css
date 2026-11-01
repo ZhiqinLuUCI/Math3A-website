@@ -344,19 +344,30 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
 
 @media (max-width: 700px) {
   body:has(.book-home) #title-block-header.quarto-title-block {
-    padding: 5.25rem 1.15rem 2.35rem;
+    padding: 6.1rem 1.15rem 2.35rem;
     border-radius: .3rem .9rem .3rem .9rem;
   }
 
   body:has(.book-home) #title-block-header.quarto-title-block::before {
-    right: 1.5rem;
+    content: "UNIVERSITY OF CALIFORNIA, IRVINE\A DEPARTMENT OF MATHEMATICS";
+    top: .85rem;
+    left: 50%;
+    right: auto;
+    width: calc(100% - 2rem);
+    padding-bottom: 0;
+    border-bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .58) 18%, rgba(255, 255, 255, .58) 82%, transparent)
+      center 1.55rem / 86% 1px no-repeat;
     font-size: .56rem;
-    letter-spacing: .1em;
+    line-height: 2.65;
+    letter-spacing: .09em;
     text-align: center;
+    white-space: pre-line;
+    transform: translateX(-50%);
   }
 
   .math-ai-art {
-    top: 3.45rem;
+    top: 4.5rem;
     right: .75rem;
     font-size: .72rem;
   }
