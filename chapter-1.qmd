@@ -43,9 +43,9 @@ A <span style="color:#b40000">*solution*</span> <span id="index-4"></span> to a 
 3.  no solution (two lines are parallel but not the same)
 
   
+  ![Three coordinate-plane sketches: intersecting lines have one solution, coincident lines have infinitely many solutions, and parallel distinct lines have no solution.](3A-lecture-notes-assets/figure-01.svg){fig-alt="Three coordinate-plane sketches: intersecting lines have one solution, coincident lines have infinitely many solutions, and parallel distinct lines have no solution." width="65%"}
 
-![Three coordinate-plane sketches: intersecting lines have one solution, coincident lines have infinitely many solutions, and parallel distinct lines have no solution.](3A-lecture-notes-assets/figure-01.svg){fig-alt="Three coordinate-plane sketches: intersecting lines have one solution, coincident lines have infinitely many solutions, and parallel distinct lines have no solution."}
-
+ 
      
 
 *Figure 1. Examples of one solution, infinitely many solutions and no solution for $2\times 2$ systems.*
@@ -181,12 +181,12 @@ x_1&-&2x_2&+&x_3&=&0\\
 &&&&x_3&=&-1
 \end{matrix}
 \qquad \qquad
-\violet{
+\color{#703080}
 \begin{bmatrix}
 1&-2&1&0\\
 0&1&-4&4\\
 0&0&1&-1
-\end{bmatrix}}
+\end{bmatrix}\color{#000000}
 $$
 
  
@@ -199,12 +199,12 @@ x_1&-&2x_2&&&=&1\\
 &&&&x_3&=&-1
 \end{matrix}
 \qquad \qquad
-\violet{
+ \color{#703080}
 \begin{bmatrix}
 1&-2&0&1\\
 0&1&0&0\\
 0&0&1&-1
-\end{bmatrix}}
+\end{bmatrix}\color{#000000}
 $$
 
  
@@ -217,12 +217,12 @@ x_1&&&&&=&1\\
 &&&&x_3&=&-1
 \end{matrix}
 \qquad \qquad
-\violet{
+\color{#703080}
 \begin{bmatrix}
 1&0&0&1\\
 0&1&0&0\\
 0&0&1&-1
-\end{bmatrix}}
+\end{bmatrix}\color{#000000}
 $$
 
  
@@ -267,7 +267,7 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.**  By the conclusion of the above example, the system is consistent, and the solution is unique. $\square$
+  By the conclusion of the above example, the system is consistent, and the solution is unique. $\square$
 
 :::
 
@@ -288,7 +288,7 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.**  The augmented matrix is 
+  The augmented matrix is 
 
 $$
 A=
@@ -335,7 +335,7 @@ $$
 \begin{matrix}
 2x_1&-&3x_2&+&2x_3&=&1\\
 &&x_2&-&4x_3&=&8\\
-&&&&\blue{0}x_3&=&\blue{15}
+&&&& {\color{#0000CC}0} x_3&=&{\color{#0000CC}15}
 \end{matrix}.
 $$
 
@@ -373,9 +373,9 @@ A matrix is in the <span style="color:#b40000">echelon form</span>, <span id="in
 
 If a matrix in its echelon form satisfies the following additional conditions, then it is called a <span style="color:#b40000">reduced echelon form</span>. <span id="index-16"></span>
 
-1. **(4)**  the leading entry in each non-zero row is $1$;
+4. the leading entry in each non-zero row is $1$;
 
-2. **(5)**  each leading entry $1$ is the only non-zero entry in its column. 
+5. each leading entry $1$ is the only non-zero entry in its column. 
 
 :::
 
@@ -404,7 +404,7 @@ The first column is the first pivot column, and the zero in the first row is the
 
 ::: {.math-block .proof}
 
-**Proof.** 
+ 
 Interchange rows $R_1$ and $R_4$:
 
 $$
@@ -456,15 +456,15 @@ The pivot columns are columns $1$, $2$, and $4$.
 
 ### The row operations algorithm {#section-9}
 
-1. **<span style="color:#02650f">**Step 1**</span>**  Begin with the left-most *non-zero* column. This is the <span style="color:#b40000">*pivot column*</span>, <span id="index-17"></span> and the pivot position is at the top. 
+  **<span style="color:#02650f">**Step 1**</span>**  Begin with the left-most *non-zero* column. This is the <span style="color:#b40000">*pivot column*</span>, <span id="index-17"></span> and the pivot position is at the top. 
 
-2. **<span style="color:#02650f">**Step 2**</span>**  Select a non-zero entry in the pivot column as a <span style="color:#b40000">*pivot*</span> <span id="index-18"></span> (if necessary, interchange rows to move this entry to the <span style="color:#b40000">*pivot position*</span><span id="index-19"></span>). 
+  **<span style="color:#02650f">**Step 2**</span>**  Select a non-zero entry in the pivot column as a <span style="color:#b40000">*pivot*</span> <span id="index-18"></span> (if necessary, interchange rows to move this entry to the <span style="color:#b40000">*pivot position*</span><span id="index-19"></span>). 
 
-3. **<span style="color:#02650f">**Step 3**</span>**  Use the row replacement operations to create zeros in all positions below the pivot.
+  **<span style="color:#02650f">**Step 3**</span>**  Use the row replacement operations to create zeros in all positions below the pivot.
 
-4. **<span style="color:#02650f">**Step 4**</span>**  Cover (or ignore) the row contain the pivot position and cover all rows, if any, above it. Repeat 1–3. 
+  **<span style="color:#02650f">**Step 4**</span>**  Cover (or ignore) the row contain the pivot position and cover all rows, if any, above it. Repeat 1–3. 
 
-5. **<span style="color:#02650f">**Step 5**</span>**  Begin with the right-most pivot and work upward and to the left, create zeros above each pivot, if a pivot is not $1$, make it $1$ by a scaling operation.
+  **<span style="color:#02650f">**Step 5**</span>**  Begin with the right-most pivot and work upward and to the left, create zeros above each pivot, if a pivot is not $1$, make it $1$ by a scaling operation.
 
 The last step is also called <span style="color:#b40000">*back substitution*</span>.
 
@@ -553,7 +553,7 @@ $$
 <span style="color:#02650f">Reduced echelon form reached.</span>
 
 The last matrix is the reduced echelon form of matrix $A$.
- $\square$
+ 
 
 :::
 
@@ -604,7 +604,7 @@ x_3 \text{ is free}
 \right.
 $$
 
-<span style="color:#0000cc">This called the *<span style="color:#b40000">parametric</span>* description of the solution set.</span> <span id="index-22"></span>
+<span style="color:#000000">This called the *<span style="color:#b40000">parametric</span>* description of the solution set.</span> <span id="index-22"></span>
 
 ::: {.math-block .example}
 
@@ -624,7 +624,7 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
+ 
 We need to deform the matrix into its reduced echelon form:
 
 $$
@@ -690,7 +690,7 @@ $$
 
 ::: {.math-block .proof}
 
-**Proof.** 
+ 
 The augmented matrix
 
 $$
@@ -746,7 +746,7 @@ We use $\mathbb R^n$ to denote the set of all $n$-dimensional vectors. We call  
 
 In geometry, a vector can be represented by an arrow from the origin of the coordinate system, as showed in the following graph. 
 
-![Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared.](3A-lecture-notes-assets/figure-02.svg){fig-alt="Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared."}
+![Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared.](3A-lecture-notes-assets/figure-02.svg){fig-alt="Coordinate axes with the vector from the origin to the point (2,2). The vector is also the point with coordinates (2,2) in R squared." width="70%"}
 
 *Figure 2. Euclidean Coordinate System*
 
@@ -783,9 +783,9 @@ find $4u$, $(-3)v$, and $4u+(-3)v$.
 
 :::
 
-::: {.math-block .proof}
+::: {.math-block .solution}
 
-****Solution:**.**  We have
+  We have
 
 $$
 \begin{aligned}
@@ -803,7 +803,7 @@ $$
 
 The diagram below illustrates vector addition.
 
-![Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin.](3A-lecture-notes-assets/figure-03.svg){fig-alt="Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin."}
+![Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin.](3A-lecture-notes-assets/figure-03.svg){fig-alt="Parallelogram rule: vectors u and v form adjacent sides, and their sum u plus v is the diagonal from the origin." width="70%"}
 
 *Figure 3. Parallelogram Rule*
 
@@ -819,23 +819,23 @@ Note that $\mathbb{R}^1=\mathbb{R}$.
 
  For all $u,v,w$ in $\mathbb{R}^n$, and for all scalar $c,d$ in $\mathbb{R}$, we have
 
-    <span style="color:#0000cc">
 
--  $u+v=v+u$
 
--  $(u+v)+w=u+(v+w)$
+1. $u+v=v+u$
 
--  $u+0=0+u=u$
+2. $(u+v)+w=u+(v+w)$
 
--  $u+(-u)=-u+u=0$, where $-u=(-1)\cdot u$,
+3. $u+0=0+u=u$
 
--  $c(u+v)=cu+cv$
+4. $u+(-u)=-u+u=0$, where $-u=(-1)\cdot u$
 
--  $(c+d)u=cu+du$
+5. $c(u+v)=cu+cv$
 
--  $c(du)=(cd)u$
+6. $(c+d)u=cu+du$
 
--  $1u=u$</span>
+7. $c(du)=(cd)u$
+
+8. $1u=u$
 
 ### Linear combinations {#section-15}
 
@@ -929,10 +929,10 @@ $$
 ::: {.math-block .definition}
 
 **Definition 2.** 
-If $v_1,\cdots,v_p$ are in $\mathbb{R}^n$, then the set of all linear combinations of $v_1,\cdots, v_p$ is denoted by $\red{{span}\{v_1,\cdots, v_p\}}$, that is, ${\rm span}\{v_1,\cdots, v_p\}$ is the collection of all vectors that can be written  in the form
+If $v_1,\cdots,v_p$ are in $\mathbb{R}^n$, then the set of all linear combinations of $v_1,\cdots, v_p$ is denoted by    ${\color{#B40000}\operatorname{span}\{v_1,\ldots,v_p\}}$, which is the collection of all vectors that can be written  in the form
 
 $$
-c_1v_1+\cdots +c_p v_p
+c_1v_1+\cdots +c_p v_p 
 $$
 
 with $c_1,\cdots, c_p$ being scalars (or weights)  as before. 
