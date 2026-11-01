@@ -1,0 +1,905 @@
+---
+title: "7. Final Exam Review Guide"
+---
+
+<span id="section-56"></span>
+
+## 7.1 Sections covered {#section-57}
+
+In the final exam, we shall cover
+<span style="color:#b40000">§1.1–§1.5, §1.7–1.9, § 2.1–§2.3, §2.8–2.9, §3.1–§3.2, §5.1–§5.4,     §6.1–6.4</span>.
+
+We emphasize the *<span style="color:#b40000">Four Basics</span>*: basic mathematical reasoning, basic concepts, basic results, basic computation.
+
+## 7.2 Basic Mathematical Reasoning {#section-58}
+
+### One can't verify a statement by only checking it for one or two special cases {#section-59}
+
+::: {.math-block .example}
+
+**Example 105.** 
+Prove that 
+
+$$
+T\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}x_1+x_2\\x_2\end{bmatrix}
+$$
+
+is a linear transformation. 
+
+:::
+
+   Wrong Proof:  Since
+
+$$
+T(e_1+e_2)=T\begin{bmatrix}1\\1\end{bmatrix}=
+\begin{bmatrix}2\\1\end{bmatrix},
+$$
+
+and 
+
+$$
+T(e_1)=T\begin{bmatrix}1\\0\end{bmatrix},\quad T(e_2)=T\begin{bmatrix}1\\1\end{bmatrix}.
+$$
+
+Therefore $T(e_1+e_2)=T(e_1)+T(e_2)$ and hence $T$ is linear. 
+
+Using one example to verify is not enough. 
+
+On the other hand, if you want to show that a transformation is not linear, you only need to provide a 	“counterexample," meaning that a single choice of 
+$x,y$, or $c$
+  is sufficient.
+
+  
+
+::: {.math-block .example}
+
+**Example 106.** 
+  Prove that 
+  
+
+$$
+T\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}x_1+|x_2|\\x_2\end{bmatrix}
+$$
+
+is not a linear transformation. 
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+We let $x_1=0, x_2=1$ and $c=-1$. Then
+
+$$
+T\left((-1)\begin{bmatrix}0\\1\end{bmatrix}\right)=\begin{bmatrix}0\\1\end{bmatrix}\neq
+(-1)\cdot T\left(\begin{bmatrix}0\\1\end{bmatrix}\right).
+$$
+
+Thus $T$ is not a linear transformation.
+ $\square$
+
+:::
+
+### Problem like “for which $k$ is the matrix invertible?" {#section-60}
+
+ means one needs to find *<span style="color:#b40000">all $k$, not just one special value of $k$</span>*, such that the matrix is invertible.
+
+::: {.math-block .example}
+
+**Example 107.** 
+Find all $k$ such that the matrix $A$ is invertible
+
+$$
+A=\begin{bmatrix} k-1& k^2\\ 0& 2-k\end{bmatrix}.
+$$
+
+:::
+
+For the above problem, if $k=3$, say, the matrix $A$ is indeed invertible. But we need to find all $k$ such that the matrix is invertible. In fact, not just $k=3$, for any $k\neq 1,2$, the matrix is invertible. So the correct answer is $k\neq 1,2$. 
+
+::: {.math-block .example}
+
+**Example 108.**  Let 
+
+$$
+u_1=\begin{bmatrix}1\\2\\3\end{bmatrix},\quad 
+u_2=\begin{bmatrix}4\\3\\2\end{bmatrix}
+$$
+
+be vectors in $\mathbb{R}^3$. Let $U={\rm span}\{u_1,u_2\}$. Find a basis of $U^\perp$.
+
+:::
+
+In the above example, we need to find *<span style="color:#b40000">all</span>* vectors perpendicular to $U$.
+
+## 7.3 Basic concepts {#section-61}
+
+ If I word the problems in different ways from the homework or quizzes, can you still do them?
+
+::: {.math-block .example}
+
+**Example 109.**  If $v$ is in the null space of $A$, $v\neq 0$, is $v$ an eigenvector of $A+5I$? What is the corresponding eigenvalue?
+
+:::
+
+<span style="color:#02650f">Since $(A+5I)v=5v$, so yes, $v$ is an eigenvector corresponding to the eigenvalue $5$.</span>
+
+::: {.math-block .example}
+
+**Example 110.**  Let $v_1,v_2,v_3$ be vectors in $\mathbb{R}^4$. How to find a basis of $W^\perp$, where 
+
+$$
+W={\rm span}\{ v_1,v_2,v_3\}.
+$$
+
+:::
+
+### Different level of abstracts {#section-62}
+
+For a linear system, we can describe the same concept through the following three levels of abstraction.
+
+1.  Existence, uniqueness, consistency, inconsistency;
+
+2.  Linear combination, span, linear dependence, linear independence;
+
+3.  one-to-one, onto.
+
+The best place to study the relations among the above concepts is in the Invertible Matrix Theorem. 
+
+### Linear transformation {#section-63}
+
+ Do you know the definition of *linear transformation*?
+
+::: {.math-block .example}
+
+**Example 111.**  Let $\mathscr P_n$ be the space of polynomials of degree $\leq n$. Prove that 
+
+$$
+T: \mathscr P_5\to \mathscr P_4, f\mapsto f''
+$$
+
+is a linear transformation. 
+
+:::
+
+### The matrix corresponding to  a linear transformation   {#section-64}
+
+1.  <span style="color:#02650f">Standard matrix for the linear transformation (page 76);</span>
+
+2.   <span style="color:#0000cc">The matrix of the linear transformation relative to the bases (page 297).</span>
+
+::: {.math-block .example}
+
+**Example 112.**  Let $T: \mathscr P_3\to \mathscr P_3$ by $T(f)=f'+2f$. Assume that $\mathfrak B=\{1,t,2t^2, t^3\}$ is a basis for the domain and $\mathfrak C=\{2, 1+t, t^2+t, t^3\}$ is  a basis for the codomain of the transformation $T$. Find the matrix $M$ of the linear transformation relative to the bases $\mathfrak B$ and $\mathfrak C$. 
+
+:::
+
+### Subspaces, column and null spaces {#section-65}
+
+The definition of the  subspace <span style="color:#b40000">(page 155)</span>.
+The most important example: let $\{v_1,\cdots, v_p\}$ be vectors in $\mathbb R^n$. Then
+
+$$
+{\rm span}\{v_1,\cdots, v_p\},
+$$
+
+which is the set of all linear combination of $v_1,\cdots,v_p$, is a subspace of $\mathbb{R}^n$. 
+
+Let $A$ be an $m\times n$ matrix. Then we can define (<span style="color:#b40000">page 156</span>)
+
+1.  the column space ${\rm Col}(A)$, which is a subspace of $\mathbb{R}^m$, spanned by the columns of $A$. 
+
+2.  the null space ${\rm Nul}(A)$, which is a subspace of $\mathbb{R}^n$, containing the solutions of the homogeneous equation
+
+    $$
+    Ax=0
+    $$
+
+3.  the row space ${\rm Row}(A)$, by its name, should be the space spanned by the rows of the matrix. It is a subspace of $\mathbb{R}^n$.
+
+We have
+
+$$
+({\rm Row}\, A)^\perp={\rm Nul}\,(A),\quad
+({\rm Col}\,(A))^\perp={\rm Nul}\,A^T
+$$
+
+### Dot product, norm, distance, and angle {#section-66}
+
+ Do you know the relations among the concepts of dot product, norm, and distance?
+
+ What is an orthogonal basis, what is an orthonormal basis? How to compute the weights (coordinates) with respect to the orthogonal basis (orthonormal basis)?
+
+## 7.4 Basic results {#section-67}
+
+::: {.math-block .theorem}
+
+**Theorem 49 (The Rank Theorem).**  Let $A$ be an $m\times n$ matrix. Then
+
+$$
+{\rm rank}\,A+\dim{\rm Nul}(A)=n.
+$$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 50 (Invertible Matrix Theorem).**  The IMT (Invertible Matrix Theorem) contains 20 equivalent statements. These statements are very useful. In particular, the statements implies that, for a linear transformation
+
+$$
+T:\mathbb{R}^n\to \mathbb{R}^n,
+$$
+
+it is onto if and only if it is one-to-one. 
+
+:::
+
+### Basis, dimension, and rank {#section-68}
+
+What is the definition of a basis for a subspace, what is the standard basis?
+
+What is the dimension of a subspace? Why the number of vectors in a basis is always the same (independent of the choice of basis?)
+
+What is the rank?
+
+$$
+{\rm rank}\,(A)=\dim{\rm Col}(A).
+$$
+
+<span style="color:#0000cc">A question, can the rank be defined by  $\dim {\rm Row}(A)$ as well?</span>
+
+Answer: yes! Since both ${\rm Row}(A)$ and ${\rm Nul}(A)$ are subspaces of $\mathbb{R}^n$, and since 
+
+$$
+({\rm Row}(A))^\perp={\rm Nul}(A),
+$$
+
+we have
+
+$$
+\dim{\rm Row}(A)+\dim{\rm Nul}(A)=n.
+$$
+
+On the other hand, the rank theorem implies that
+
+$$
+\dim{\rm Col}(A)+\dim{\rm Nul}(A)=n.
+$$
+
+Therefore
+
+$$
+\dim{\rm Col}(A)=\dim{\rm Row}(A).
+$$
+
+(The above is the advanced topic, not required for the exam though.)
+
+## 7.5 Basic computations {#section-69}
+
+The most important basic computation is the <span style="color:#b40000">row operation</span>, which is the foundation of linear algebra. Other important basic computations are listed below. 
+
+### Matrix multiplication {#section-70}
+
+<span style="color:#0000cc">(One should know matrix addition, scalar multiplication, vector addition, scalar multiplication as well.)</span>
+
+If $A$ is an $m\times n$ matrix, and if $B$ is an $n\times k$ matrix, then we can form a matrix $C$ of the size $m\times k$ where $C=AB$. $C$ can be computed by the so-called
+<span style="color:#b40000">row-column rule</span>, which is a generalization of the <span style="color:#b40000">row-vector rule</span>. 
+
+If $B=[b_1,\cdots, b_k]$, then
+
+$$
+AB=[Ab_1,\cdots, Ab_k].
+$$
+
+Some facts:
+
+1.  In general, $AB$ is not defined, unless the number of columns of $A$ is equal to the number of rows of $B$. 
+
+2.  Even $AB$ is defined, $BA$ may not be defined. 
+
+3.  Even both $AB$ and $BA$ are defined (which happens if $A$ is of $m\times n$ and $B$ is of $n\times m$), they may not be of the same size. 
+
+4.  Even both $AB$ and $BA$ are defined and of the same size, they may not be equal, that is, in general $AB\neq BA$.
+
+5.  However, we always have the associativity law
+
+    $$
+    (AB)C=A(BC)
+    $$
+
+    for any $A,B,C$, whenever the multiplications are defined (that is,  the number of columns of $A$  =  the number of rows of $B$ and the number of columns of $B$ = the number of rows of $C$).
+
+### Other matrix operations {#section-71}
+
+1.  $A\mapsto A^T$
+
+2.  $A\to A^2\to A^3\to\cdots\to A^k$
+
+### The inverse of a martrix {#section-72}
+
+If $A$ is invertible, then  $A^{-1}\cdot A=A\cdot A^{-1}=I$.
+
+For a $2\times 2$ matrix, if 
+
+$$
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix}
+$$
+
+and if $ad-bc\neq 0$, then $A$ is invertible, and 
+
+$$
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix} d& -b\\-c&a\end{bmatrix}.
+$$
+
+For an $n\times n$ matrix $A$, we form the augmented matrix $[A,I]$, and we do the row operations to obtain the reduced echelon form
+
+$$
+[A,I]\to\cdots\to [P,Q].
+$$
+
+1.  if $P=I$, then $A$ is invertible, and $Q=A^{-1}$
+
+2.  if $P\neq I$, then $A$ is not invertible.
+
+### The basis of column space and null space {#section-73}
+
+1.  Know how to compute the basis of a column space;
+
+2.  Know how to compute the basis of a null space;
+
+3.  Can you compute the basis of a row space?
+
+### The coordinates of a vector with respect to a basis {#section-74}
+
+<span style="color:#0000cc">A more general question: </span>  how to compute the matrix of a linear transformation relative to the corresponding bases?
+
+### The determinant {#section-75}
+
+The determinant 
+of a $2\times 2$ matrix can be defined by 
+
+$$
+\det\begin{bmatrix} a&c\\b&d\end{bmatrix} =ad-bc.
+$$
+
+For bigger sized matrices, the determinant is defined by using  the co-factor expansion. 
+
+The method of using row operation is a more effective way to compute the determinant.
+
+ 
+In general, you need to be able to use the hybrid method (combining both methods) to compute the determinant.
+
+We also have
+
+1.  $\det(A)=\det(A^T)$;
+
+2.  $\det(AB)=\det(A)\cdot\det(B)$;
+
+3.  in general, $\det(A+B)\neq \det(A)+\det(B)$. 
+
+### Eigenvalues and Eigenvectors {#section-76}
+
+1.  One should be able to compute the eigenvalues of a $2\times 2$ matrix.
+
+2.  One should be able to compute the eigenvalues of special matrices like triangle matrices, diagonalized matrices. If the characteristic equation is provided, one should be able to factorize and find the roots. 
+
+3.  for other general matrices, eigenvalues will be provided to you in the exam.
+
+4.  One needs to be able to find eigenvectors if eigenvalues are known. How to find the eigenspace, the dimension of eigenspace?
+
+5.  One should be able to answer the question whether a matrix is diagonalizable, if all the information of eigenvalues and eigenvectors are known, in case the matrix is diagonalizable, find the diagonalization. 
+
+### Diagonalization {#section-77}
+
+<span style="color:#0000cc">Question: </span> How to diagonalizing a matrix? What is the algebraic multiplicity and geometric multiplicity of an eigenvalue?
+
+::: {.math-block .theorem}
+
+**Theorem 51.**  A matrix is diagonalizable if and only if there are $n$ linearly independent eigenvectors. This happens if the algebraic multiplicity is equal to the geometric multiplicity. In layman's words, we should have “enough” eigenvectors. 
+
+:::
+
+  Concepts to review: <span style="color:#b40000">multiplicity=algebraic multiplicity of eigenvalues, geometric multiplicity of eigenvalues. If for every eigenvalue, the corresponding algebraic multiplicity is equal to the geometric multiplicity, can you diagonalize the matrix?  Yes.  If  for one of the eigenvalues, the algebraic multiplicity is strictly bigger than the geometric multiplicity, can you diagonalize the matrix?  No. </span>
+
+ It is impossible for the geometric multiplicity to be strictly bigger than the algebraic multiplicity. 
+
+ 
+
+### What is an orthogonal basis? An orthonormal basis? {#section-78}
+
+If $\mathcal B=\{v_1,\cdots,v_n\}$ is an orthogonal (orthonormal, resp)   basis, how to find the coordinates of a vector with respect to that basis? Do we still need to solve a general linear equation, or can we use the concept of inner product to find them?
+
+::: {.math-block .example}
+
+**Example 113.** 
+Apply the Gram–Schmidt process to the vectors
+
+$$
+\mathbf v_1=
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix},
+\qquad
+\mathbf v_2=
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix},
+\qquad
+\mathbf v_3=
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}.
+$$
+
+Find an orthonormal basis for
+
+$$
+\operatorname{span}\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+**Solution.** 
+Let
+
+$$
+\mathbf u_1=\mathbf v_1=
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}.
+$$
+
+Then
+
+$$
+\|\mathbf u_1\|=\sqrt{2},
+\qquad
+\mathbf e_1=\frac{\mathbf u_1}{\|\mathbf u_1\|}
+=\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}.
+$$
+
+For the second vector,
+
+$$
+\mathbf u_2
+=
+\mathbf v_2-\operatorname{proj}_{\mathbf u_1}\mathbf v_2.
+$$
+
+Since
+
+$$
+\operatorname{proj}_{\mathbf u_1}\mathbf v_2
+=
+\frac{\mathbf v_2\cdot\mathbf u_1}
+{\mathbf u_1\cdot\mathbf u_1}\mathbf u_1
+=
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix},
+$$
+
+we obtain
+
+$$
+\mathbf u_2
+=
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix}
+-
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}
+=
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+$$
+
+We may replace $\mathbf u_2$ by the scalar multiple
+
+$$
+\mathbf u_2=
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+$$
+
+Therefore,
+
+$$
+\|\mathbf u_2\|=\sqrt{6},
+\qquad
+\mathbf e_2
+=
+\frac{1}{\sqrt{6}}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+$$
+
+For the third vector,
+
+$$
+\mathbf u_3
+=
+\mathbf v_3
+-\operatorname{proj}_{\mathbf u_1}\mathbf v_3
+-\operatorname{proj}_{\mathbf u_2}\mathbf v_3.
+$$
+
+We have
+
+$$
+\operatorname{proj}_{\mathbf u_1}\mathbf v_3
+=
+\frac{\mathbf v_3\cdot\mathbf u_1}
+{\mathbf u_1\cdot\mathbf u_1}\mathbf u_1
+=
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix},
+$$
+
+and
+
+$$
+\operatorname{proj}_{\mathbf u_2}\mathbf v_3
+=
+\frac{\mathbf v_3\cdot\mathbf u_2}
+{\mathbf u_2\cdot\mathbf u_2}\mathbf u_2
+=
+\frac{1}{6}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+$$
+
+Thus
+
+$$
+\begin{aligned}
+\mathbf u_3
+&=
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+-
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}
+-
+\frac{1}{6}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix} \\
+&=
+\frac{2}{3}
+\begin{bmatrix}
+-1\\
+1\\
+1
+\end{bmatrix}.
+\end{aligned}
+$$
+
+We may replace $\mathbf u_3$ by
+
+$$
+\mathbf u_3=
+\begin{bmatrix}
+-1\\
+1\\
+1
+\end{bmatrix}.
+$$
+
+Hence
+
+$$
+\|\mathbf u_3\|=\sqrt{3},
+\qquad
+\mathbf e_3
+=
+\frac{1}{\sqrt{3}}
+\begin{bmatrix}
+-1\\
+1\\
+1
+\end{bmatrix}.
+$$
+
+Therefore, an orthonormal basis is
+
+$$
+\left\{
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix},
+\frac{1}{\sqrt{6}}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix},
+\frac{1}{\sqrt{3}}
+\begin{bmatrix}
+-1\\
+1\\
+1
+\end{bmatrix}
+\right\}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 114.** 
+Find a QR decomposition
+
+$$
+A=QR
+$$
+
+of the matrix
+
+$$
+A=
+\begin{bmatrix}
+1&1\\
+1&0\\
+0&1
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+**Solution.** 
+Let the columns of $A$ be
+
+$$
+\mathbf a_1=
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix},
+\qquad
+\mathbf a_2=
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix}.
+$$
+
+Using the Gram–Schmidt process,
+
+$$
+\mathbf q_1
+=
+\frac{\mathbf a_1}{\|\mathbf a_1\|}
+=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}.
+$$
+
+Next,
+
+$$
+\begin{aligned}
+\mathbf u_2
+&=
+\mathbf a_2-(\mathbf q_1^T\mathbf a_2)\mathbf q_1\\
+&=
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix}
+-
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}\\
+&=
+\frac{1}{2}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+\end{aligned}
+$$
+
+Since
+
+$$
+\|\mathbf u_2\|=\frac{\sqrt{6}}{2},
+$$
+
+we obtain
+
+$$
+\mathbf q_2
+=
+\frac{\mathbf u_2}{\|\mathbf u_2\|}
+=
+\frac{1}{\sqrt{6}}
+\begin{bmatrix}
+1\\
+-1\\
+2
+\end{bmatrix}.
+$$
+
+Therefore,
+
+$$
+Q=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}\\
+\frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{6}}\\
+0&\frac{2}{\sqrt{6}}
+\end{bmatrix}.
+$$
+
+Since $R=Q^TA$, we have
+
+$$
+R=
+\begin{bmatrix}
+\sqrt{2}&\frac{1}{\sqrt{2}}\\
+0&\frac{\sqrt{6}}{2}
+\end{bmatrix}.
+$$
+
+Hence
+
+$$
+A=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}\\
+\frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{6}}\\
+0&\frac{2}{\sqrt{6}}
+\end{bmatrix}
+\begin{bmatrix}
+\sqrt{2}&\frac{1}{\sqrt{2}}\\
+0&\frac{\sqrt{6}}{2}
+\end{bmatrix}.
+$$
+
+ $\square$
+
+:::
+
+## 7.6 Additional True-False questions {#section-79}
+
+True or False and Explain why? 
+
+1.  A homogeneous linear system must be consistent.
+
+2.   Multiplying a linear equation through by zero is an acceptable elementary row operation.
+
+3.  A single linear equation with two or more unknowns must always have infinitely many solutions. 
+
+4.  If $B$ has a column of zeros, then so does $AB$ if this product is defined.
+
+5.  $\det(A+B)=\det(A) + \det(B)$ for any $n\times n$ matrices $A,B$.
+
+6.  If the set of vectors $\{v_1,\cdots, v_n\}$ is linearly independent, then 
+
+    $$
+    \{kv_1, kv_2, \cdots, kv_n\}
+    $$
+
+      is also linearly independent for every nonzero scalar $k$.
+
+7.  Let $a_{ij}$ be the entries of a square matrix $A$. If  $a_{ij}>0$ for all $i,j$, then $A$ is invertible. 
+
+8.  If $A^2$ is invertible, so is $A$.
+
+9.  A finite set that contains $0$  is linearly dependent.
+
+10.  A set containing a single vector is linearly independent. 
+
+11.  Does  the vector space of polynomials of degree less than or equal to $n$  have a basis consisting of polynomials with the same degree?
+
+12.  If $T:\mathbb{R}^3\to\mathbb{R}$ is a linear transformation, then $T(x,y,z)=ax+by+cz$ for some $a,b,c\in\mathbb{R}$.
+
+13.  If two non-zero vectors are linearly independent, then one must be a scalar multiple of the other. 
+
+14.  If a system of homogeneous linear equations is overdetermined (i.e. it has more equations than variables), it must have only the trivial solution.
+
+15.  If  $A$ and $B$ are two matrices such that $AB=I$, then $BA=I$.
+
+16.  A basic variable in a linear system is a variable that corresponds to a pivot column in the coefficient matrix.
+
+17.  If a system of equations has more than one solution, it has infinitely many solutions.
+
+18.  Let $A$ be a $2\times 3$ matrix. Then ${\rm Nul}(A)$ is a subspace of $\mathbb{R}^2$.
+
+19.  If $V$ is a subspace of $\mathbb{R}^n$, then every basis for $V$ must have the same number of vectors.
+
+20.  If $V$  is a vector space of dimension $d$, and $\{v_1,\cdots,v_d\}$  are $d$  linearly independent vectors in $V$, then they must span $V$.
+
+21.  Assume that $A,B$ are square matrices of the same size. Then $AB+B^TA^T$ is always symmetric. Here a matrix $X$ is symmetric if $X^T=X$. 
+
+22.  If $\det(A^2)+2\det(A)+\det(I)=0$, then $A$ is invertible. 
+
+23.  $\{(x,y)\in\mathbb{R}^2\mid x^2+y^2=0\}$ is a subspace of $\mathbb{R}^2$. 
+
+24.  $\{\cos^2(t),\sin^2(t),\cos(2t)\}$ is linearly dependent. 
+
+25.  If $A$ is similar to $B$, then $\det(A)=\det(B)$.
+
+26.  If $A$ is similar to $B$, then $A$ and $B$ have the same eigenvectors.
+
+27.  Every matrix has a real eigenvalue.
+
+28.  Every matrix has a unique reduced row echelon form.
+
+29.  Let $v$ be an $n$-dimensional vector. Then $v^Tv$ is a diagonalizable matrix. 
+
+30.  If $A$ is a $4\times 6$  matrix, then the maximum possible number of leading $1$'s in its reduced row echelon form is $4$.
+
+### Answers to the TF questions {#section-80}
+
+TFFTF, TFTTF, TTTFF, TTFTT, TTTTT, FFTTT.

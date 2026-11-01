@@ -1,0 +1,14 @@
+MATH 3A WEBSITE — CHAPTER FILES
+
+Open this entire folder in VS Code.
+Edit chapter-1.qmd, chapter-2.qmd, chapter-3.qmd, chapter-5.qmd,
+chapter-6.qmd, or chapter-7.qmd (Final Exam Review Guide).
+There is no Chapter 4 in the original notes; numbering is preserved.
+index.qmd is now the overview page. subject-index.qmd is the subject index.
+
+Double-click Preview.command to start the local browser preview.
+Save a chapter file: the local preview rebuilds automatically.
+Press Control+C in the preview Terminal to stop it.
+
+Build.command creates the HTML website in _site.
+Online publishing is not configured yet.

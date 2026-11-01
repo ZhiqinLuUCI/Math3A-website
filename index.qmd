@@ -1,0 +1,15 @@
+---
+title: "UCI Math 3A Lecture Notes"
+author: "Zhiqin Lu"
+subtitle: "11th edition · Linear Algebra"
+---
+
+Choose a chapter below. Each chapter has its own table of contents.
+
+- [1. Linear Equations in Linear Algebra](chapter-1.qmd)
+- [2. Matrix Algebra](chapter-2.qmd)
+- [3. Determinants](chapter-3.qmd)
+- [5. Eigenvalues and eigenvectors](chapter-5.qmd)
+- [6. Orthogonality and Least Squares](chapter-6.qmd)
+- [7. Final Exam Review Guide](chapter-7.qmd)
+- [Subject Index](subject-index.qmd)

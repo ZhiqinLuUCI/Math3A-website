@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Math 3A · Zhiqin Lu"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Lecture Notes
+  sidebar:
+    style: docked
+    contents:
+      - href: index.qmd
+        text: Overview
+      - href: chapter-1.qmd
+        text: "1. Linear Equations in Linear Algebra"
+      - href: chapter-2.qmd
+        text: "2. Matrix Algebra"
+      - href: chapter-3.qmd
+        text: "3. Determinants"
+      - href: chapter-5.qmd
+        text: "5. Eigenvalues and eigenvectors"
+      - href: chapter-6.qmd
+        text: "6. Orthogonality and Least Squares"
+      - href: chapter-7.qmd
+        text: "7. Final Exam Review Guide"
+      - href: subject-index.qmd
+        text: Subject Index
+  page-navigation: true
+  search: true
+
+format:
+  html:
+    lang: en
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"
+    include-in-header: math-config.html
+    link-external-newwindow: false

@@ -1,0 +1,574 @@
+---
+title: "3. Determinants"
+---
+
+<span id="section-38"></span>
+
+## 3.1 Introduction to Determinants {#section-39}
+
+Recall that for a $2\times 2$ matrix
+
+$$
+\begin{bmatrix}
+a&b\\c&d
+\end{bmatrix},
+$$
+
+it is invertible if and only if $ad-bc\neq 0$. For higher order square matrices, do we have a numerical criterion for them to be invertible?
+
+Yes, and such a numerical criterion is related to  the concept called *<span style="color:#b40000">determinant</span>*. 
+
+The $2\times 2$ determinant is defined by
+
+$$
+\det\begin{bmatrix}
+a&b\\c&d
+\end{bmatrix}=ad-bc.
+$$
+
+For $n\times n$ matrices, the determinant is defined by a *<span style="color:#b40000">recursive</span>* <span id="index-68"></span> formula. We begin with a $3\times 3$ matrix.
+
+Let
+
+$$
+A=\begin{bmatrix}
+1&2&3\\4&5&6\\7&8&9
+\end{bmatrix}.
+$$
+
+We define 
+
+$$
+\det A=1\cdot \det \begin{bmatrix}
+5&6\\8&9
+\end{bmatrix}
+-
+2\cdot \det \begin{bmatrix}
+4&6\\7&9
+\end{bmatrix}
++
+3\cdot \det \begin{bmatrix}
+4&5\\7&8
+\end{bmatrix}.
+$$
+
+In general, if 
+
+$$
+A=
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}
+\end{bmatrix},
+$$
+
+then
+
+$$
+\det A=a_{11}\cdot \det \begin{bmatrix}
+a_{22}&a_{23}\\a_{32}&a_{33}\end{bmatrix}
+-a_{12}\cdot \det \begin{bmatrix}
+a_{21}&a_{23}\\a_{31}&a_{33}\end{bmatrix}
++a_{13}\cdot \det \begin{bmatrix}
+a_{21}&a_{22}\\a_{31}&a_{32}
+\end{bmatrix}.
+$$
+
+Now let $A$ be an $n\times n$ matrix. Let $A_{ij}$ be the submatrix obtained by deleting the $i$-th row and the $j$-th column. $A_{ij}$ is an $(n-1)\times (n-1)$ matrix.
+
+::: {.math-block .definition}
+
+**Definition 18.** 
+For $n\geq 2$, the <span style="color:#b40000">determinant</span>  of an $n\times n$ matrix $A=[a_{ij}]$ is the sum of $n$ terms of the form $\pm a_{1j}\det A_{1j}$, with plus and minus signs alternating, where the entries $a_{11},\cdots, a_{1n}$ are from the first row of $A$. In symbols, we have
+
+$$
+\det A=a_{11}\det A_{11}-a_{12}\det A_{12}+\cdots +(-1)^{n+1} a_{1n}\det A_{1n}
+=\sum_{j=1}^n (-1)^{1+j} a_{1j}\det A_{1j}.
+$$
+
+:::
+
+::: {.math-block .example}
+
+**Example 52.** 
+Compute the determinant of
+
+$$
+A=\begin{bmatrix}
+1&5&0\\2&4&-1\\0&-2&0
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We use the formula to obtain
+
+$$
+\begin{aligned}
+&\det A=1\cdot \det \begin{bmatrix}
+4&-1\\-2&0
+\end{bmatrix}
+-
+5\cdot \det \begin{bmatrix}
+2&-1\\0&0
+\end{bmatrix}
++0\cdot \det\begin{bmatrix}
+2&4\\0&-2
+\end{bmatrix}\\
+&=1\cdot(0-2)-5\cdot (0-0)+0\cdot (-4-0)=-2.
+\end{aligned}
+$$
+
+ $\square$
+
+:::
+
+It is more convenient to write the definition of $\det A$ in a slightly different form. The ($i,j$)-th *<span style="color:#b40000">cofactor</span>*  
+ <span id="index-69"></span>
+of $A$ is the number $C_{ij}$ given by 
+
+$$
+C_{ij}=(-1)^{i+j}\det A_{ij}.
+$$
+
+Thus we can write
+
+$$
+\det A=a_{11} C_{11}+a_{12} C_{12}+\cdots+ a_{1n} C_{1n}.
+$$
+
+The above formula is called the *<span style="color:#b40000">cofactor expansion</span>* <span id="index-70"></span>  across the first row of $A$. In fact, we can expand the determinant of a matrix through any row or column.
+
+::: {.math-block .theorem}
+
+**Theorem 22.** 
+The determinant of an $n\times n$ matrix $A$ can be computed by a cofactor expansion across any row or down any column. The expansion across the $i$-th row is
+
+$$
+\det A=a_{i1} C_{i1}+\cdots+a_{in} C_{in}.
+$$
+
+The cofactor expansion down the $j$-th column is 
+
+$$
+\det A=a_{1j}C_{1j}+\cdots+a_{nj} C_{nj}.
+$$
+
+:::
+
+::: {.math-block .example}
+
+**Example 53.** 
+Use a cofactor expansion across the third column to compute $\det A$, where $A$ is defined in the previous example.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We compute 
+
+$$
+\det A=(-1)\cdot (-1)^{2+3}\cdot\det\begin{bmatrix}
+1&5\\0&-2
+\end{bmatrix}=-2.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 54.** 
+Compute $\det A$, where
+
+$$
+A=
+\begin{bmatrix}
+3&-7&8&9&-6\\
+0&2&-5&7&3\\
+0&0&1&5&0\\
+0&0&2&4&-1\\
+0&0&0&-2&0
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We use cofactor expansion
+
+$$
+\begin{array}{llll}
+\det A=3\cdot  
+\det\begin{bmatrix}  2&-5&7&3\\
+0&1&5&0\\
+0&2&4&-1\\
+0&0&-2&0\end{bmatrix}
+&&& \text {\color{#703080}{\scriptsize expanding using the first column}}\\
+=3\cdot 2\cdot\det
+\begin{bmatrix} 1&5&0\\2&4&-1\\0&-2&0 \end{bmatrix}
+&&&\text{\color{#703080}{\scriptsize exapnding using the first column again}}\\
+=6\cdot (-2)\cdot (-1)^{3+2}\cdot\det \begin{bmatrix} 1&0\\2&-1\end{bmatrix}.
+&&& \text{\color{#703080}{\scriptsize expanding using the third row}}\\
+=-12.
+\end{array}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 23.** 
+If $A$ is a triangular matrix, then $\det A$ is the product of the entries on the main diagonal of $A$.
+
+:::
+
+## 3.2 Properties of determinant {#section-40}
+
+It is not practical to compute the determinant using its recursive definition, if $n\geq 5$. In this section, we shall 
+use row operations to reduce the complexity. 
+
+::: {.math-block .theorem}
+
+**Theorem 24 (Row operations).** Let $A$ be a square matrix.
+
+1.  if a multiple of one row of $A$ is added to another  row to produce a matrix $B$, then $\det B=\det A$;
+
+2.  if two rows of $A$ are interchanged to produce $B$, then $\det B=-\det A$;
+
+3.  if one row of $A$ is multiplied by $k$ to produce $B$, then $\det B=k\cdot \det A$.
+
+:::
+
+::: {.math-block .example}
+
+**Example 55.** 
+Compute $\det A$, where
+
+$$
+A=\begin{bmatrix}  1&-4&2\\-2&8&-9\\-1&7&0\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Using the above theorem, we use $1$ on the top left position to eliminate the rest of the entries in the first column, and  we use the co-factor expansion with respect to the first column to get 
+
+$$
+\det A=\det\begin{bmatrix} 1&-4&2\\0&0&-5\\0&3&2 \end{bmatrix}
+=1\cdot (-1)\cdot 3\cdot (-5)=15.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 56.** 
+Compute $\det A$, where 
+
+$$
+A=
+\begin{bmatrix}  2&-8&6&8\\3&-9&5&10\\-3&0&1&-2\\
+1&-4&0&6\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\begin{aligned}
+&\det A=2\det\begin{bmatrix} 1&-4&3&4\\3&-9&5&10\\-3&0&1&-2\\1&-4&0&6 \end{bmatrix}=2\det
+\begin{bmatrix} 1&-4&3&4\\0&3&-4&-2\\0&-12&10&10\\0&0&-3&2  \end{bmatrix}\\
+&=2\det \begin{bmatrix}  3&-4&-2\\
+ -12&10&10\\ 0&-3&2 \end{bmatrix}
+=
+2
+\det\begin{bmatrix} 3 &-4 &-2\\0&-6&2\\0&-3&2\end{bmatrix}\\
+&=6\det\begin{bmatrix}-6&2\\-3&2\end{bmatrix}=-36.
+\end{aligned}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 25.** 
+A square matrix $A$ is invertible if and only if $\det A\neq 0$.
+
+:::
+
+Note that whether or not the determinant of a matrix is not zero is invariant under the row operations. 
+
+The echelon form of a square matrix is always an upper triangular matrix. Thus the determinant of it is
+
+1.  $\neq 0$, if and only if each column is a pivot column;
+
+2.  $=0$, if and only if one of the columns is not a pivot column.
+
+::: {.math-block .example}
+
+**Example 57.** 
+Compute $\det A$, where
+
+$$
+A=
+\begin{bmatrix}
+3&-1&2&-5\\0&5&-3&-6\\-6&7&-7&4\\-5&-8&0&9
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\det A=\begin{bmatrix}
+3&-1&2&-5\\0&5&-3&-6\\0&5&-3&-6\\-5&-8&0&9
+\end{bmatrix}=0,
+$$
+
+because there are two rows that are the same. 
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 58.** 
+Compute $\det A$, where
+
+$$
+A=\begin{bmatrix}
+0&1&2&-1\\2&5&-7&3\\0&3&6&2\\-2&-5&4&-2
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.**  We have
+
+$$
+\begin{aligned}
+&\det A=\det \begin{bmatrix}
+0&1&2&-1\\2&5&-7&3\\0&3&6&2\\0&0&-3&1
+\end{bmatrix}
+=-2\det \begin{bmatrix}
+1&2&-1\\3&6&2\\0&-3&1
+\end{bmatrix}\\
+&=-2\det \begin{bmatrix}
+1&2&-1\\0&0&5\\0&-3&1
+\end{bmatrix}
+=(-2)\cdot 15=-30.
+\end{aligned}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 26.** 
+If $A$ is an $n\times n$ matrix, then $\det A=\det A^T$.
+
+:::
+
+Therefore, any “column operations" change the determinant in the same way as the row operations. 
+
+::: {.math-block .theorem}
+
+**Theorem 27 (Multiplicative Property).** <span id="ref-6"></span>
+If $A$ and $B$ are $n\times n$ matrices, then $\det AB=(\det A)(\det B)$.
+
+:::
+
+::: {.math-block .example}
+
+**Example 59.** 
+Verify the above theorem for 
+
+$$
+A=\begin{bmatrix}
+6&1\\3&2
+\end{bmatrix},\quad 
+B=\begin{bmatrix}
+4&3\\1&2
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+AB=\begin{bmatrix}
+6&1\\3&2
+\end{bmatrix}\cdot \begin{bmatrix}
+4&3\\1&2
+\end{bmatrix}=
+\begin{bmatrix}
+25&20\\14&13
+\end{bmatrix},
+$$
+
+and thus
+
+$$
+\det (AB)=45.
+$$
+
+On the other hand, $\det A=9$, $\det B=5$. Thus we have verified that 
+
+$$
+\det(AB)=\det A\cdot \det B.
+$$
+
+We also have 
+
+$$
+BA=\begin{bmatrix}
+4&3\\1&2
+\end{bmatrix}\cdot \begin{bmatrix}
+6&1\\3&2
+\end{bmatrix}
+=\begin{bmatrix} 33&10\\12&5\end{bmatrix}.
+$$
+
+We also see that 
+
+$$
+\det(BA)=45.
+$$
+
+ $\square$
+
+:::
+
+ Using Theorem [27](#ref-6), we have
+
+$$
+\det A^k=(\det A)^k.
+$$
+
+The following are additional examples and techniques in computing the determinant of a matrix. 
+
+::: {.math-block .example}
+
+**Example 60.** 
+If $A$ is an invertible matrix, then what is $\det A^{-1}$?
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+A\cdot A^{-1}=I.
+$$
+
+Thus
+
+$$
+1=\det I=\det (A\cdot A^{-1})=\det A\cdot \det A^{-1}.
+$$
+
+Hence 
+
+$$
+\det A^{-1}=(\det A)^{-1}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 61.** 
+If $A$ is a square matrix and if $A^2=I$, is $A$ invertible?
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Answer: Yes. Since $1=\det I=\det A^2=(\det A)^2$, we conclude that $\det A=\pm 1\neq 0$. Thus $A$ is invertible.
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 62.** 
+Compute $\det A$, where
+
+$$
+A=\begin{bmatrix}
+1&a&a^2\\1&b&b^2\\1&c&c^2
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\begin{aligned}
+&\det A=\det \begin{bmatrix}
+1&a&a^2\\1&b&b^2\\1&c&c^2
+\end{bmatrix}=\det \begin{bmatrix}
+1&a&a^2\\0&b-a&b^2-a^2\\0&c-a&c^2-a^2
+\end{bmatrix}\\
+&=\det \begin{bmatrix}
+b-a&b^2-a^2\\c-a&c^2-a^2
+\end{bmatrix}=(b-a)(c-a)\det \begin{bmatrix}
+1&b+a\\1&c+a
+\end{bmatrix}\\&=(b-a)(c-a)(c-b).
+\end{aligned}
+$$
+
+ $\square$
+
+:::
+
+The matrix is invertible if and only if $a,b,c$ are distinct.  
+
+::: {.math-block .example}
+
+**Example 63.** 
+Let $A$ be an $n\times n$ matrix with $n\geq 2$. Then $\det \,(2A)=2\det (A)$ – true or false?
+
+:::
+
+*<span style="color:#b40000">We will skip Chapter 4.</span>*

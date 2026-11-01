@@ -1,0 +1,1325 @@
+---
+title: "2. Matrix Algebra"
+---
+
+<span id="section-26"></span>
+
+## 2.1 Matrix operations {#section-27}
+
+There are three ways to represent a matrix. 
+
+1.  A matrix can just  be represented by a capital letter $A$. This is the simpliest way but gives the least information of the matrix.
+
+2.  A matrix can be  written as 
+
+    $$
+    A=[a_1,\cdots,a_n],
+    $$
+
+    where $a_i$ are column vectors.
+
+3.  A matrix can be written in the most detailed form
+
+    $$
+    A=\begin{bmatrix}
+    a_{11}&\cdots& a_{1n}\\
+    \vdots&&\vdots\\
+    a_{m1}&\cdots &a_{mn}
+    \end{bmatrix}
+    $$
+
+    but it is complicated to write down.
+
+If $A$ is an $m\times n$ matrix, then $(m,n)$ is called the *size*, or the *dimension* of the matrix. 
+
+The above is the prelude of this section. 
+
+Now we  define the addition and scalar multiplication of matrices. 
+
+First, like in the case of vectors, we define that two matrices to be equal, if they have the same dimension, and the corresponding columns are equal, or in other words, all the corresponding entries of the matrices are equal. 
+
+The addition and scalar multiplication are defined similar to those for vectors. We elaborate them in the following example. 
+
+::: {.math-block .example}
+
+**Example 30.** 
+Let
+
+$$
+A=\begin{bmatrix}4&0&5\\-1&3&2\end{bmatrix},\quad
+B=\begin{bmatrix}1&1&1\\3&5&7\end{bmatrix},\quad
+C=\begin{bmatrix}2&-3\\0&1\end{bmatrix}
+$$
+
+Then
+
+$$
+\begin{aligned}
+&
+A+B=\begin{bmatrix}4&0&5\\-1&3&2\end{bmatrix}+
+\begin{bmatrix}1&1&1\\3&5&7\end{bmatrix}=
+\begin{bmatrix}5&1&6\\2&8&9\end{bmatrix}\\[1ex]
+&
+2B=2\begin{bmatrix}1&1&1\\3&5&7\end{bmatrix}=\begin{bmatrix}2&2&2\\6&10&14\end{bmatrix}\\[1ex]
+&
+A-2B=\begin{bmatrix}4&0&5\\-1&3&2\end{bmatrix}-2\begin{bmatrix}1&1&1\\3&5&7\end{bmatrix}=
+\begin{bmatrix}2&-2&3\\-7&-7&-12\end{bmatrix}
+\end{aligned}
+$$
+
+$A+C$ is not defined since $A$ and $C$ are of different sizes. 
+
+:::
+
+Similar to  the addition and scalar multiplication of vectors, we have
+
+::: {.math-block .theorem}
+
+**Theorem 8.** 
+Let $A,B$ and $C$ be matrices of the same size, and let $r$ and $s$ be scalars.
+Then we have
+
+1.  $A+B=B+A$
+
+2.  $(A+B)+C=A+(B+C)$
+
+3.  $A+0=0+A=A$
+
+4.  $A+(-A)=(-A)+A=0$, where $-A=(-1)\cdot A$
+
+5.  $r(A+B)=rA+rB$
+
+6.  $(r+s)A=rA+sA$
+
+7.  $r(sA)=(rs)A$
+
+8.  $1\cdot A=A$
+
+:::
+
+What is more interesting, however, is the *<span style="color:#b40000">matrix multiplication</span>*, <span id="index-57"></span> which we are now able to define. 
+
+Before making the formal definition, we take a look of the relation between matrix and linear transformation. 
+
+Let $A$ be an $m\times n$ matrix, and let $B$ be an $n\times k$ matrix. As is well-known, $A$ corresponds to a linear transformation
+
+$$
+T_1: \mathbb{R}^n\to \mathbb{R}^m,\quad x\mapsto Ax,
+$$
+
+and $B$ corresponds to another transformation
+
+$$
+T_2: \mathbb{R}^k\to \mathbb{R}^n,\quad x\mapsto Bx.
+$$
+
+Thus we can define $T=T_1\circ T_2: \mathbb{R}^k\to \mathbb{R}^m$.
+
+![Composition of linear transformations: T sub 2 represented by B maps R k to R n, then T sub 1 represented by A maps R n to R m.](3A-lecture-notes-assets/figure-06.svg){fig-alt="Composition of linear transformations: T sub 2 represented by B maps R k to R n, then T sub 1 represented by A maps R n to R m."}
+
+*Figure 5. The composition of two linear transformations.*
+
+So, what is the matrix corresponding to the linear transformation $T$?
+
+Let $e_1,\cdots,  e_k$ be the standard basis of $\mathbb R^k$. Then the matrix can be represented as 
+
+$$
+[T(e_1),\cdots, T(e_k)]=[T_1(T_2(e_1)),\cdots, T_1(T_2(e_k))].
+$$
+
+If we write 
+
+$$
+B=[b_1,\cdots, b_k],
+$$
+
+then
+
+$$
+B=[T_2(e_1),\cdots, T_2(e_k)].
+$$
+
+Therefore, we have
+
+$$
+[T_1(T_2(e_1)),\cdots, T_1(T_2(e_k))]=[T_1(b_1),\cdots, T_1(b_k)]
+=[Ab_1,\cdots, Ab_k].
+$$
+
+::: {.math-block .definition}
+
+**Definition 9.** 
+The multiplication $AB$, is defined by
+
+$$
+AB=[Ab_1,\cdots, Ab_k].
+$$
+
+:::
+
+An alternative way to interpret the definition of the multiplication of two matrices is: in order to define $AB$, we just need to define $(AB)x$ for any $m$-dimensional vector $x$. We compute 
+
+$$
+(AB)x=A(Bx)=A(x_1b_1+\cdots + x_k b_k)=x_1\,Ab_1+\cdots+x_k \,Ab_k.
+$$
+
+Thus
+
+$$
+AB=[Ab_1,\cdots, Ab_k].
+$$
+
+From the above definition we observe that matrix-vector  multiplication is a special case of the matrix multiplication.
+
+::: {.math-block .example}
+
+**Example 31.**  Compute $AB$, where 
+
+$$
+A=\begin{bmatrix} 2&3\\1&-5\end{bmatrix},\quad 
+B=\begin{bmatrix} 4&3&6\\1&-2&3\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+****Solution:**.** 
+Compute the indicated entries:
+
+$$
+AB=\begin{bmatrix} 2&3\\1&-5\end{bmatrix}\cdot \begin{bmatrix} 4&3&6\\1&-2&3\end{bmatrix}
+=\begin{bmatrix} *&*& \blue 2\cdot \color{#02650f} 6+\blue 3\cdot 3\\
+*&*&*\end{bmatrix}
+$$
+
+and 
+
+$$
+AB=\begin{bmatrix} 2&3\\1&-5\end{bmatrix}\cdot \begin{bmatrix} 4&3&6\\1&-2&3\end{bmatrix}
+=\begin{bmatrix} *&*& *\\
+*&\blue 1\cdot \color{#02650f} 3+\blue{(-5)}\cdot \color{#02650f} (-2)&*\end{bmatrix}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 32.** 
+Find the entry of the second row of $AB$, where 
+
+$$
+A=\begin{bmatrix} 2&-5&0\\-1&3&-4\\6&-8&-7\\-3&0&9\end{bmatrix},
+\quad B=\begin{bmatrix}
+4&-6\\7&1\\3&2
+\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+****Solution:**.** 
+Multiply the second row of $A$ by each column of $B$:
+
+$$
+\begin{bmatrix} 2&-5&0\\\blue{-1}&\blue 3&\blue {-4}\\6&-8&-7\\-3&0&9\end{bmatrix}\cdot
+\begin{bmatrix}
+\color{#02650f}4&\color{#02650f}-6\\\color{#02650f}7&\color{#02650f}1\\\color{#02650f}3&\color{#02650f}2
+\end{bmatrix}
+=\begin{bmatrix}
+*&*\\
+\color{#b40000} -4+21-12&\color{#b40000}  6+3-8\\
+*&*\\
+*&*
+\end{bmatrix}
+$$
+
+ $\square$
+
+:::
+
+Properties of the matrix multiplication. Let $I_m$ be the $m\times m$ identity matrix. 
+
+::: {.math-block .theorem}
+
+**Theorem 9.**  Let $A$ be an $m\times n$ matrix, and let $B$ and $C$ have sizes for which the indicated sums and products are defined.
+
+1.  $A(BC)=(AB)C,\quad$ (associative law of multiplication)
+
+2.  $A(B+C)=AB+AC,\quad$ (left distribution law)
+
+3.  $(B+C)A=BA+CA,\quad$ (right distributive law)
+
+4.  $r(AB)=(rA)B=A(rB),\quad$ where $r\in\mathbb R$
+
+5.  $I_mA=A=AI_n$
+
+:::
+
+::: {.math-block .remark}
+
+**Remark 1.** 
+In general, $AB\neq BA$, because
+
+1.  $AB$ or $BA$ may not be defined
+
+2.   even both $AB$ and $BA$ are defined, they may not be of the same size
+
+3.   even both $AB$ and $BA$ are of the same size, in general $AB\neq BA$
+
+:::
+
+::: {.math-block .example}
+
+**Example 33.** 
+Let
+
+$$
+A=\begin{bmatrix} 5&1\\3&-2\end{bmatrix},\quad B=
+\begin{bmatrix} 2&0\\4&3\end{bmatrix}
+$$
+
+Then $AB\neq BA$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.**  We have
+
+$$
+AB=\begin{bmatrix} 5&1\\3&-2\end{bmatrix}\cdot 
+\begin{bmatrix} 2&0\\4&3\end{bmatrix}
+=\begin{bmatrix} 14&3\\-2&-6\end{bmatrix}
+$$
+
+and
+
+$$
+BA=\begin{bmatrix} 2&0\\4&3\end{bmatrix}\cdot 
+\begin{bmatrix} 5&1\\3&-2\end{bmatrix}
+=\begin{bmatrix} 10&2\\29&-2\end{bmatrix}
+$$
+
+So $AB\neq BA$.
+ $\square$
+
+:::
+
+Other warnings: 
+
+1.   No cancellation law: $AB=AC$, and $A\neq 0$ *doesn't* imply $B=C$.
+
+2.  The existence of zero divisor: if $AB=0$, then it is *not* necessarily that $A=0$ or $B=0$
+
+The power of a matrix is defined by
+
+$$
+A^k=\underbrace{A\cdots\cdots A}_{k{\rm-times}}
+$$
+
+::: {.math-block .example}
+
+**Example 34.**  (Fibonacci Sequence) The Fibonacci Sequence $\{F_n\}$ is defined by $F_0=0, F_1=1$, and 
+
+$$
+F_n=F_{n-1}+F_{n-2}
+$$
+
+for $n\geq 2$.
+
+Let $\{G_n\}$ be a vector
+
+$$
+G_n=\begin{bmatrix} F_n\\F_{n-1}\end{bmatrix}
+$$
+
+for all $n\geq 1$.
+Then we have 
+
+$$
+G_{n+1}=\begin{bmatrix} F_{n+1}\\F_{n}\end{bmatrix}=\begin{bmatrix} F_n+F_{n-1}\\F_{n}\end{bmatrix}
+=A\cdot G_{n},
+$$
+
+where 
+
+$$
+A=\begin{bmatrix} 1&1\\1&0\end{bmatrix}.
+$$
+
+Thus
+
+$$
+G_n=A^{n-1}G_1=A^{n-1}\begin{bmatrix} 1\\0\end{bmatrix}
+$$
+
+for $n\geq 1$.
+
+:::
+
+The transpose of a matrix is defined flipping  a matrix over its diagonal, that is it switches the row and column indices of the matrix.
+
+::: {.math-block .example}
+
+**Example 35.** 
+Let
+
+$$
+A=\begin{bmatrix} a&b\\c&d\end{bmatrix},\quad B=\begin{bmatrix} -5&2\\1&-3\\0&4\end{bmatrix},\quad C=
+\begin{bmatrix} 1&1&1&1\\-3&5&-2&7\end{bmatrix}
+$$
+
+Then
+
+$$
+A^T=\begin{bmatrix} a&c\\b&d\end{bmatrix},\quad B^T=\begin{bmatrix} -5&1&0\\2&-3&4\end{bmatrix},\quad C^T=
+\begin{bmatrix} 1&-3\\1&5\\1&-2\\1&7\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 10.** 
+Let $A,B$ denote matrices whose sizes are appropriate for the following sums and products. Then we have
+
+1.  $(A^T)^T=A$
+
+2.  $(A+B)^T=A^T+B^T$
+
+3.  for any scalar $\gamma$, $(\gamma A)^T=\gamma A^T$
+
+4.  $(AB)^T=B^TA^T$
+
+:::
+
+## 2.2 The inverse of a matrix {#section-28}
+
+::: {.math-block .definition}
+
+**Definition 10.** 
+An $n\times n$ matrix $A$ is said to be <span style="color:#b40000">invertible</span>, if there is an $n\times n$ matrix  $C$ such that <span id="index-58"></span>
+
+$$
+CA=I,\quad AC=I,
+$$
+
+where $I=I_n$  is the $n\times n$ identity matrix. In this case, $C$ is an inverse matrix of $A$. In fact, $C$ is uniquely determined by $A$, and we can write $C=A^{-1}$.
+
+:::
+
+A matrix which is not invertible is sometimes called  a *<span style="color:#b40000">singular matrix</span>* <span id="index-59"></span>, and an invertible matrix is sometimes called a *<span style="color:#b40000">non-singular matrix</span>* <span id="index-60"></span>.
+
+::: {.math-block .example}
+
+**Example 36.**  If
+
+$$
+A=\begin{bmatrix} 2&5\\-3&-7\end{bmatrix},\quad C=\begin{bmatrix}
+-7&-5\\3&2\end{bmatrix}
+$$
+
+Then
+
+$$
+AC=\begin{bmatrix} 2&5\\-3&-7\end{bmatrix}\cdot \begin{bmatrix}
+-7&-5\\3&2\end{bmatrix}=\begin{bmatrix}
+1&0\\0&1\end{bmatrix}
+$$
+
+and
+
+$$
+CA=\begin{bmatrix}
+-7&-5\\3&2\end{bmatrix}\cdot \begin{bmatrix} 2&5\\-3&-7\end{bmatrix}=\begin{bmatrix}
+1&0\\0&1\end{bmatrix}
+$$
+
+Thus $C$ is the inverse of $A$, and  $C=A^{-1}$.
+
+:::
+
+For $2\times 2$ matrices, we have the following formula
+
+::: {.math-block .theorem}
+
+**Theorem 11.** 
+If 
+
+$$
+A=\begin{bmatrix} a&b\\c&d\end{bmatrix},
+$$
+
+and if $ad-bc\neq 0$, then $A$ is invertible and 
+
+$$
+A^{-1}=\frac{1}{ad-bc}\cdot \begin{bmatrix} d&-b\\-c&a\end{bmatrix}
+$$
+
+:::
+
+ The number $ad-bc$ is called the *<span style="color:#b40000">determinant</span>* <span id="index-61"></span>  of $A$, and we denote it as
+
+$$
+\det A=ad-bc
+$$
+
+::: {.math-block .example}
+
+**Example 37.**  Find the inverse of the matrix
+
+$$
+A=\begin{bmatrix}
+3&4\\5&6
+\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\det(A)=3\cdot 6-4\cdot 5=-2\neq 0.
+$$
+
+Thus $A$ is invertible, and 
+
+$$
+A^{-1}=\frac{1}{-2} \begin{bmatrix}6&-4\\-5&3  \end{bmatrix}
+=
+\begin{bmatrix} -3&2\\5/2&-3/2\end{bmatrix}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 12.** 
+Let $A$ be an invertible $n\times n$ matrix. Then for each $b$ in $\mathbb R^n$, the equation $Ax=b$ has the unique solution $x=A^{-1}b$.
+
+:::
+
+Verification: $A(A^{-1}b)=(AA^{-1})b=Ib=b$.
+
+::: {.math-block .example}
+
+**Example 38.** 
+Use the inverse matrix formula to solve the system
+
+$$
+\begin{aligned}
+& 3x_1+4x_2=3\\
+& 5x_1+6x_2=7
+\end{aligned}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Since
+
+$$
+A^{-1}=\begin{bmatrix} -3&2\\5/2&-3/2 \end{bmatrix}
+$$
+
+as in the previous example, we have
+
+$$
+x=A^{-1}b=
+\begin{bmatrix} -3&2\\5/2&-3/2 \end{bmatrix}\cdot \begin{bmatrix} 3\\7 \end{bmatrix}
+=\begin{bmatrix} 5\\-3 \end{bmatrix}
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 13.** 
+We have
+
+1.  if $A$ is an invertible matrix, then $A^{-1}$ is invertible, and
+
+    $$
+    (A^{-1})^{-1}=A.
+    $$
+
+2.  if $A,B$ are $n\times n$ invertible matrices, then so is $AB$, and we have
+
+    $$
+    (AB)^{-1}=B^{-1}A^{-1}.
+    $$
+
+3.  if $A$ is invertible, so is $A^T$, and 
+
+    $$
+    (A^T)^{-1}=(A^{-1})^T.
+    $$
+
+:::
+
+### Elementary matrices {#section-29}
+
+An elementary matrix is the one that is obtained by performing a single elementary row operation on an identity matrix. 
+
+::: {.math-block .example}
+
+**Example 39.** 
+Let
+
+$$
+E_1=\begin{bmatrix} 1&0&0\\0&1&0\\-4&0&1 \end{bmatrix},\quad
+E_2=\begin{bmatrix} 0&1&0\\1&0&0\\0&0&1 \end{bmatrix},\quad
+E_3=\begin{bmatrix} 1&0&0\\0&1&0\\0&0&5\end{bmatrix}
+$$
+
+and let 
+
+$$
+A=\begin{bmatrix} a&b&c\\d&e&f\\g&h&i \end{bmatrix}.
+$$
+
+Compute $E_1A, E_2A, E_3A$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We can verify that 
+
+$$
+E_1A=\begin{bmatrix} a&b&c\\d&e&f\\g-4a&h-4b&i-4c \end{bmatrix},\quad
+E_2A=\begin{bmatrix} d&e&f\\a&b&c\\g&h&i \end{bmatrix},\quad
+E_3A=\begin{bmatrix} a&b&c\\d&e&f\\5g&5h&5i \end{bmatrix}
+$$
+
+The conclusion: left multiplication by an elementary matrix is equivalent to the corresponding row operations. 
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 14.** 
+An $n\times n$ matrix $A$ is invertible, if and only if $A$ is row equivalent to $I_n$, and in this case, any sequence of elementary row operations that reduce $A$ to $I_n$ also transform $I_n$ to $A^{-1}$.
+
+:::
+
+Algorithm for finding $A^{-1}$: row reduces the matrix $[A,I]$ if $A$ is row equivalent to $I_n$, then $[A,I]$ is row equivalent to $[I,A^{-1}]$. Otherwise, 
+$A$ is not invertible. 
+
+::: {.math-block .example}
+
+**Example 40.** 
+Find the inverse matrix of 
+
+$$
+A=\begin{bmatrix} 0&1&2\\1&0&3\\4&-3&8 \end{bmatrix}
+$$
+
+if it exists. 
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Row-reduce the augmented matrix:
+
+$$
+\begin{aligned}
+&[A,I]\to \begin{bmatrix} 0&1&2&1&0&0\\1&0&3&0&1&0\\4&-3&8&0&0&1 \end{bmatrix}\to
+\begin{bmatrix} 1&0&3&0&1&0\\0&1&2&1&0&0\\0&-3&-4&0&-4&1 \end{bmatrix}\\
+&\to 
+\begin{bmatrix} 1&0&3&0&1&0\\0&1&2&1&0&0\\0&0&2&3&-4&1 \end{bmatrix}
+\to \begin{bmatrix}1&0&3&0&1&0\\0&1&2&1&0&0\\0&0&1&3/2&-2&1/2\end{bmatrix}\\&
+\to
+\begin{bmatrix} 1&0&0&-9/2&7&-3/2\\0&1&0&-2&4&-1\\0&0&1&3/2&-2&1/2 \end{bmatrix}.
+\end{aligned}
+$$
+
+Thus $A$ is invertible, and
+
+$$
+A^{-1}=\begin{bmatrix} -9/2&7&-3/2\\-2&4&-1\\3/2&-2&1/2 \end{bmatrix}
+$$
+
+ $\square$
+
+:::
+
+## 2.3 Characterization of Invertible Matrices {#section-30}
+
+::: {.math-block .theorem}
+
+**Theorem 15 (The Invertible Matrix Theorem).** <span id="ref-t222"></span>
+Let $A$ be a square $n\times n$ matrix. Then the following statements are equivalent, that is, all statements are either all true or all false.
+
+- **(a)** **(a)**  $A$ is an invertible matrix;
+
+- **(b)** **(b)**   $A$ is row equivalent  to the $n\times n$ identity matrix;
+
+- **(c)** **(c)**    $A$ has $n$  pivot positions;
+
+- **(d)** **(d)**   the equation $Ax=0$ has only trivial solutions;
+
+- **(e)** **(e)**   the columns  of $A$ form a linearly independent set;
+
+- **(f)** **(f)**   the linear transformation $x\mapsto Ax$ is one-to-one;
+
+- **(g)** **(g)**   the equation $Ax=b$ has at least one solution for each $b$ in $\mathbb R^n$;
+
+- **(h)** **(h)**   the columns of $A$ span $\mathbb R^n$;
+
+- **(i)** **(i)**   the linear transformation $x\mapsto Ax$ maps $\mathbb R^n$ onto $\mathbb R^n$;
+
+- **(j)** **(j)**    there is an $n\times n$ matrix $C$ such that $CA=I$;
+
+- **(k)** **(k)**    there is an $n\times n$ matrix $D$ such that $AD=I$;
+
+- **(l)** **(l)**   $A^T$ is an invertible matrix. 
+
+:::
+
+In general, a linear transformation $T:\mathbb R^n\to\mathbb R^m$ being one-to-one or  onto are independent properties. But if $m=n$, by the above theorem, they are equivalent. 
+
+::: {.math-block .example}
+
+**Example 41.**  Use the Invertible Matrix Theorem to decide whether $A$ is invertible, where
+
+$$
+A=\begin{bmatrix}  1&0&2\\3&1&-2\\-5&-1&9\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+A\to \begin{bmatrix} 1&0&-2\\0&1&4\\0&-1&-1 \end{bmatrix}\to
+\begin{bmatrix} 1&0&-2\\0&1&4\\0&0&3 \end{bmatrix}
+$$
+
+So $A$ is invertible because it has three pivot columns, by the Invertible Matrix Theorem.
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 42.** 
+The linear transformation defined by $A^{-1}$ is the inverse linear transformation of $T: x\mapsto Ax$. 
+
+:::
+
+*<span style="color:#b40000">(We will skip § 2.4–§ 2.7)</span>*
+
+## 2.8 Subspaces of $\mathbb{R}^n$ {#section-31}
+
+::: {.math-block .definition}
+
+**Definition 11.** 
+A <span style="color:#b40000">subspace</span> <span id="index-62"></span> of $\mathbb{R}^n$ is any set $H$ in $\mathbb{R}^n$ that has three properties:
+
+1.  the zero vector is in $H$;
+
+2.  for each $u$ and $v$ in $H$, the sum $u+v$ is in $H$;
+
+3.  for each $u$ in $H$ and each scalar $c$, the vector $cu$ is in $H$.
+
+:::
+
+In other words, a subspace is *closed* under the addition and scalar multiplication. 
+
+The most important examples of subspaces are the span of vectors. 
+
+::: {.math-block .example}
+
+**Example 43.** 
+$\{0\}$ is a subspace of $\mathbb{R}^n$, and $\mathbb{R}^n$ is a subspace of $\mathbb{R}^n$. These two subspaces are called *trivial* subspaces. 
+
+:::
+
+::: {.math-block .example}
+
+**Example 44.** 
+Let $v_1,v_2$ be two vectors. Then
+
+$$
+{\rm Span}\,\{v_1,v_2\}
+$$
+
+is a subspace. 
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+Let
+
+$$
+u=s_1v_1+s_2v_2,\quad v=t_1v_1+t_2v_2.
+$$
+
+Then 
+
+$$
+u+v=(s_1v_1+s_2v_2)+(t_1v_1+t_2v_2)
+=(s_1+t_1)v_1+(s_2+t_2) v_2
+$$
+
+is still  a linear combination of $v_1,v_2$, hence is in ${\rm Span}\,\{v_1,v_2\}$.
+
+Similarly, $cu=(cs_1) v_1+(cs_2)v_2$ is still in ${\rm Span}\,\{v_1,v_2\}$. Therefore, 
+${\rm Span}\,\{v_1,v_2\}$ is a subspace. 
+
+ $\square$
+
+:::
+
+ Understanding the above proof is very important!
+
+In general, let $v_1,\cdots, v_p$ be vectors in $\mathbb{R}^n$, then
+${\rm Span}\,\{v_1,v_2,\cdots, v_p\}$ is a subspace of $\mathbb{R}^n$.
+
+### Geometric interpretation of subspaces {#section-32}
+
+ Planes and lines  through the origin in $\mathbb{R}^3$, and lines through the origin in $\mathbb{R}^2$ are the geometric pictures of subspaces. 
+
+::: {.math-block .definition}
+
+**Definition 12.** 
+Let $A=[a_1,\cdots, a_n]$ with columns in $\mathbb{R}^m$. Define the <span style="color:#b40000">column space</span> <span id="index-63"></span>
+
+$$
+{\rm Col}\,(A)={\rm Span}\,\{a_1,\cdots, a_n\}.
+$$
+
+:::
+
+::: {.math-block .example}
+
+**Example 45.** 
+Let
+
+$$
+A=\begin{bmatrix} 1&-3&-4\\-4&6&-2\\-3&7&6  \end{bmatrix},\quad 
+b=\begin{bmatrix}3\\3\\-4 \end{bmatrix}
+$$
+
+Determine whether $b$ is in the column space of $A$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+$b$ is in the column space if and only if 
+
+$$
+Ax=b
+$$
+
+has a solution. We do the row operations to obtain
+
+$$
+\begin{bmatrix} 1&-3&-4&3\\-4&6&-2&3\\-3&7&6&-4 \end{bmatrix}
+\to
+\begin{bmatrix} 1&-3&-4&3\\0&-6&-18&15\\0&-2&-6&5 \end{bmatrix}
+\to
+\begin{bmatrix} 1&-3&-4&3\\0&-6&-18&15\\0&0&0&0 \end{bmatrix}.
+$$
+
+Thus we conclude that $Ax=b$ is consistent, and $b$ is in ${\rm Col}\, (A)$.
+
+ $\square$
+
+:::
+
+::: {.math-block .definition}
+
+**Definition 13.** 
+The <span style="color:#b40000">null space</span> <span id="index-64"></span> ${\rm Nul}\,(A)$ of a matrix $A$ is the set  of all solutions of the homogeneous equation $Ax=0$.
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 16.** 
+The null space of an $m\times n$ matrix $A$ is a subspace of $\mathbb{R}^n$. Equivalently, the set of all solutions of a system $Ax=0$ of $m$ homogeneous linear equations in $n$ unknowns is a subspace of $\mathbb{R}^n$.
+
+:::
+
+ ${\rm Col}\,(A)$ is a subspace of $\mathbb{R}^m$, and ${\rm Nul}\,(A)$ is a subspace of $\mathbb{R}^n$.
+
+If $Ax=0$ has trivial solutions only, then ${\rm Nul}\,(A)=0$, where $0$ is the subspace that only contains the origin of $\mathbb{R}^m$ as its element.  
+
+### Basis for a subspace {#section-33}
+
+::: {.math-block .definition}
+
+**Definition 14.** 
+A <span style="color:#b40000">basis</span> <span id="index-65"></span> for a subspace $H$ of $\mathbb{R}^n$ is a linear independent  set in $H$ that spans $H$.
+
+:::
+
+::: {.math-block .example}
+
+**Example 46.** 
+The columns of an invertible $n\times n$ matrix form a basis for all of $\mathbb{R}^n$ because they are linearly independent and span $\mathbb{R}^n$ by the Invertible Matrix Theorem. In particular, the vectors
+
+$$
+\blue{e_1=\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}},
+\red{e_2=\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix}},\cdots,
+\green{e_n=\begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix}},
+$$
+
+which can be obtained from the identity matrix, is a basis. The set $\{e_1,e_2,\cdots,e_n\}$ is called *<span style="color:#b40000">standard basis</span>* <span id="index-66"></span> of $\mathbb{R}^n$. 
+
+:::
+
+::: {.math-block .example}
+
+**Example 47.** 
+Find a basis for the null space of the matrix
+
+$$
+A=\begin{bmatrix}
+-3&6&-1&1&-7\\1&-2&2&3&-1\\2&-4&5&8&-4
+\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We first solve the equation $Ax=0$:
+
+$$
+\begin{aligned}
+&
+[A,0]\to
+\begin{bmatrix}
+1&-2&2&3&-1&0\\-3&6&-1&1&-7&0\\2&-4&5&8&-4&0
+\end{bmatrix}
+\to
+\begin{bmatrix}
+1&-2&2&3&-1&0\\0&0&5&10&-10&0\\0&0&1&2&-2&0
+\end{bmatrix}\\
+&
+\to
+\begin{bmatrix}
+1&-2&2&3&-1&0\\0&0&1&2&-2&0\\0&0&0&0&0&0
+\end{bmatrix}
+\to
+ \begin{bmatrix}
+1&-2&0&-1&3&0\\0&0&1&2&-2&0\\0&0&0&0&0&0\end{bmatrix}
+\end{aligned}
+$$
+
+which corresponds to the equations
+
+$$
+\begin{aligned}
+& x_1-2x_2-x_4+3x_5=0\\
+& x_3+2x_4-2x_5=0\\
+&0=0
+\end{aligned}
+$$
+
+The general solutions of the system are
+
+$$
+\begin{aligned}
+& x_1=2x_2+x_4-3x_5\\
+&x_3=-2x_4+2x_5\\
+& x_2,x_4,x_5 \text{ are free}
+\end{aligned}
+$$
+
+Thus
+
+$$
+x=\begin{bmatrix}
+x_1\\x_2\\x_3\\x_4\\x_5
+\end{bmatrix}
+=\begin{bmatrix}
+2x_2+x_4-3x_5\\x_2\\-2x_4+2x_5\\x_4\\x_5
+\end{bmatrix}
+=x_2
+\underset{\green{\begin{array}{c}\uparrow\\  u\end{array}}}{\begin{bmatrix}
+2\\1\\0\\0\\0
+\end{bmatrix}}
++x_4 \underset{\green{\begin{array}{c}\uparrow\\  v\end{array}}}
+{\begin{bmatrix}
+1\\0\\-2\\1\\0
+\end{bmatrix}}
++x_5 \underset{\green{\begin{array}{c}\uparrow\\  w\end{array}}}
+{\begin{bmatrix}
+-3\\0\\2\\0\\1
+\end{bmatrix}}
+$$
+
+Thus we have 
+
+$$
+x=x_2 u+x_4 v+x_5 w
+$$
+
+and
+
+$$
+{\rm Nul}\,(A)={\rm Span}\,\{u,v,w\}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .remark}
+
+**Remark 2.** 
+It can be proved that $u,v,w$ are linearly independent.
+
+:::
+
+::: {.math-block .example}
+
+**Example 48.** 
+Find a basis for the column space of the matrix
+
+$$
+B=\begin{bmatrix}
+1&0&-3&5&0\\0&1&2&-1&0\\0&0&0&0&1\\0&0&0&0&0
+\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Denoting the columns of $B$ by $\{b_1,\cdots, b_5\}$ and noting that $b_1,b_2,b_5$ are pivot columns. Therefore $\{b_1,b_2,b_5\}$ forms a basis of the space.
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 49.** 
+It can be verified that the matrix
+
+$$
+A=\begin{bmatrix}
+1&3&3&2&-9\\-2&-2&2&-8&2\\2&3&0&7&1\\3&4&-1&11&-8
+\end{bmatrix}
+$$
+
+is row equivalent to $B$ in the above example. Find a basis of ${\rm Col}(A)$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We assume that 
+
+$$
+A=[a_1, a_2,a_3,a_4,a_5].
+$$
+
+In the previous  example, $\{b_1,b_2,b_5\}$ is a basis. Since the row operations do not change the positions of the pivot columns,  $\{a_1,a_2,a_5\}$ is a basis for ${\rm Col}\,(A)$.
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 17.** 
+The pivot columns of a matrix $A$ form a basis for the column space.
+
+:::
+
+::: {.math-block .remark}
+
+**Remark 3.**  Basis of a subspace is not unique.
+
+:::
+
+## 2.9 Dimension and Rank {#section-34}
+
+### Coordinate System {#section-35}
+
+ Any element of a subspace can be written in a unique way as a linear combination of the basis. Let
+
+$$
+\mathfrak B=\{b_1,\cdots, b_p\}
+$$
+
+be a basis of a subspace $H$. If not, assume that $x$ in $H$ can be written as the linear combination of $b_1,\cdots,b_p$ in two different ways, 
+
+$$
+x=c_1b_1+\cdots+c_pb_p,\quad x=c_1'b_1+\cdots+c_p'b_p.
+$$
+
+Then
+
+$$
+(c_1-c_1') b_1+\cdots+(c_p-c_p')b_p=0,
+$$
+
+and we conclude that $c_i=c_i'$ for $1\leq i\leq p$. This is  a contradiction, and hence we  prove the uniqueness. 
+
+::: {.math-block .definition}
+
+**Definition 15.** 
+Suppose that the set $\mathfrak B=\{b_1,\cdots, b_p\}$ is a basis for a subspace $H$. For $x\in H$, the <span style="color:#b40000">coordinates </span> of $x$ relative to the basis $\mathfrak B$ are the weights $c_1,\cdots, c_p$ such that $x=c_1b_1+\cdots+c_pb_p$, and we write
+
+$$
+[x]_{\mathfrak B}=\begin{bmatrix} c_1\\c_2\\\vdots\\c_p \end{bmatrix}
+$$
+
+$[x]_{\mathfrak B}$ is called the coordinate vector of $x$ (relative to $\mathfrak B$) or the $\mathfrak B$-coordinate vector of $x$.
+
+:::
+
+::: {.math-block .example}
+
+**Example 50.** 
+Let
+
+$$
+v_1=\begin{bmatrix}3\\6\\2  \end{bmatrix},\quad 
+v_2=\begin{bmatrix} -1\\0\\1 \end{bmatrix},\quad
+x=\begin{bmatrix} 3\\12\\7 \end{bmatrix}.
+$$
+
+Let $\mathfrak B=\{v_1,v_2\}$. Then $\mathfrak B$ is a basis for $H={\rm Span}\,\{v_1,v_2\}$ because $v_1,v_2$ are linearly independent. Determine if $x$ is in $H$, and if it is, find the coordinate vector of $x$ relative to $\mathfrak B$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We need to solve the following equation
+
+$$
+c_1\,\begin{bmatrix} 3\\6\\2 \end{bmatrix}+c_2\begin{bmatrix} -1\\0\\1  \end{bmatrix}
+=\begin{bmatrix} 3\\12\\7 \end{bmatrix}.
+$$
+
+In order to solve the above equation, we perform the row operations
+
+$$
+\begin{bmatrix}
+3&-1&3\\6&0&12\\2&1&7
+\end{bmatrix}\to
+\begin{bmatrix}
+3&-1&3\\0&2&6\\0&5/3&5
+\end{bmatrix}\to
+\begin{bmatrix}
+3&-1&3\\0&1&3\\0&0&0
+\end{bmatrix}\to
+\begin{bmatrix}
+3&0&6\\0&1&3\\0&0&0
+\end{bmatrix}\to
+\begin{bmatrix}
+1&0&2\\0&1&3\\0&0&0
+\end{bmatrix}.
+$$
+
+Thus we have $c_1=2, c_2=3$ and hence
+
+$$
+[x]_{\mathfrak B}=\begin{bmatrix}
+2\\3
+\end{bmatrix}.
+$$
+
+ $\square$
+
+:::
+
+Note that $x$ is a vector in $\mathbb{R}^3$, but the coordinate vector of $x$ is a 2-dimensional vector.
+
+Let $x\in \mathbb{R}^n$.  If we write 
+
+<span id="ref-81"></span>
+$$
+\tag{2.9.1}
+x=\begin{bmatrix}
+x_1\\\vdots\\x_n
+\end{bmatrix},
+$$
+
+then since $x=x_1e_1+\cdots + x_ne_n$, $\begin{bmatrix}
+x_1\\\vdots\\x_n
+\end{bmatrix}$ are the coordinates relative to the standard basis. Let $\mathcal E=\{e_1,\cdots, e_n\}$. Then we should write 
+
+$$
+[x]_{\mathcal E}=\begin{bmatrix}
+x_1\\\vdots\\x_n
+\end{bmatrix}
+$$
+
+instead of [(2.9.1)](#ref-81). 
+
+::: {.math-block .theorem}
+
+**Theorem 18 (Linearity of coordinate function).** <span id="ref-t28"></span>
+The coordinate function is linear; that is, if $\mathfrak B$ is a basis of a vector space $V$, then
+
+1.  $[x+y]_\mathfrak B=[x]_\mathfrak B+[y]_\mathfrak B$ for $x,y\in V$;
+
+2.  $[cx]_\mathfrak B=c[x]_\mathfrak B$ for $x\in V$, and $c\in\mathbb{R}$.
+
+:::
+
+::: {.math-block .definition}
+
+**Definition 16.** 
+The <span style="color:#b40000">dimension</span>  of a subspace $H$, denoted by $\dim H$, is the number of vectors in any basis for $H$.  Exception: if $H=\{0\}$, there is no basis, and $\dim H$ is defined to be zero.
+
+:::
+
+### Implication of the definition of  dimension {#section-36}
+
+ While there are infinitely many choices of bases, the number of vectors in any basis is the same, and thus the “dimension" is well-defined.
+
+::: {.math-block .definition}
+
+**Definition 17.** 
+The <span style="color:#b40000">rank</span> <span id="index-67"></span> of a matrix $A$, denoted by ${\rm Rank} (A)$, is the dimension of the column space of $A$.
+
+$$
+{\rm Rank}\,(A)=\dim{\rm Col}\,(A).
+$$
+
+:::
+
+::: {.math-block .example}
+
+**Example 51.** 
+Determine the rank of the matrix
+
+$$
+A=\begin{bmatrix}
+2&5&-3&-4&8\\4&7&-4&-3&9\\6&9&-5&2&4\\0&-9&6&5&-6
+\end{bmatrix}
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We use the row operations to obtain
+
+$$
+\begin{aligned}
+&
+A\to
+\begin{bmatrix}
+2&5&-3&-4&8\\0&-3&2&5&-7\\0&-6&4&14&-20\\0&-9&6&5&-6
+\end{bmatrix}\\
+&
+\to
+\begin{bmatrix}
+2&5&-3&-4&8\\0&-3&2&5&-7\\0&0&0&4&-6\\0&0&0&-10&15
+\end{bmatrix}
+\to
+\begin{bmatrix}
+2&5&-3&-4&8\\0&-3&2&5&-7\\0&0&0&4&-6\\0&0&0&0&0
+\end{bmatrix}.
+\end{aligned}
+$$
+
+Since there are three pivot columns, ${\rm Rank}\,(A)=3$.
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 19 (Rank Theorem).** 
+If $A$ is an $m\times n$ matrix, then
+
+$$
+{\rm Rank}\,(A)+\dim{\rm Nul}\,(A)=n.
+$$
+
+:::
+
+The theorem can also be written as 
+
+$$
+\dim{\rm Col}\,(A)+\dim{\rm Nul}\,(A)=n.
+$$
+
+Note that ${\rm Col}\,(A)$ and ${\rm Nul}\,(A)$ are subspaces of different Euclidean spaces.  ${\rm Col}\,(A)$  is a subspace of $\mathbb{R}^m$ and ${\rm Nul}\,(A)$ is a subspace of $\mathbb{R}^n$. 
+
+::: {.math-block .proof}
+
+**Proof.** 
+Since $\dim{\rm Col}\,(A)$ is the number of pivot columns, it is equal to the number of basic variables of the equation $Ax=0$. On the other hand, $\dim{\rm Nul}\,(A)$ is the number of free variables. Therefore, they add up to $n$, which is the Rank Theorem. 
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 20 (The Basis Theorem).**  <span id="ref-t900"></span> Let $H$ be a $p$-dimensional subspace of $\mathbb{R}^n$. Any linearly independent set of exactly $p$ elements in $H$ is automatically a basis for $H$. Also, any set of $p$ elements of $H$ that spans $H$ is automatically a basis.
+
+:::
+
+### Invertible Matrix Theorem Extended {#section-37}
+
+::: {.math-block .theorem}
+
+**Theorem 21.** 
+Let $A$ be an $n\times n$ matrix. Then the following statements are each equivalent to the statement that $A$ is an invertible matrix. 
+
+1. **(m)**   the columns of $A$ form a basis of $\mathbb{R}^n$;
+
+2. **(n)**  ${\rm Col}\,(A)=\mathbb{R}^n$;
+
+3. **(o)**  $\dim {\rm Col}\,(A)=n$;
+
+4. **(p)**  ${\rm Rank}\,(A)=n$;
+
+5. **(q)**      ${\rm Nul}\,(A)=\{0\}$;
+
+6. **(r)**   $\dim {\rm Nul}\,(A)=0$.
+
+:::
+
+In particular, when $A$ is an $n\times n$ matrix, then
+
+$A$ is onto $\Longleftrightarrow$ ${\rm Col}\,(A)=\mathbb{R}^n$ $\Longleftrightarrow$  Rank (A)=$n$.
+
+$A$ is one-to-one $\Longleftrightarrow$ ${\rm Nul}\,(A)=\{0\}$ $\Longleftrightarrow$ $\dim{\rm Nul}\,(A)=0$.
+
+Thus
+
+$A$ is onto $\Longleftrightarrow$ $A$ is one-to-one.
+
+But the Rank Theorem is much more general then the invertible matrix theorem.

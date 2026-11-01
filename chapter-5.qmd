@@ -1,0 +1,1759 @@
+---
+title: "5. Eigenvalues and eigenvectors"
+---
+
+<span id="section-41"></span>
+
+## 5.1 Eigenvectors and eigenvalues {#section-42}
+
+Consider the linear transformation $x\mapsto Ax$ for a square matrix $A$. If $A$ is a diagonal matrix, for example, if 
+
+$$
+A=\begin{bmatrix}
+1&0\\0&3
+\end{bmatrix},
+$$
+
+Let 
+
+$$
+e_1=\begin{bmatrix}1\\0\end{bmatrix},\qquad e_2=\begin{bmatrix}0\\1\end{bmatrix}.
+$$
+
+Then we have $Ae_1=e_1$, $Ae_2=3e_2$. Thus, the linear transformation stretches the vector $e_2$ three times compared it does to  $e_1$.
+
+::: {.math-block .example}
+
+**Example 64.** 
+Let
+
+$$
+A=\begin{bmatrix}
+3&-2\\1&0
+\end{bmatrix},\quad u=\begin{bmatrix}
+-1\\1
+\end{bmatrix},\quad
+v=\begin{bmatrix}
+2\\1
+\end{bmatrix}.
+$$
+
+We have
+
+$$
+\begin{aligned}
+&Au=\begin{bmatrix}
+3&-2\\1&0
+\end{bmatrix}\cdot \begin{bmatrix}
+-1\\1
+\end{bmatrix}=\begin{bmatrix}
+-5\\-1
+\end{bmatrix},\\
+&Av=\begin{bmatrix}
+3&-2\\1&0
+\end{bmatrix}\cdot
+\begin{bmatrix}
+2\\1
+\end{bmatrix}=\begin{bmatrix}
+4\\2
+\end{bmatrix}=2v.
+\end{aligned}
+$$
+
+The vector $v$ is called an *<span style="color:#b40000">eigenvector</span>*. 
+
+:::
+
+::: {.math-block .definition}
+
+**Definition 19.** 
+An <span style="color:#b40000">eigenvector</span> <span id="index-71"></span> of an $n\times n$ matrix $A$ is a <span style="color:#b40000">non-zero </span>
+  vector $x$ such that $Ax=\lambda x$ for some scalar $\lambda$. A scalar is called an <span style="color:#b40000">eigenvalue</span>  <span id="index-72"></span>  if $A$ is there is a non-trivial solution $x$ of the equation $Ax=\lambda x$; such a non-zero solution is called an eigenvector corresponding to $\lambda$.
+
+:::
+
+ 
+
+::: {.math-block .example}
+
+**Example 65.** 
+Let
+
+$$
+A=\begin{bmatrix}
+1&6\\5&2
+\end{bmatrix},\quad 
+u=\begin{bmatrix}
+6\\-5
+\end{bmatrix},\quad v=\begin{bmatrix}
+3\\-2
+\end{bmatrix}.
+$$
+
+Check whether $u,v$ are eigenvectors. 
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\begin{aligned}
+& Au=\begin{bmatrix}
+1&6\\5&2
+\end{bmatrix}\begin{bmatrix}
+6\\-5
+\end{bmatrix}=\begin{bmatrix}
+-24\\20
+\end{bmatrix}=-4\begin{bmatrix}
+6\\-5
+\end{bmatrix}=-4u\\
+&Av=\begin{bmatrix}
+1&6\\5&2
+\end{bmatrix}\begin{bmatrix}
+3\\-2
+\end{bmatrix}=\begin{bmatrix}
+-9\\11
+\end{bmatrix}\neq \lambda 
+\begin{bmatrix}
+3\\-2
+\end{bmatrix}.
+\end{aligned}
+$$
+
+So $u$ is an eigenvector of $A$ corresponding to the eigenvalue $-4$, and $v$ is not an eigenvector.
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 66.** 
+Show that $7$ is an eigenvalue of matrix $A$ in the above example, and find the corresponding 
+eigenvectors. 
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+The number $7$ is an eigenvalue of $A$ if and only if the equation
+
+$$
+Ax=7 x
+$$
+
+has a non-zero solution. But $Ax=7x$ is equivalent to $(A-7I)x=0$ ( Note $7x=7Ix$, the left side being the  scalar multiplication and the right hand being the matrix-vector multiplication).
+
+$$
+A-7I=\begin{bmatrix}
+1&6\\5&2
+\end{bmatrix}-\begin{bmatrix}
+7&0\\0&7
+\end{bmatrix}=\begin{bmatrix}
+-6&6\\5&-5
+\end{bmatrix}.
+$$
+
+In order  to solve the homogeneous system, we do the row operations
+
+$$
+\begin{bmatrix} -6&6&0\\5&-5&0 \end{bmatrix}\to
+\begin{bmatrix} 1&-1&0\\0&0&0 \end{bmatrix}.
+$$
+
+Therefore, the general solution has the form $x_2\begin{bmatrix} 1\\1 \end{bmatrix}$. In order to obtain a *non-zero* solution, we choose $x_2=1$. Thus
+$\begin{bmatrix} 1\\1 \end{bmatrix}$ is an eigenvector of $A$ with respect to  the eigenvalue $7$.
+
+The eigenvectors are not unique, but $\begin{bmatrix} 0\\0 \end{bmatrix}$ is *<span style="color:#b40000">not</span>*  an eigenvector.
+
+ $\square$
+
+:::
+
+If the an eigenvalue is known, then we can find the corresponding eigenvectors  by solving the linear system. On the other hand, it is not possible to use linear methods to find eigenvalues. 
+
+The set  of eigenvectors, plus the zero vector,  corresponding to an eigenvalue forms a subspace. The space is called the *<span style="color:#b40000">eigenspace</span>*
+<span id="index-73"></span>  corresponding to the eigenvalue.  If $\lambda$ is an eigenvalue, then the corresponding eigenspace is ${\rm Nul}\,(A-\lambda I)$.
+
+::: {.math-block .example}
+
+**Example 67.** 
+The matrix $A$ 
+
+$$
+A=
+\begin{bmatrix}4&-1&6\\2&1&6\\2&-1&8  \end{bmatrix}
+$$
+
+has an eigenvalue $2$. Find its eigenspace.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Form
+
+$$
+A-2I=\begin{bmatrix}4&-1&6\\2&1&6\\2&-1&8  \end{bmatrix}
+-
+\begin{bmatrix}2&0&0\\0&2&0\\0&0&2 \end{bmatrix}
+=
+\begin{bmatrix} 2&-1&6\\2&-1&6\\2&-1&6 \end{bmatrix}.
+$$
+
+By the row reduction argument, we have
+
+$$
+\begin{bmatrix} 2&-1&6\\2&-1&6\\2&-1&6 \end{bmatrix}
+\to
+\begin{bmatrix} 2&-1&6\\0&0&0\\0&0&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&-\frac 12&3\\0&0&0\\0&0&0 \end{bmatrix}.
+$$
+
+Thus the equation $(A-2I)x=0$ is equivalent to the equation
+
+$$
+x_1-\frac 12 x_2+3x_3=0, \quad x_2, x_3 \text{ are free}
+$$
+
+Hence we have
+
+$$
+\begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix}=
+\begin{bmatrix} \frac 12 x_2-3x_3\\x_2\\x_3 \end{bmatrix}
+=x_2 \,\underset{\begin{array}{c} \uparrow\\\color{#02650f} u\end{array}}{\begin{bmatrix} \frac 12\\1\\0 \end{bmatrix}}
++x_3 \,\underset{\begin{array}{c} \uparrow\\\color{#02650f} v\end{array}}{\begin{bmatrix} -3\\0\\1 \end{bmatrix}}.
+$$
+
+So the eigenspace is spanned by $\{u,v\}$. Since $u,v$ are linearly independent, the basis of the eigenspace is $\{u,v\}$.
+
+ $\square$
+
+:::
+
+Now we discuss how to find eigenvalues of a matrix.
+
+::: {.math-block .theorem}
+
+**Theorem 28.** 
+The eigenvalues of a triangular matrix are the entries on its main diagonal.
+
+:::
+
+We take $3\times 3$ matrices as an example. A $3\times 3$ upper triangular matrix
+is of the form
+
+$$
+A=\begin{bmatrix} a_{11}&a_{12}&a_{13}\\0&a_{22}&a_{23}\\0&0&a_{33}  \end{bmatrix}.
+$$
+
+We then have
+
+$$
+A-\lambda I=
+\begin{bmatrix} a_{11}-\lambda&a_{12}&a_{13}\\0&a_{22}-\lambda&a_{23}\\0&0&a_{33} -\lambda \end{bmatrix}.
+$$
+
+If $(A-\lambda I)x=0$ has non-trivial solutions, then $A-\lambda I$ is not invertible.
+Therefore we have
+
+$$
+0=\det (A-\lambda I)=(a_{11}-\lambda)(a_{22}-\lambda)(a_{33}-\lambda),
+$$
+
+and we have
+
+$$
+\lambda=a_{11}, a_{22}, a_{33}
+$$
+
+as eigenvalues. 
+
+::: {.math-block .example}
+
+**Example 68.** 
+Let
+
+$$
+A=\begin{bmatrix} 3&6&-8\\0&0&6\\0&0&2 \end{bmatrix},\quad
+B=\begin{bmatrix} 4&0&0\\-2&1&0\\5&3&4\end{bmatrix}.
+$$
+
+Then $A$ has eigenvalues $3,0,2$; $B$ has eigenvalues $4,1,4$. 
+
+:::
+
+In the above example, $0$ could be an eigenvalue and $4$ is an eigenvalue of $B$ with multiplicity $2$. Moreover, a matrix has the same eigenvalue set as 
+its transpose. 
+
+## 5.2 The characteristic equation {#section-43}
+
+The idea of finding the eigenvalues of a triangular matrix can be used in the general case. We begin by the following example. 
+
+::: {.math-block .example}
+
+**Example 69.** 
+Find eigenvalue(s) of the matrix
+
+$$
+A=\begin{bmatrix} 2&3\\3&-6 \end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+If $\lambda$  is an eigenvalue, then the equation $(A-\lambda I)x=0$ has non-trivial solutions. Thus the matrix $A-\lambda I$ is not invertible and hence
+$\det(A-\lambda I)=0$. The equation is called *<span style="color:#b40000">characteristic equation</span>*.
+<span id="index-74"></span>
+
+We compute
+
+$$
+A-\lambda I=\begin{bmatrix} 2&3\\3&-6 \end{bmatrix}-\begin{bmatrix} \lambda&0\\0&\lambda \end{bmatrix}=
+\begin{bmatrix} 2-\lambda &3\\3&-6-\lambda\end{bmatrix}.
+$$
+
+Thus
+
+$$
+\det(A-\lambda I)=(2-\lambda)(-6-\lambda)-9=\lambda^2+4\lambda -21=(\lambda-3)(\lambda+7).
+$$
+
+The roots of the above equation are $3$ and $-7$, which are the eigenvalues of the matrix.
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 29 (The Invertible Matrix Theorem (continued)).** 
+Let $A$ be an $n\times n$ matrix. Then $A$ is invertible if and only if
+
+1. **(s)**  the number $0$ is not an eigenvalue of $A$;
+
+2. **(t)**  the determinant of $A$ is not zero.
+
+:::
+
+::: {.math-block .example}
+
+**Example 70.** 
+Find the characteristic equation of 
+
+$$
+A=\begin{bmatrix} 5&-2&6&-1\\0&3&-8&0\\0&0&5&4\\0&0&0&1  \end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\det(A-\lambda I)=\det\begin{bmatrix} 5-\lambda&-2&6&-1\\
+0&3-\lambda&-8&0\\0&0&5-\lambda&4\\
+0&0&0&1-\lambda \end{bmatrix}
+=(5-\lambda)(3-\lambda)(5-\lambda)(1-\lambda)
+$$
+
+because the matrix $A-\lambda I$ is an upper triangular matrix. 
+
+The characteristic equation is a polynomial equation. The eigenvalues of the matrix are the roots of the characteristic equation, which are $5,3,1$. The eigenvalue $5$ has multiplicity $2$.
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 71.** 
+The characteristic polynomial of a $6\times 6$ matrix is $\lambda^6-4\lambda^5-12\lambda^4$. Find the eigenvalues and their multiplicity. 
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+\lambda^6-4\lambda^5-12\lambda^4=\lambda^4(\lambda^2-4\lambda-12)=\lambda^4(\lambda-6)(\lambda+2).
+$$
+
+ Therefore, there are three eigenvalues $0,6,-2$, with the corresponding multiplicity $4,1,1$.
+
+ $\square$
+
+:::
+
+::: {.math-block .definition}
+
+**Definition 20.** 
+Two matrices $A,B$ are <span style="color:#b40000">similar</span> , if there exists an invertible matrix $P$ such that
+
+$$
+A=PBP^{-1}.
+$$
+
+:::
+
+<span id="index-75"></span>
+
+For similar matrices, we have the following very important
+
+::: {.math-block .theorem}
+
+**Theorem 30.** 
+If two $n\times n$ matrices $A$ and $B$ are similar, then
+
+$$
+\det(A-\lambda I)=\det(B-\lambda I).
+$$
+
+In other words, $A$ and $B$ have the same characteristic polynomial and
+therefore the same eigenvalues.
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+Since $A$ and $B$ are similar, there exists an invertible matrix $P$ such
+that
+
+$$
+B=P^{-1}AP.
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+B-\lambda I
+&=P^{-1}AP-\lambda I\\
+&=P^{-1}AP-\lambda P^{-1}IP\\
+&=P^{-1}(A-\lambda I)P.
+\end{aligned}
+$$
+
+Taking determinants gives
+
+$$
+\begin{aligned}
+\det(B-\lambda I)
+&=\det\bigl(P^{-1}(A-\lambda I)P\bigr)\\
+&=\det(P^{-1})\det(A-\lambda I)\det(P)\\
+&=\frac{1}{\det(P)}\det(A-\lambda I)\det(P)\\
+&=\det(A-\lambda I).
+\end{aligned}
+$$
+
+Thus, $A$ and $B$ have the same characteristic polynomial. Consequently,
+they have the same eigenvalues, including algebraic multiplicities.
+ $\square$
+
+:::
+
+  Warning: two matrices having the same eigenvalues are not necessarily similar. For example, the matrices
+
+$$
+A=\begin{bmatrix} 2&1\\0&2 \end{bmatrix},\quad
+B=\begin{bmatrix} 2&0\\0&2 \end{bmatrix}
+$$
+
+are not similar, but they have the same eigenvalues.  
+
+Indeed, suppose that there were an invertible matrix $P$ such that
+
+$$
+A=PBP^{-1}.
+$$
+
+Since $B=2I$, we would have
+
+$$
+PBP^{-1}
+=P(2I)P^{-1}
+=2PP^{-1}
+=2I
+=B.
+$$
+
+This would imply that $A=B$, which is false. Therefore, no such invertible
+matrix $P$ exists, and $A$ and $B$ are not similar.
+
+Also, similarity is not the same as row equivalence. 
+
+::: {.math-block .example}
+
+**Example 72.** 
+Let 
+
+$$
+A=\begin{bmatrix}
+1&1\\-1&1
+\end{bmatrix}.
+$$
+
+Then the characteristic equation of $A$ is
+
+$$
+\det(A-\lambda I)=(\lambda-1)^2+1.
+$$
+
+Thus $A$ has complex eigenvalues.
+
+:::
+
+## 5.3 Diagonalization {#section-44}
+
+A *<span style="color:#b40000">diagonal matrix</span>* is a special kind of square matrix where all the entries outside the main diagonal are zero.
+
+::: {.math-block .definition}
+
+**Definition 21.** 
+Let $A$ be an $n\times n$ matrix. If $A$ is similar to a digonal matrix $D$, that is, if 
+
+$$
+A=PDP^{-1}
+$$
+
+for some invertible matrix $P$, then we say $A$ is <span style="color:#b40000">digonalizable</span>. <span id="index-76"></span>
+
+:::
+
+::: {.math-block .example}
+
+**Example 73.** 
+If $D=\begin{bmatrix} 5&0\\0&3 \end{bmatrix}$, then $D^2=\begin{bmatrix} 5^2&0\\0&3^2 \end{bmatrix}$. In general, we have
+
+$$
+D^k=\begin{bmatrix} 5^k&0\\0&3^k \end{bmatrix}.
+$$
+
+:::
+
+So, in conclusion, it is easier to compute the powers of diagonalized matrices. 
+
+A matrix is a table of $n\times n$ numbers, by *diagonalizing* a matrix, we are  able to reduce the data from $n^2$ numbers to $n$ numbers. 
+
+By diagonalization, we mean for a given matrix, we shall find a diagonal matrix which is similar to it. 
+
+Of course, this is not always possible.
+
+::: {.math-block .example}
+
+**Example 74.** 
+Let
+
+$$
+A=\begin{bmatrix}
+7&2\\-4&1
+\end{bmatrix}.
+$$
+
+Find $A^k$.
+
+ We assume that $A=PDP^{-1}$, where
+
+$$
+P=\begin{bmatrix}
+1&1\\-1&-2
+\end{bmatrix},\quad 
+D=\begin{bmatrix}
+5&0\\0&3
+\end{bmatrix}.
+$$
+
+:::
+
+We have
+
+$$
+P^{-1}=\begin{bmatrix}
+2&1\\-1&-1
+\end{bmatrix}.
+$$
+
+Thus we have
+
+$$
+\begin{aligned}
+&A^2=PDP^{-1}PDP^{-1}=PD^2P^{-1},\\
+&A^3=PD^3P^{-1}\cdots
+\end{aligned}
+$$
+
+Therefore we have
+
+$$
+A^k=PD^kP^{-1}=\begin{bmatrix}
+1&1\\-1&-2
+\end{bmatrix}\cdot
+\begin{bmatrix}
+5^k&0\\0&3^k
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+2&1\\-1&-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2\cdot 5^k-3^k&5^k-3^k\\2\cdot 3^k-2\cdot 5^k& 2\cdot 3^k-5^k
+\end{bmatrix}.
+$$
+
+::: {.math-block .theorem}
+
+**Theorem 31 (The Diagonalization Theorem).** 
+An $n\times n$ matrix $A$ is diagonalizable, if and only if $A$ has $n$ linearly independent eigenvectors.
+
+:::
+
+In fact, $A=PDP^{-1}$, with $D$ a diagonal matrix, if and only if the columns of $P$ are $n$ linearly independent eigenvectors of $A$. In this case, the diagonal entries of $D$ are eigenvalues of $A$ that corresponding, respectively, to the eigenvectors in $P$.
+
+::: {.math-block .proof}
+
+**Proof.** 
+Let $v_i$ be an eigenvector corresponding to the eigenvalue $\lambda_i$, that is, 
+
+$$
+Av_i=\lambda_iv_i,\qquad 1\leq i\leq n.
+$$
+
+Then
+
+$$
+A[v_1,v_2,\cdots, v_n]=[\lambda_1v_1,\lambda_2v_2,\cdots,\lambda_nv_n].
+$$
+
+Observe that 
+
+$$
+[\lambda_1v_1,\lambda_2v_2,\cdots,\lambda_nv_n]=[v_1,v_2,\cdots, v_n]
+\begin{bmatrix}
+\lambda_1\\&\ddots\\&&\lambda_n
+\end{bmatrix}.
+$$
+
+Let $P=[v_1,v_2,\cdots, v_n]$. Then
+
+$$
+AP=PD,
+$$
+
+and if $P$ is invertible, we have
+
+$$
+A=PDP^{-1}.
+$$
+
+ $\square$
+
+:::
+
+We shall use the following example to show how to diagonalize a matrix. 
+
+::: {.math-block .example}
+
+**Example 75.** 
+Diagonalize the following matrix, if possible
+
+$$
+A=\begin{bmatrix}
+1&3&3\\-3&-5&-3\\3&3&1
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+
+**Step 1: find the eigenvalues of $A$.**
+
+In order to find the eigenvalues, we need to set up the characteristic equation, and to solve it. In this problem, we have
+
+$$
+\det(A-\lambda I)=\det \begin{bmatrix}
+1-\lambda &3&3\\
+-3&-5-\lambda &-3\\
+3&3& 1-\lambda
+\end{bmatrix}=-\lambda^3-3\lambda^2+4=-(\lambda-1)(\lambda+2)^2.
+$$
+
+Therefore, the eigenvalues of $A$ are $\lambda=1$ and $\lambda=-2$.
+
+**Step 2: find three linearly independent eigenvectors of $A$.**
+
+If it is impossible to find three linearly independent eigenvectors, then the matrix is not diagnolizable.
+
+For $\lambda=1$,  we consider the matrix
+
+$$
+A-1\cdot I=
+\begin{bmatrix}  1&3&3\\-3&-5&-3\\3&3&1\end{bmatrix}-
+\begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}
+=
+\begin{bmatrix} 0&3&3\\-3&-6&-3\\3&3&0  \end{bmatrix}.
+$$
+
+In order to solve the homogeneous system $(A-I)x=0$, we use
+
+$$
+\begin{bmatrix} 0&3&3&0\\-3&-6&-3&0\\3&3&0&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&1&0&0\\1&2&1&0\\0&1&1&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&1&0&0\\0&1&1&0\\0&1&1&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&0&-1&0\\0&1&1&0\\0&0&0&0\end{bmatrix}.
+$$
+
+Thus the homogeneous system becomes
+
+$$
+x_1-x_3=0,\quad x_2+x_3=0.
+$$
+
+The solution can be written as
+
+$$
+x=\begin{bmatrix} x_1\\x_2\\x_3\end{bmatrix}=
+\begin{bmatrix} x_3\\-x_3\\x_3\end{bmatrix}=
+x_3\begin{bmatrix}1\\-1\\1\end{bmatrix}.
+$$
+
+Thus 
+
+$$
+v_1=\begin{bmatrix}  1\\-1\\1\end{bmatrix}
+$$
+
+is an eigenvector. 
+
+For $\lambda=-2$,  we consider the homogeneous system $(A+2I)x=0$, where 
+
+$$
+A+2I=\begin{bmatrix} 3&3&3\\-3&-3&-3\\3&3&3 \end{bmatrix}.
+$$
+
+Thus, after row operations on the argument matrix, we have
+
+$$
+\begin{bmatrix} 3&3&3&0\\-3&-3&-3&0\\3&3&3&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&1&1&0\\0&0&0&0\\0&0&0&0\end{bmatrix}.
+$$
+
+The system becomes
+
+$$
+x_1+x_2+x_3=0,
+$$
+
+and
+
+$$
+x=\begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix}
+=\begin{bmatrix} -x_2-x_3\\x_2\\x_3 \end{bmatrix}
+=
+x_2\begin{bmatrix} -1\\1\\0 \end{bmatrix}+
+x_3\begin{bmatrix}-1\\0\\1  \end{bmatrix}.
+$$
+
+Therefore
+
+$$
+v_2=\begin{bmatrix} -1\\1\\0 \end{bmatrix},\quad 
+v_3=\begin{bmatrix} -1\\0\\1 \end{bmatrix}
+$$
+
+are the two other eigenvectors so that $v_1,v_2,v_3$ are linearly independent. 
+
+**Step 3: construct $P$ from the eigenvectors from Step 2.**
+
+We have
+
+$$
+P=\begin{bmatrix}1&-1&-1\\-1&1&0\\1&0&1  \end{bmatrix}.
+$$
+
+**Step 4: construct $D$ from the corresponding eigenvalues.**
+
+$$
+D=\begin{bmatrix}1&0&0\\0&-2&0\\0&0&-2  \end{bmatrix}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .remark}
+
+**Remark 4.** 
+The order of the eigenvectors are not important. For example, we can take 
+
+$$
+P=\begin{bmatrix} -1&1&-1\\1&-1&0\\0&1&1 \end{bmatrix},
+$$
+
+and just need to change $D$ to be
+
+$$
+D=\begin{bmatrix}-2&0&0\\0&1&0\\0&0&-2  \end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .example}
+
+**Example 76.** 
+Diagonalize the following matrix, if possible
+
+$$
+A=\begin{bmatrix}2&4&3\\-4&-6&-3\\3&3&1\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+The characteristic equation is given by 
+
+$$
+0=\det (A-\lambda I)=-\lambda^3-3\lambda^2+4=-(\lambda-1)(\lambda+2)^2.
+$$
+
+So the eigenvalues are $1$ and $-2$.
+
+We have
+
+$$
+A-I=\begin{bmatrix} 1&4&3\\-4&-7&-3\\3&3&0 \end{bmatrix}
+\to
+\begin{bmatrix} 1&4&3\\0&9&9\\0&-9&-9 \end{bmatrix}
+\to
+\begin{bmatrix}  1&4&3\\0&1&1\\0&0&0\end{bmatrix}.
+$$
+
+Thus ${\rm Rank}\,(A-I)=2$, and hence $\dim {\rm Nul}\,(A-I)=1$, and the eigenspace is $1$-dimensional.
+
+On the other hand, 
+
+$$
+A+2I=\begin{bmatrix} 4&4&3\\-4&-4&-3\\3&3&3\end{bmatrix}\to
+\begin{bmatrix} 1&1&1\\ 4&4&3\\0&0&0\end{bmatrix}\to
+\begin{bmatrix} 1&1&1\\0&0&-1\\0&0&0 \end{bmatrix}.
+$$
+
+Thus ${\rm Rank}\,(A-I)=2$, $\dim {\rm Nul}\,(A+2I)=1$. So the eigenspace is $1$-dimensional. Given the fact that there are only two linearly independent eigenvalues,  the matrix is not diagonalizable. 
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 32.** 
+An $n\times n$ matrix with $n$ distinct eigenvalues is diagonalizable.
+
+:::
+
+::: {.math-block .example}
+
+**Example 77.** 
+Determine if the following matrix is
+diagonalizable.
+
+$$
+A=\begin{bmatrix}5&-8&1\\0&0&7\\0&0&-2  \end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+Since the matrix is upper triangular, the eigenvalues are $5,0,-2$, which are distinct. 
+So the matrix is diagonalizable. 
+ $\square$
+
+:::
+
+If a matrix whose eigenvalues are not distinct, then of course for those eigenvalues with multiplicity, there should be enough linearly independent eigenvectors for $A$ to be diagonalizable.
+
+::: {.math-block .definition}
+
+**Definition 22.** 
+The multiplicity of a root (eigenvalue) of the characteristic polynomial is called the <span style="color:#b40000">algebraic multiplicity</span><span id="index-77"></span> of that eigenvalue. The dimension of the eigenspace of that  eigenvalue is called the <span style="color:#b40000">geometric multiplicity</span>. <span id="index-78"></span> 
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 33.**  A matrix is diagonalizable, if  and only if, 
+corresponding to every eigenvalue, the algebraic multiplicity is equal to the geometric multiplicity.
+
+:::
+
+More precisely, in the textbook, the following version of the above theme is given. 
+
+::: {.math-block .theorem}
+
+**Theorem 34.**  
+Let $A$ be an $n\times n$ matrix whose distinct eigenvalues are 
+
+$$
+\lambda_1,\cdots,\lambda_p.
+$$
+
+1.  For $1\leq k\leq p$, the dimension of eigenspace for $\lambda_k$ is less than or equal to the multiplicity of the eigenvalue $\lambda_k$, that is, the geometric multiplicity is no more that the algebraic multiplicity.
+
+2.   The matrix $A$ is diagonalizable if and only if the sum of the dimensions of the eigenspaces equals $n$, and this happens if and only if (i) the characteristic polynomial factors completely into linear factos and (ii) the dimension of the eigespaces  for each $\lambda_k$m equals the mutiplicity of $\lambda_k$. 
+
+:::
+
+::: {.math-block .example}
+
+**Example 78.** 
+Let 
+
+$$
+A=\begin{bmatrix}
+0&1\\0&0
+\end{bmatrix}.
+$$
+
+It is easy to see that the eigenvalue is $0$ with multiplicity $2$. To find the dimensional of the eigenspace, we consider the argument matrix
+
+$$
+[A,0]=\begin{bmatrix}
+0&1&0\\0&0&0
+\end{bmatrix}
+$$
+
+which is in its reduced echelon form. The eigenspace can be represented by
+
+$$
+x_1\begin{bmatrix} 1\\0\end{bmatrix},
+$$
+
+which is one-dimensional. Thus the geometric multiplicity is strictly less than the algebraic multiplicity. Therefore matrix $A$ is not diagonalizable. 
+
+:::
+
+::: {.math-block .example}
+
+**Example 79.**  For what $t$ is the following matrix diagonalizable?
+
+$$
+A(t) = \begin{bmatrix}
+1 & t & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{bmatrix}.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+**Solution.** 
+ The eigenvalues are $\{1,1,2\}$.  
+
+ For $\lambda=1$:
+
+$$
+A - I = 
+\begin{bmatrix}
+0 & t & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}.
+$$
+
+Thus $x_3=0$ and $t\,x_2=0$.  
+
+-  If $t \neq 0$: then $x_2=0$, so eigenvectors span $\{(1,0,0)^T\}$. 
+    Geometric multiplicity $=1 <$ algebraic multiplicity $=2$ 
+    $\Rightarrow$ not diagonalizable.  
+
+-  If $t=0$: then $A(0)=\mathrm{diag}(1,1,2)$, which is diagonalizable.  
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 80.**  Consider 
+
+$$
+P = \begin{bmatrix}
+1 & 0 & 0 \\
+p & 1-p & 0 \\
+0 & q & 1-q
+\end{bmatrix}, \quad p,q \in (0,1),\ p \neq q.
+$$
+
+:::
+
+::: {.math-block .proof}
+
+**Solution.** 
+Since $P$ is upper triangular, the eigenvalues are the diagonal entries:
+
+$$
+\lambda_1 = 1, \qquad \lambda_2 = 1-p, \qquad \lambda_3 = 1-q.
+$$
+
+**Eigenvector for $\lambda_1=1$:**
+
+$$
+(P-I)v=0 \;\;\Rightarrow\;\; v_1=v_2=v_3.
+$$
+
+So one eigenvector is
+
+$$
+v^{(1)}=\begin{bmatrix}1\\[4pt]1\\[4pt]1\end{bmatrix}.
+$$
+
+**Eigenvector for $\lambda_2=1-p$:**
+
+$$
+(P-(1-p)I)v=0 \;\;\Rightarrow\;\; v_1=0,\quad qv_2+(p-q)v_3=0.
+$$
+
+So an eigenvector is
+
+$$
+v^{(2)}=\begin{bmatrix}0\\[4pt]q-p\\[4pt]q\end{bmatrix}.
+$$
+
+**Eigenvector for $\lambda_3=1-q$:**
+
+$$
+(P-(1-q)I)v=0 \;\;\Rightarrow\;\; v_1=0,\; v_2=0.
+$$
+
+So an eigenvector is
+
+$$
+v^{(3)}=\begin{bmatrix}0\\[4pt]0\\[4pt]1\end{bmatrix}.
+$$
+
+**Forming $S$ and $D$:**
+
+$$
+S = \big[v^{(1)}\;\; v^{(2)}\;\; v^{(3)}\big]
+= \begin{bmatrix}
+1 & 0 & 0 \\
+1 & q-p & 0 \\
+1 & q & 1
+\end{bmatrix}, 
+\qquad
+D = \operatorname{diag}(1,\, 1-p,\, 1-q).
+$$
+
+Since $\det(S)=q-p \neq 0$, the matrix $S$ is invertible. Therefore
+
+$$
+P = S D S^{-1}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 81.** (Fibonacci Sequence)
+We define the Fibonacci Sequence $\{F_n\}$ by the following recursive recursive formulas
+
+$$
+F_0=0, F_1=1, F_n=F_{n-1}+F_{n-2} \quad {\rm for}\,\, n\geq 2.
+$$
+
+Then we have 
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+We define a sequence of vectors
+
+$$
+V_n=\begin{bmatrix} F_n\\F_{n-1}\end{bmatrix}.
+$$
+
+Then
+
+$$
+V_n=\begin{bmatrix} F_n\\F_{n-1}\end{bmatrix}=\begin{bmatrix} F_{n-1}+F_{n-2}\\F_{n-1}\end{bmatrix}=\begin{bmatrix} 1&1\\1&0\end{bmatrix}\begin{bmatrix} F_{n-1}\\F_{n-2}\end{bmatrix}=AV_{n-1}
+$$
+
+for $n\geq 2$, where 
+
+$$
+A=\begin{bmatrix} 1&1\\1&0\end{bmatrix},
+$$
+
+with 
+
+$$
+V_1=\begin{bmatrix} F_1\\F_{0}\end{bmatrix}=\begin{bmatrix} 1\\0\end{bmatrix}.
+$$
+
+Thus 
+
+$$
+V_n=A^{n-1} V_1
+$$
+
+for $n\geq 1$. Let $V_0=\begin{bmatrix}0\\1\end{bmatrix}$. Then one can check that $V_n=A^nV_0$ for any $n\geq 0$. 
+
+Since the characteristic equation can be written as 
+
+$$
+\det(A-\lambda I)=\det\begin{bmatrix} 1-\lambda&1\\1&-\lambda\end{bmatrix}
+=-(1-\lambda)\lambda-1=\lambda^2-\lambda-1=0
+$$
+
+As a result, the eigenvalues of matrix $A$ are 
+
+$$
+\lambda_1=\frac{1+\sqrt 5}{2},\quad \lambda_2=\frac{1-\sqrt 5}{2}.
+$$
+
+We can compute the corresponding eigenvectors as 
+
+$$
+\begin{aligned}
+&b_1=\begin{bmatrix}\lambda_1\\1\end{bmatrix} \quad for \quad \lambda_1= 
+\frac{1+\sqrt 5}{2};\\
+&b_2=\begin{bmatrix}\lambda_2\\1\end{bmatrix} \quad for \quad \lambda_2= 
+\frac{1-\sqrt 5}{2}.
+\end{aligned}
+$$
+
+Thus we have the following diagonalization
+
+$$
+A=\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}\cdot \begin{bmatrix}\lambda_1\\&\lambda_2\end{bmatrix}\cdot
+\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}^{-1}.
+$$
+
+As a result, 
+
+$$
+A^{n}=\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}\cdot \begin{bmatrix}\lambda_1^{n}\\&\lambda_2^{n}\end{bmatrix}\cdot
+\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}^{-1}.
+$$
+
+We thus have 
+
+$$
+\begin{aligned}
+&
+V_n= A^{n}V_0=\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}\cdot \begin{bmatrix}\lambda_1^{n}\\&\lambda_2^{n}\end{bmatrix}\cdot
+\begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}^{-1}\cdot\begin{bmatrix}0\\1\end{bmatrix}\\
+&= \begin{bmatrix} \lambda_1 &\lambda_2\\
+1&1\end{bmatrix}\cdot \begin{bmatrix}\lambda_1^{n}\\&\lambda_2^{n}\end{bmatrix}\cdot
+\begin{bmatrix}-\frac{1}{\sqrt 5}\lambda_2\\\frac{1}{\sqrt 5}\lambda_1\end{bmatrix}
+=\frac{1}{\sqrt 5}\begin{bmatrix} \lambda_1^n-\lambda_2^n\\\lambda_1^{n-1}-\lambda_2^{n-1}\
+\end{bmatrix}.
+\end{aligned}
+$$
+
+Thus
+
+$$
+F_n=\frac{1}{\sqrt 5}(\lambda_1^n-\lambda_2^n)=\frac{1}{\sqrt 5}
+\left(\left(\frac{1+\sqrt 5}{2}\right)^n-\left(\frac{1-\sqrt 5}{2}\right)^n\right).
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 82.** 
+Consider the matrix
+
+$$
+A=\begin{bmatrix}
+0&1&1&1\\
+1&0&1&1\\
+1&1&0&1\\
+1&1&1&0
+\end{bmatrix}.
+$$
+
+1.  Write down the characteristic polynomial $\det(A-\lambda I)$. What are the   eigenvalues of A, and their corresponding algebraic multiplicities? 
+
+2.  If $A$  is diagonalizable. Find a basis of $\mathbb R^4$ consisting of eigenvectors of $A$. 
+
+:::
+
+::: {.math-block .proof}
+
+**Solution.** 
+We solve the two parts in order:
+
+1.  **Characteristic polynomial and eigenvalues.**
+    Write $J$ for the $4\times4$ all-ones matrix. Then $A=J-I_4$.
+    Since $J$ has eigenvalues $4$ (with eigenvector $\mathbf{1}=(1,1,1,1)^{T}$) and $0$ (with multiplicity $3$),
+    the eigenvalues of $A$ are
+
+    $$
+    \lambda=3 \quad(\text{mult }1), \qquad \lambda=-1 \quad(\text{mult }3).
+    $$
+
+    Hence
+
+    $$
+    \det(A-\lambda I)==-(\lambda-3)(\lambda+1)^3.
+    $$
+
+2.  **A basis of $\mathbb{R}^4$ of eigenvectors.**
+      One convenient eigenbasis is
+
+    $$
+    v_1=\begin{bmatrix}1\\1\\1\\1\end{bmatrix}\quad(\lambda=3),\qquad
+    v_2=\begin{bmatrix}1\\-1\\0\\0\end{bmatrix},\quad
+    v_3=\begin{bmatrix}1\\0\\-1\\0\end{bmatrix},\quad
+    v_4=\begin{bmatrix}1\\0\\0\\-1\end{bmatrix}\quad(\lambda=-1).
+    $$
+
+    (Any three independent vectors with coordinate sum $0$ span the $\lambda=-1$ eigenspace.)
+
+ $\square$
+
+:::
+
+ 
+
+## 5.4 Eigenvectors and linear transformation {#section-45}
+
+ In this section, we want to understand matrix factorization and linear transformation. 
+
+Before we proceed, we need to cover the following two topics. Consider this a quick fix since we skipped Chapter 4.
+
+ 
+
+### 1. Abstract vector space {#section-46}
+
+ As we know, $\mathbb{R}^n$ is a vector space containing all $n$-dimensional column vectors.
+ But there are other *<span style="color:#b40000">abstract</span>* vector spaces. 
+
+ 
+
+::: {.math-block .definition}
+
+**Definition 23.** 
+ A <span style="color:#b40000">vector space</span>, or <span style="color:#b40000">linear space</span>, <span id="index-79"></span> <span id="index-80"></span>  is a non-empty set $V$ together with a binary operation called “addition" and a binary operation called “scalar multiplication” that satisfies the eight axioms below.
+
+For all $u,v,w$ in $V$, and for all scalar $c,d$ in $\mathbb{R}$, we have
+
+1.  $u+v=v+u$
+
+2.  $(u+v)+w=u+(v+w)$
+
+3.  there exists an element $0\in V$ such that $u+0=0+u=u$
+
+4.  $u+(-u)=-u+u=0$, where $-u=(-1)\cdot u$,
+
+5.  $c(u+v)=cu+cv$
+
+6.  $(c+d)u=cu+du$
+
+7.  $c(du)=(cd)u$
+
+8.  $1u=u$
+
+:::
+
+Sometimes we call the vector spaces defined above
+*<span style="color:#b40000">abstract vector spaces</span>*
+<span id="index-81"></span>,
+to distinguish them from the usual Euclidean spaces $\mathbb{R}^n$.
+
+ 
+
+::: {.math-block .example}
+
+**Example 83.** 
+ The set of all real-valued functions $\mathscr F$ on $[0,1]$ forms an abstract vector space. This is an infinite-dimensional space. 
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+ For any $f,g\in \mathscr F$, and $c\in\mathbb{R}$,  we define 
+ 
+
+$$
+(f+g)(x)=f(x)+g(x), \quad (c f)(x)=cf(x)
+$$
+
+ for any $x\in [0,1]$.
+  $\square$
+
+:::
+
+ $\mathscr F$ contains a lot of subspaces, for example, $\mathcal C[0,1]$ is the space of continuous functions; $\mathcal C^k[0,1]$
+ is the space of $k$-th continuous differentiable functions; $\mathcal C^\infty[0,1]$ is the space of smooth functions; $\mathcal C^\omega[0,1]$ is the space of 
+ real analytic functions; $\mathscr P[0,1]$ is the space of polynomials on $[0,1]$; and $L^2[0,1]$ is the space of square integrable functions.
+
+ 
+ A polynomial of degree $n$ can be written as
+ 
+
+$$
+f(t)=a_0+a_1t+\cdots+ a_n t^n,
+$$
+
+ where $a_n\neq 0$. 
+
+ 
+
+::: {.math-block .example}
+
+**Example 84.** 
+ The set $\mathscr P_n$ of polynomials of degree less than or equal to $n$   is a 
+ vector space and is finite-dimensional. 
+
+:::
+
+ 
+
+::: {.math-block .proof}
+
+**Proof.** 
+ We observe that if $f$ is a polynomial of degree less than or equal to $n$, then it can be represented by 
+  
+
+<span id="ref-900"></span>
+$$
+\tag{5.4.1}
+ f(t)=a_0+a_1t+\cdots+ a_n t^n,
+$$
+
+ where $a_n$ is zero if the degree of $f$ is strictly less than $n$. 
+
+  $\square$
+
+:::
+
+**Warning:** The set of polynomials of degree equal to $n$ is  *<span style="color:#b40000">not</span>* a vector space. This is because that $0$ polynomial has to be an element of a vector space, and also because that it is possible that the summation of two polynomials of degree $n$ could be a polynomial of degree strictly less than $n$.
+
+::: {.math-block .remark}
+
+**Remark 5.** 
+The concepts of linear combinations, span, linear dependence and
+independence, bases, dimension, and linear transformations extend
+naturally to abstract vector spaces.
+
+:::
+
+  
+
+### 2. The coordinates with respect to a basis {#section-47}
+
+  
+
+**Important warning:** What does it mean by a function $f=0$? In the definition of vector space, the $0$ element is represented by the zero function, which is the function identically equal to zero. Thus $f=0$ is equivalent to $f(x)\equiv 0$ for any $x$ in the domain of the function.  
+
+::: {.math-block .example}
+
+**Example 85.** 
+We consider $\mathscr P_n$, the space of polynomials of degree less than or equal to $n$. A basis of $\mathscr P_n$ is given by
+$\{1, t, \cdots, t^n\}$. To prove that, we shall see that first, by [(5.4.1)](#ref-900), we have 
+
+$$
+\mathscr P_n={\rm span}\{ 1, t, \cdots, t^n\}.
+$$
+
+next, the set is linearly independent since if 
+
+$$
+c_0+c_1 t+\cdots + c_nt^n\equiv 0
+$$
+
+will result in all $c_j$ to be zero. As a result, the dimension of $\mathscr P_n$ is $n+1$.
+
+:::
+
+::: {.math-block .example}
+
+**Example 86.** 
+Prove that 
+
+$$
+\mathfrak B=\{2, 4t-3, 2t^2+3t-1\}
+$$
+
+ 
+form a basis of $\mathscr P_2$. 
+
+:::
+
+  
+
+::: {.math-block .proof}
+
+**Proof.** 
+  We prove that the set is linearly independent. To see this, we set up the following equation
+  
+
+$$
+c_0\cdot 2+c_1(4t-3)+c_2(2t^2+3t-1)\equiv 0.
+$$
+
+ We can write the above as 
+ 
+
+$$
+(2c_0-3c_1-c_2)+(4c_1+3c_2) t+2c_2 t^2\equiv 0
+$$
+
+ Since $\{1, t, t^2\}$ is a basis (and hence linearly independent), we must have 
+ 
+
+$$
+\begin{aligned}
+ & 2c_0-3c_1-c_2=0\\
+ & 4c_1+3c_2=0\\
+ &2c_2=0
+ \end{aligned}.
+$$
+
+ It is not hard to see that all $c_j$ must be zero, and this proves that the set $\mathscr B$ is linearly independent. Since $\dim \mathscr P_2=3$, by the Basis Theorem (Theorem [20](chapter-2.qmd#ref-t900)), we know that $\mathscr B$ is a basis.
+   $\square$
+
+:::
+
+  
+
+::: {.math-block .example}
+
+**Example 87.**  Find the coordinates of the polymomial $f(t)=1+t$ under the above basis $\mathfrak B$.
+
+:::
+
+  
+
+::: {.math-block .proof}
+
+**Solution.** 
+  We need to write 
+  
+
+$$
+\begin{aligned}
+&  1+t=c_0 \cdot 2+c_1(4t-3)+c_2(2t^2+3t-1)\\
+&= (2c_0-3c_1-c_2)+(4c_1+3c_2) t+2c_2 t^2.
+\end{aligned}
+$$
+
+  Thus we have 
+   
+
+$$
+\begin{aligned}
+ & 2c_0-3c_1-c_2=1\\
+ & 4c_1+3c_2=1\\
+ &2c_2=0
+ \end{aligned}.
+$$
+
+ by comparing both sides of the above. We thus solve $c_0=7/8; c_1=1/4; c_2=0$. Hence the coordinates of $f$ under $\mathfrak B$ is given by 
+ 
+
+$$
+[f]_\mathfrak B=\begin{bmatrix} \frac 78\\[1ex]\frac 14\\[1ex]0\end{bmatrix}.
+$$
+
+   $\square$
+
+:::
+
+  
+
+::: {.math-block .example}
+
+**Example 88.** 
+  Let $\mathfrak B=\{e_1-e_2, e_1+e_2\}$, where $\mathfrak E=\{e_1, e_2\}$ is the standard basis of $\mathbb{R}^2$. Let 
+  
+
+$$
+x=\begin{bmatrix} 1\\3\end{bmatrix}.
+$$
+
+  What is $[x]_\mathfrak B$?
+
+:::
+
+  
+
+::: {.math-block .proof}
+
+**Solution.** 
+  We write 
+  
+
+$$
+\begin{bmatrix} 1\\3\end{bmatrix}=c_1(e_1-e_2)+c_2(e_1+e_2)=(c_1+c_2) e_1+
+  (c_1-c_2) e_2.
+$$
+
+  Thus $c_1+c_2=1$, and $c_2-c_1=3$, and then
+  
+
+$$
+[x]_\mathfrak B=\begin{bmatrix}c_1\\c_2\end{bmatrix}=
+  \begin{bmatrix}-1\\2\end{bmatrix}.
+$$
+
+  In other words, $\begin{bmatrix}-1\\2\end{bmatrix}$ are the coordinates of $x$ under $\mathfrak B$.
+   $\square$
+
+:::
+
+ 
+
+### The matrix of a linear transformation {#section-48}
+
+ The following was known in § 1.9: let $T:\mathbb{R}^n\to \mathbb{R}^m$ be a linear transformation. The matrix $A$ of the linear transformation is given by 
+ 
+
+$$
+A=[T(e_1),\cdots, T(e_n)].
+$$
+
+ Now let $V$ be an $n$-dimensional vector space, and let $W$ be an $m$-dimensional vector space. Let $T: V\to W$ be 
+ a linear transformation.
+
+ Let $\mathfrak B$ be a basis for $V$ and let $\mathfrak C$ be a basis for $W$. Given any $x$ in $V$, the coordinate vector  $[x]_{\mathfrak B}$ is in $\mathbb{R}^n$, and the coordinate vector of $T(x)$, $[T(x)]_\mathfrak C$, is in $\mathbb{R}^m$.
+
+The question is, what is the matrix $M$ such that
+
+$$
+M[x]_{\mathfrak B}=[T(x)]_\mathfrak C?
+$$
+
+Such a matrix $M$ is called the *<span style="color:#b40000">matrix of $T$ relative to the bases $\mathfrak B$ and $\mathfrak C$</span>*. <span id="index-82"></span>
+Sometimes we write $M=[T]_{\mathfrak B,\mathfrak C}$.
+
+::: {.math-block .proof}
+
+** Solution.** 
+Let
+
+$$
+\mathfrak B=\{b_1,\cdots, b_n\}.
+$$
+
+If
+
+$$
+[x]_{\mathfrak B}=\begin{bmatrix}  r_1\\\vdots\\r_n\end{bmatrix},
+$$
+
+then by definition, $x=r_1b_1+\cdots+r_n b_n$. Thus we have
+
+$$
+T(x)=T(r_1b_1+\cdots+r_n b_n)=r_1T(b_1)+\cdots+r_n T(b_n).
+$$
+
+Since the coordinate function is linear (Theorem [18](chapter-2.qmd#ref-t28)), we have
+
+$$
+[T(x)]_\mathfrak C=r_1[T(b_1)]_\mathfrak C+\cdots+r_n[T(b_n)]_\mathfrak C,
+$$
+
+and therefore
+
+$$
+M=[[T(b_1)]_\mathfrak C,\cdots, [T(b_n)]_\mathfrak C].
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 89.**  Let $V,W$ be linear spaces.
+Suppose $\mathfrak B=\{b_1,b_2\}$ is a basis for $V$ and $\mathfrak C=\{c_1,c_2,c_3\}$ is a basis for $W$. Let $T: V\to W$ be a linear transformation with the property that 
+
+$$
+T(b_1)=3c_1-2c_2+5c_3,\quad T(b_2)=4c_1+7c_2-c_3.
+$$
+
+Find the matrix $M$ for $T$ relative to $\mathfrak B$ and $\mathfrak C$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We use the formula to obtain
+
+$$
+M=[[T(b_1)]_\mathfrak C, [T(b_2)]_\mathfrak C]=\begin{bmatrix} 3&4\\-2&7\\5&-1 \end{bmatrix}.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .example}
+
+**Example 90.** 
+Let $\mathscr P_2$ be the vector space of all polynomials of degree less than or equal to $2$. 
+Let $\mathfrak B=\{1, t,t^2\}$ be a basis of $\mathscr P_2$.
+Let
+
+$$
+T: \mathscr P_2\to \mathscr P_2, \quad T(a_0+a_1t+a_2t^2)=a_1+2a_2t
+$$
+
+be the derivative operator. Then $T$ is a linear transformation.
+
+1.  find the matrix for $T$ relative to the basis $\mathfrak B$;
+
+2.  verify that $[T(p)]_\mathfrak B=[T]_\mathfrak B\cdot [p]_\mathfrak B$ for any $p$ in $P_2$, where $[T]_\mathfrak B=[T]_{\mathfrak B,\mathfrak B}$ is the matrix of $T$ relative to the bases of $\mathfrak B$ and $\mathfrak B$.
+
+:::
+
+::: {.math-block .proof}
+
+** Solution.** 
+We have
+
+$$
+T(1)=0,\quad T(t)=1,\quad T(t^2)=2t.
+$$
+
+Therefore, under the basis $\mathfrak B$, the coordinate vector of $T(1), T(t), T(t^2)$ are
+
+$$
+[T(1)]_\mathfrak B=\begin{bmatrix}0\\0\\0  \end{bmatrix},\quad
+[T(t)]_\mathfrak B=\begin{bmatrix}1\\0\\0  \end{bmatrix},\quad
+[T(t^2)]_\mathfrak B=\begin{bmatrix}0\\2\\0  \end{bmatrix}.
+$$
+
+Thus
+
+$$
+M=\begin{bmatrix} 0&1&0\\0&0&2\\0&0&0 \end{bmatrix}.
+$$
+
+We would like to use the following diagram
+
+$$
+\begin{CD}
+x@>T>>T(x)\\
+@VVV@VVV
+\\
+[x]_\mathfrak B@>>>[T(x)]_\mathfrak B=M[x]_{\mathfrak B}
+\end{CD}
+$$
+
+to illustrate the above procedure.
+
+To verify, we note that 
+
+$$
+T(p)=a_1+2a_2 t
+$$
+
+if $p=a_0+a_1t+a_2t^2$. Thus we have
+
+$$
+[T(p)]_\mathfrak B=\begin{bmatrix}a_1\\2a_2\\0\end{bmatrix}.
+$$
+
+On the other hand,
+
+$$
+[T]_\mathfrak B=M=\begin{bmatrix} 0&1&0\\0&0&2\\0&0&0 \end{bmatrix},\qquad [p]_\mathfrak B=
+\begin{bmatrix} a_0\\a_1\\a_2\end{bmatrix}.
+$$
+
+A straightforward computation shows that 
+
+$$
+[T(p)]_\mathfrak B=\begin{bmatrix}a_1\\2a_2\\0\end{bmatrix}=\begin{bmatrix} 0&1&0\\0&0&2\\0&0&0 \end{bmatrix}\begin{bmatrix} a_0\\a_1\\a_2\end{bmatrix}=[T]_\mathfrak B\cdot [p]_\mathfrak B.
+$$
+
+ $\square$
+
+:::
+
+::: {.math-block .theorem}
+
+**Theorem 35 (Diagonal Matrix Representation).** 
+Suppose $A=PDP^{-1}$, where $D$ is a diagonal $n\times n$ matrix. If $\mathfrak B$ is the basis of $\mathbb{R}^n$ formed from the columns of $P$, then $D$ is the $\mathfrak B$-matrix for the transformation $x\mapsto Ax$.
+
+:::
+
+::: {.math-block .proof}
+
+**Proof.** 
+Define
+
+$$
+T: \mathbb{R}^n\to\mathbb{R}^n,\quad x\mapsto Ax.
+$$
+
+Let $\mathfrak B=\{v_1,\cdots, v_n\}$ be the basis made from eigenvectors; more precisely, we have 
+
+$$
+T(v_j)=Av_j=\lambda_j v_j,\quad 1\leq j\leq n.
+$$
+
+Thus
+
+$$
+M=[[T(v_1)]_\mathfrak B, [T(v_2)]_\mathfrak B,\cdots, [T(v_n)]_\mathfrak B].
+$$
+
+Since $T(v_j)=\lambda_j v_j$, we have 
+
+$$
+[T(v_j)]_\mathfrak B=[\lambda_jv_j]_\mathfrak B=\lambda_j [v_j]_\mathfrak B=\lambda_j e_j
+$$
+
+Thus
+
+$$
+M=[\lambda_1 e_1,\cdots,\lambda_n e_n]=\begin{bmatrix}\lambda_1\\&\lambda_2\\&&\ddots\\&&&\lambda_n\end{bmatrix}.
+$$
+
+ $\square$
+
+:::
