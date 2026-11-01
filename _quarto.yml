@@ -102,7 +102,9 @@ format:
   html:
     lang: en
     theme: cosmo
-    css: styles.css
+    # Versioned filename prevents GitHub Pages/browser caches from keeping an
+    # older copy of the chapter-title design.
+    css: styles-v2.css
     toc: true
     toc-depth: 3
     number-sections: false
