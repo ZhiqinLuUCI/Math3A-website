@@ -1,7 +1,7 @@
 ---
 title: "UCI Math 3A Lecture Notes"
 author: "Zhiqin Lu"
-subtitle: "11th edition · Linear Algebra"
+subtitle: "12th edition · Linear Algebra"
 ---
 
 Choose a chapter below. Each chapter has its own table of contents.
