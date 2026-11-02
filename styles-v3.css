@@ -1,6 +1,6 @@
 :root{--bs-body-bg:#fff;--bs-body-color:#000;--bs-secondary-color:#1a1a1a}html,body,.page-columns,.content,.sidebar,.sidebar-navigation{background-color:#fff!important}body,.quarto-document-content,.sidebar-navigation,.navbar,.toc-active{font-family:Georgia,"Times New Roman",Times,serif!important}body{font-size:1.1rem;font-weight:500;line-height:1.75;color:#000}.navbar{background:#12324f!important;border-bottom:3px solid #2f78a8;box-shadow:0 2px 8px rgba(18,50,79,.22);padding:.55rem 1.25rem}.navbar-brand,.navbar-title,.navbar-nav .nav-link,.navbar #quarto-search .aa-SubmitIcon{color:#fff!important}.navbar-brand,.navbar-title{font-size:1.22rem;font-weight:700;letter-spacing:.01em}.navbar-nav .nav-link{border-radius:.3rem;font-weight:600;margin:0 .15rem;padding:.4rem .7rem!important}.navbar-nav .nav-link:hover,.navbar-nav .nav-link:focus,.navbar-nav .nav-link.active{background-color:rgba(255,255,255,.14);text-decoration:none}.navbar-nav .nav-link.active{box-shadow:inset 0 -3px 0 #fff}.sidebar-navigation .sidebar-item-text,.toc-actions a,.page-navigation a{color:#000}.figure-caption,.table-caption,.text-muted{color:#1a1a1a!important}a{color:#134e83}a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid #a14f00;outline-offset:3px}img{max-width:100%;height:auto}.math-block{margin:1.4rem 0}.example>p:first-child>strong:first-child{color:#02650f}.theorem,.lemma,.corollary{color:#171477}.definition,.remark,.numberedremark{color:#02650f}.proposition{color:#005591}:is(.proof,.solution){position:relative;color:#17212b;background:linear-gradient(135deg,#f7fbff 0%,#fff 72%);border:1px solid #c8dbea;border-left:5px solid #2f78a8;border-radius:.25rem .8rem .8rem .25rem;box-shadow:0 .35rem 1rem rgba(18,50,79,.09);padding:1.15rem 1.35rem 1.15rem 1.5rem;overflow:hidden}:is(.proof,.solution)::after{content:"";position:absolute;top:-2.4rem;right:-2.4rem;width:6rem;height:6rem;border:1rem double rgba(47,120,168,.08);border-radius:50%;pointer-events:none}:is(.proof,.solution)>p:first-child{margin-top:0}:is(.proof,.solution)>p:last-child{margin-bottom:0}:is(.proof,.solution) .proof-title,:is(.proof,.solution)>p:first-child>strong:first-child{display:inline-block;color:#12324f;font-size:1.05em;font-variant:small-caps;font-weight:700;letter-spacing:.045em;margin-right:.2rem}:is(.proof,.solution) .proof-title em{font-style:normal}:is(.proof,.solution) .math.display{background:rgba(255,255,255,.72);border-radius:.35rem;padding:.15rem .35rem}.math.display{max-width:100%;overflow-x:auto}h1,h2,h3,h4{color:#12324f}.quarto-title h1.title{color:#12324f}@media(max-width:575.98px){:is(.proof,.solution){padding:1rem 1rem 1rem 1.15rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* A polished QED mark, aligned with the right edge of every proof. */
+/* Polished QED mark, aligned with the right edge of every proof. */
 :is(.proof,.solution)>p:last-child>.math.inline:last-child {
   position: relative;
   z-index: 1;
@@ -609,6 +609,89 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
   color: #542f18;
 }
 
+/* Handwritten-style annotations embedded in the lecture notes. */
+.handnote {
+  position: relative;
+  margin: 1.25rem 1.1rem 1.45rem;
+  padding: .95rem 1.25rem .95rem 1.35rem;
+  color: #17212b;
+  background:
+    linear-gradient(rgba(61, 117, 155, .11) 1px, transparent 1px) 0 1.95rem / 100% 1.55rem,
+    #fff9d9;
+  border: 1px solid #d8bd63;
+  border-left: 5px solid #b77912;
+  border-radius: .2rem .55rem .55rem .2rem;
+  box-shadow: .25rem .4rem .85rem rgba(86, 63, 20, .14);
+  font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.55rem;
+  transform: rotate(-.18deg);
+}
+
+.handnote::before {
+  content: none;
+}
+
+.handnote > :first-child {
+  margin-top: 0;
+}
+
+.handnote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Inline handwritten arrow pointing to an especially important word. */
+.important-annotation {
+  position: relative;
+  display: inline-block;
+}
+
+.handwritten-arrow-note {
+  position: absolute;
+  z-index: 2;
+  top: 2.9em;
+  left: 50%;
+  color: #14532d;
+  font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+  font-size: .94em;
+  font-weight: 900;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.handwritten-arrow-note::before {
+  content: "↑";
+  position: absolute;
+  left: 50%;
+  bottom: .9em;
+  color: #14532d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2em;
+  line-height: 1;
+  transform: translateX(-50%);
+}
+
+.math-block p:has(.important-annotation) {
+  margin-bottom: 3.82rem;
+}
+
+@media (max-width: 575.98px) {
+  .handnote {
+    margin-inline: .15rem;
+    padding-inline: 1rem;
+    transform: none;
+  }
+
+  .handnote::before {
+    left: 1rem;
+  }
+}
+
 /* Indexed vocabulary is red and italic throughout the lecture notes. */
 #quarto-document-content p:has(span[id^="index-"])
   span[style*="color:#b40000"],
@@ -787,6 +870,95 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
     max-width: 96%;
     padding-inline: .8rem;
     font-size: .9rem;
+  }
+}
+
+/* Clean printable version available from the navigation bar. */
+@media print {
+  @page {
+    margin: .65in;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  #quarto-header,
+  #quarto-sidebar,
+  #quarto-margin-sidebar,
+  .quarto-secondary-nav,
+  .page-navigation,
+  .nav-page,
+  #quarto-search,
+  .math-ai-art {
+    display: none !important;
+  }
+
+  body.nav-sidebar .page-columns,
+  .page-columns,
+  #quarto-content,
+  main.content,
+  #quarto-document-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  a,
+  a:visited {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .math-block,
+  figure,
+  table,
+  img,
+  .numbered-figure-caption {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  :is(.proof, .solution) {
+    background: #fff !important;
+    border-color: #6f8595 !important;
+    box-shadow: none !important;
+  }
+
+  .handnote {
+    background: #fff !important;
+    border-color: #777 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .handwritten-arrow-note {
+    color: #000 !important;
+    transform: translateX(-50%) !important;
+  }
+
+  body:has(.book-home) #title-block-header.quarto-title-block {
+    color: #000 !important;
+    background: #fff !important;
+    border: 2px solid #12324f !important;
+    box-shadow: none !important;
+  }
+
+  body:has(.book-home) #title-block-header.quarto-title-block::before,
+  body:has(.book-home) #title-block-header .quarto-title h1.title,
+  body:has(.book-home) #title-block-header .subtitle,
+  body:has(.book-home) #title-block-header .quarto-title-meta-contents p,
+  body:has(.book-home) #title-block-header .quarto-title-author-email,
+  .book-source-note,
+  .book-source-note em {
+    color: #000 !important;
+    text-shadow: none !important;
   }
 }
 

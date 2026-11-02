@@ -48,7 +48,7 @@ $$
 -1\\1
 \end{bmatrix}=\begin{bmatrix}
 -5\\-1
-\end{bmatrix},\\
+\end{bmatrix},\\[.2cm]
 &Av=\begin{bmatrix}
 3&-2\\1&0
 \end{bmatrix}\cdot
@@ -109,7 +109,7 @@ $$
 -24\\20
 \end{bmatrix}=-4\begin{bmatrix}
 6\\-5
-\end{bmatrix}=-4u\\
+\end{bmatrix}=-4u,\\[.2cm]
 &Av=\begin{bmatrix}
 1&6\\5&2
 \end{bmatrix}\begin{bmatrix}
@@ -166,7 +166,7 @@ $$
 Therefore, the general solution has the form $x_2\begin{bmatrix} 1\\1 \end{bmatrix}$. In order to obtain a *non-zero* solution, we choose $x_2=1$. Thus
 $\begin{bmatrix} 1\\1 \end{bmatrix}$ is an eigenvector of $A$ with respect to  the eigenvalue $7$.
 
-The eigenvectors are not unique, but $\begin{bmatrix} 0\\0 \end{bmatrix}$ is *<span style="color:#b40000">not</span>*  an eigenvector.
+The eigenvectors are not unique, but $\begin{bmatrix} 0\\0 \end{bmatrix}$ is *<span class="important-annotation"><span style="color:#b40000">not</span><span class="handwritten-arrow-note">This is important!</span></span>*  an eigenvector because eigenvector is not a zero vector.
 
  $\square$
 
@@ -229,6 +229,10 @@ $$
 $$
 
 So the eigenspace is spanned by $\{u,v\}$. Since $u,v$ are linearly independent, a basis for the eigenspace is $\{u,v\}$.
+
+<div class="handnote">
+Finding a basis for an eigenspace is equivalent to solving a homogeneous system of linear equations.
+</div>
 
  $\square$
 

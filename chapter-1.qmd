@@ -6,6 +6,9 @@ title: "1. Linear Equations in Linear Algebra"
 
 ## 1.1 System of linear equations {#section-2}
 
+
+
+
 A <span style="color:#b40000">*linear equation*</span><span id="index-1"></span>  can be written as 
 
 $$
@@ -15,6 +18,9 @@ $$
 where $a_1,\cdots,a_n$ and $b$ are real numbers known in advance.
 
 For example, $4x_1-5x_2+2=x_1$ is a linear equation, $\sqrt 2 x_1+\pi x_2=-1$ is also a linear equation, but $x_1=2x_2x_4$, and $x_2=2\sqrt{x_1}-6$ are not linear equations. 
+
+
+A linear equation may contain constants such as $\sqrt{2}$ and $\pi$, but each variable can occur only to the first power, and variables cannot be multiplied together
 
 A <span style="color:#b40000">*system of linear equations*</span> (or a <span style="color:#b40000">*linear system*</span>) <span id="index-2"></span>
 <span id="index-3"></span>  is a collection of one or more linear equations involving the same variables $x_1,\cdots,x_n$. For example 

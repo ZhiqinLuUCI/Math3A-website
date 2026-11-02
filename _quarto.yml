@@ -11,6 +11,10 @@ website:
     left:
       - href: index.qmd
         text: Lecture Notes
+    right:
+      - href: "#print-page"
+        text: Print / Save PDF
+        icon: printer
   sidebar:
     style: docked
     collapse-level: 1
@@ -104,7 +108,7 @@ format:
     theme: cosmo
     # Versioned filename prevents GitHub Pages/browser caches from keeping an
     # older copy of the chapter-title design.
-    css: styles-v2.css
+    css: styles-v3.css
     toc: true
     toc-depth: 3
     number-sections: false
@@ -114,4 +118,5 @@ format:
     include-in-header:
       - math-config.html
       - chapter-title.html
+      - print-tools.html
     link-external-newwindow: false

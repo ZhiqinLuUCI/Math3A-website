@@ -1,0 +1,13 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const printLink = document.querySelector('a[href$="#print-page"]');
+  if (!printLink) return;
+
+  printLink.setAttribute("role", "button");
+  printLink.setAttribute("aria-label", "Print this page or save it as a PDF");
+  printLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.print();
+  });
+});
+</script>
