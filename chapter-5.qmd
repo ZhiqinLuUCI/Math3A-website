@@ -6,7 +6,7 @@ title: "5. Eigenvalues and eigenvectors"
 
 ## 5.1 Eigenvectors and eigenvalues {#section-42}
 
-Consider the linear transformation $x\mapsto Ax$ for a square matrix $A$. If $A$ is a diagonal matrix, for example, if 
+reConsider the linear transformation $x\mapsto Ax$ for a square matrix $A$. If $A$ is a diagonal matrix, for example, if 
 
 $$
 A=\begin{bmatrix}
