@@ -650,24 +650,24 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
 .handwritten-arrow-note {
   position: absolute;
   z-index: 2;
-  top: 2.9em;
+  top: 2.3em;
   left: 50%;
   color: #14532d;
   font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
-  font-size: .94em;
+  font-size: 1.5em;
   font-weight: 900;
   letter-spacing: 0;
   word-spacing: 0;
   line-height: 1;
   text-align: left;
   white-space: nowrap;
-  transform: translateX(-50%) rotate(-2deg);
+  transform: translateX(-50%) rotate(-7deg);
 }
 
 .handwritten-arrow-note::before {
   content: "↑";
   position: absolute;
-  left: 50%;
+  left: calc(50% + .2cm);
   bottom: .9em;
   color: #14532d;
   font-family: Georgia, "Times New Roman", serif;
