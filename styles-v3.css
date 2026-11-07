@@ -641,6 +641,17 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
   margin-bottom: 0;
 }
 
+.handnote-green {
+  width: fit-content;
+  max-width: calc(100% - 2.2rem);
+  background:
+    linear-gradient(rgba(40, 110, 72, .10) 1px, transparent 1px) 0 1.95rem / 100% 1.55rem,
+    #eef9ef;
+  border-color: #9fc9a7;
+  border-left-color: #3f7d4e;
+  box-shadow: .25rem .4rem .85rem rgba(35, 91, 52, .13);
+}
+
 /* Inline handwritten arrow pointing to an especially important word. */
 .important-annotation {
   position: relative;
@@ -678,6 +689,143 @@ body:has(.book-home) #title-block-header .quarto-title-author-email:hover {
 
 .math-block p:has(.important-annotation) {
   margin-bottom: 3.82rem;
+}
+
+/* Handwritten multiplicity note, matching the "This is important!" annotation. */
+.multiplicity-note mjx-mtext {
+  color: #14532d;
+  font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+  font-size: 1.15em;
+  font-weight: 900;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.multiplicity-note mjx-mover > mjx-over {
+  position: relative;
+  top: -1.35em;
+}
+
+/* Rounded handwritten balloon; its tail points to the annotated lambda^4. */
+.multiplicity-note mjx-mover mjx-mtable {
+  position: relative;
+  min-width: 11em !important;
+  padding: 1em 1.35em;
+  color: #14532d;
+  background: #f4fbf5;
+  border: 2px solid #14532d;
+  border-radius: 46% 54% 43% 57% / 55% 44% 56% 45%;
+  box-shadow: 0 .2em .45em rgba(20, 83, 45, .18);
+}
+
+.multiplicity-note mjx-mover mjx-mtable::after {
+  content: "";
+  position: absolute;
+  left: .7em;
+  bottom: -.64em;
+  width: .9em;
+  height: .9em;
+  background: #f4fbf5;
+  border-right: 2px solid #14532d;
+  border-bottom: 2px solid #14532d;
+  transform: rotate(45deg);
+}
+
+/* The raised note is intentionally outside the equation's layout box. */
+.multiplicity-note .math.display,
+.multiplicity-note .math.display mjx-container {
+  overflow: visible !important;
+}
+
+:is(.proof, .solution):has(.multiplicity-note) {
+  overflow: visible;
+}
+
+/* MathJax gives smashed annotations zero-width wrappers; keep the balloon visible. */
+.multiplicity-note mjx-mover,
+.multiplicity-note mjx-over,
+.multiplicity-note mjx-texatom,
+.multiplicity-note mjx-mpadded,
+.multiplicity-note mjx-block,
+.multiplicity-note mjx-mstyle,
+.multiplicity-note mjx-mtable,
+.multiplicity-note mjx-table,
+.multiplicity-note mjx-itable,
+.multiplicity-note mjx-mtr,
+.multiplicity-note mjx-mtd {
+  overflow: visible !important;
+}
+
+/* A true HTML callout avoids MathJax clipping while staying anchored to lambda^4. */
+.multiplicity-equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  margin: 5.4rem 0 .35rem;
+  overflow: visible;
+  text-align: center;
+}
+
+.lambda-four-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+.flower-balloon {
+  --balloon-anchor: 22.4%;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: calc(100% + 1.15rem);
+  width: 14rem;
+  padding: .85rem 1.15rem;
+  color: #14532d;
+  background: #f4fbf5;
+  border: 2px solid #14532d;
+  border-radius: 46% 54% 43% 57% / 55% 44% 56% 45%;
+  box-shadow: 0 .2rem .5rem rgba(20, 83, 45, .18);
+  font-family: "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.12;
+  white-space: normal;
+  transform: translateX(-22.4%);
+}
+
+.lambda-arrow {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  bottom: calc(100% + .05rem);
+  width: 2.25rem;
+  height: 1.75rem;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.lambda-arrow-line,
+.lambda-arrow-head {
+  fill: none;
+  stroke: #14532d;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 575.98px) {
+  .multiplicity-equation {
+    margin-top: 6.2rem;
+  }
+
+  .flower-balloon {
+    --balloon-anchor: 28%;
+    width: 11.5rem;
+    font-size: 1rem;
+    transform: translateX(-28%);
+  }
 }
 
 @media (max-width: 575.98px) {
